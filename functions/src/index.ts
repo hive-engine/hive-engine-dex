@@ -40,7 +40,7 @@ export const createUserRoles = functions.auth.user().onCreate((user) => {
         member: true
     };
 
-    const adminUsers = ['yabapmatt', 'aggroed', 'beggars'];
+    const adminUsers = ['aggroed', 'beggars'];
 
     if (adminUsers.includes(user.uid)) {
         customClaims.admin = true;

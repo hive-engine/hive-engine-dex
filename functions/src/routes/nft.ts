@@ -16,7 +16,7 @@ const bucket = storage.bucket('steem-engine-dex.appspot.com', {
 import * as SSC from 'sscjs';
 
 const firestore = admin.firestore();
-const ssc = new SSC('https://api.hive-engine.com/rpc2');
+const ssc = new SSC('https://api.hive-engine.com/rpc');
 
 async function loadNft(symbol: string) {
     const result = await ssc.findOne('nft', 'nfts', { symbol });
