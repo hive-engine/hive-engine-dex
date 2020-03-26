@@ -138,7 +138,7 @@ export class WithdrawModal {
             let result;
             const amountFixed = toFixedNoRounding(parseFloat(this.amount), 3);
 
-            if (this.token.symbol === 'STEEM') {
+            if (this.token.symbol === 'HIVE') {
                 result = await this.se.withdrawHive(amountFixed);
             } else {
                 this.getDepositInfo();

@@ -20,7 +20,7 @@
     "unstakeTransactionsInvalidRange": "Unstaking number of transactions range is between 1 and 365",
     "withdrawHiveError": "There was a problem processing your request",
     "insufficientBalanceForIssueToken": "You do not have enough {{symbol}}. Your balance is: {{balance}}",
-    "insufficientBalanceForbuyBee": "You do not have enough STEEM. Your balance is: {{balance}}",
+    "insufficientBalanceForbuyBee": "You do not have enough HIVE. Your balance is: {{balance}}",
     "required": "Required field.",
     "requiredAlphaNumericSpaces": "Required field. Alpha-numeric characters and spaces only.",
     "betweenZeroAndEight": "Please enter a number from 0 to 8",

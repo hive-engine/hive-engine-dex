@@ -12,7 +12,7 @@ const HtmlCriticalPlugin = require('html-critical-webpack-plugin');
 const ensureArray = config => (config && (Array.isArray(config) ? config : [config])) || [];
 const when = (condition, config, negativeConfig) => (condition ? ensureArray(config) : ensureArray(negativeConfig));
 
-const title = 'Hive Engine - Smart Contracts on the STEEM blockchain';
+const title = 'Hive Engine - Smart Contracts on the HIVE blockchain';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const baseUrl = '/';

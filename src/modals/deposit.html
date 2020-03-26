@@ -29,7 +29,7 @@
                 </select>
             </div>
 
-            <div if.bind="token && token == 'STEEM'">
+            <div if.bind="token && token == 'HIVE'">
                 <div class="form-group">
                     <h4>${'HIVEP Balance' & t}</h4>
                     <p class="mb-4">${tokenBalance | comma}</p>
@@ -44,7 +44,7 @@
                             placeholder="0.000"
                             value.bind="amount"
                         />
-                        <div class="input-group-append">${'STEEM' & t}</div>
+                        <div class="input-group-append">${'HIVE' & t}</div>
                         <div class="invalid-tooltip">
                             ${'errors:Please enter an amount greater than 0' &
                             t}
@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div if.bind="token && token !== 'STEEM' && depositInfo">
+            <div if.bind="token && token !== 'HIVE' && depositInfo">
                 <div class="note mb-4">
                     Please send any amount of ${token} to the following address
                     and you will receive an equal amount of
@@ -114,7 +114,7 @@
             <button
                 class="btn btn-lg greenBtns"
                 click.trigger="depositHive()"
-                if.bind="token && token == 'STEEM'"
+                if.bind="token && token == 'HIVE'"
             >
                 ${'Deposit' & t} ${token & t}
             </button>

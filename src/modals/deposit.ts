@@ -30,7 +30,7 @@ export class DepositModal {
         this.taskQueue.queueMicroTask(async () => {
             this.loading = false;
 
-            if (this.token !== 'STEEM') {
+            if (this.token !== 'HIVE') {
                 this.loading = true;
 
                 try {

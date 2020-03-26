@@ -62,7 +62,7 @@ export class BuyTokenModal {
         this.username = this.state.account.name;
 
         const user = await getAccount(this.username);
-        this.steemBalance = user.balance.replace('STEEM', '').trim();
+        this.steemBalance = user.balance.replace('HIVE', '').trim();
 
         this.beeBalance = 0;
         const beeToken = this.state.account.balances.find(x => x.symbol === environment.nativeToken);

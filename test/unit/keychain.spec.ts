@@ -33,7 +33,7 @@ describe('Hive Keychain', () => {
     });
 
     test('requestTransfer should return value after promise resolves from callback', async () => {
-        const returnValue = await requestTransfer('beggars', 'aggroed', '1234.456', 'Testing', 'STEEM');
+        const returnValue = await requestTransfer('beggars', 'aggroed', '1234.456', 'Testing', 'HIVE');
         expect(returnValue).toEqual('aggroed');
     });
 });

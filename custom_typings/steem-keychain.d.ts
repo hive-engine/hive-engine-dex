@@ -2,7 +2,7 @@
 // This code is licensed under MIT license (see LICENSE for details)
 
 declare namespace HiveKeychain {
-    type CurrencyType = 'STEEM' | 'SBD';
+    type CurrencyType = 'HIVE' | 'HBD';
     type KeyType = 'Memo' | 'Posting' | 'Active';
     type KeyTypeWithoutMemo = 'Posting' | 'Active';
     type HiveUnit = 'VESTS' | 'SP';

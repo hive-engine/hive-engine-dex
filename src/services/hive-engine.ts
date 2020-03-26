@@ -1018,7 +1018,7 @@ export class HiveEngine {
         };
 
         if (window.steem_keychain) {
-            const withdraw = await customJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Withdraw STEEM');
+            const withdraw = await customJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Withdraw HIVE');
 
             if (withdraw && withdraw.success && withdraw.result) {
 
@@ -1072,7 +1072,7 @@ export class HiveEngine {
             };
 
             if (window.steem_keychain) {
-                const deposit = await requestTransfer(username, environment.hivepAccount, amount, JSON.stringify(transaction_data), 'STEEM');
+                const deposit = await requestTransfer(username, environment.hivepAccount, amount, JSON.stringify(transaction_data), 'HIVE');
 
                 if (deposit && deposit.success && deposit.result) {
                     try {
@@ -1110,7 +1110,7 @@ export class HiveEngine {
                     resolve(false);
                 }
             } else {
-                steemConnectTransfer(username, environment.hivepAccount, `${amount} STEEM`, JSON.stringify(transaction_data), () => {
+                steemConnectTransfer(username, environment.hivepAccount, `${amount} HIVE`, JSON.stringify(transaction_data), () => {
                     resolve(true);
                 });
             }
@@ -1324,7 +1324,7 @@ export class HiveEngine {
             };
 
             if (window && window.steem_keychain) {
-                const buyBeeRes = await requestTransfer(username, 'steemsc', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'STEEM');
+                const buyBeeRes = await requestTransfer(username, 'steemsc', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'HIVE');
 
                 if (buyBeeRes && buyBeeRes.success && buyBeeRes.result) {
                     try {

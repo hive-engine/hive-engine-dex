@@ -32,9 +32,9 @@ export default [
         "_id": 2,
         "issuer": "steem-peg",
         "symbol": "HIVEP",
-        "name": "STEEM Pegged",
+        "name": "HIVE Pegged",
         "metadata": {
-            "desc": "STEEM backed by the steem-engine team",
+            "desc": "HIVE backed by the steem-engine team",
             "url": "https://hive-engine.com",
             "icon": "https://cdn.steemitimages.com/DQmdo9WqQrT3ywGEfKY8b1uJvTR4KdNX9uFBXs5JPuPdvQz/image.png"
         },

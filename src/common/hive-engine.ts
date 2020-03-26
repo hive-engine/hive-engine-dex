@@ -102,7 +102,7 @@ export async function getFormattedCoinPairs() {
     let tokenPairs = [];
     const nonPeggedCoins = coins.filter(x => x.coin_type !== 'steemengine');
 
-    const steem = { name: 'STEEM', symbol: 'STEEM', pegged_token_symbol: 'HIVEP' };
+    const steem = { name: 'HIVE', symbol: 'HIVE', pegged_token_symbol: 'HIVEP' };
     tokenPairs.push(steem);
 
     for (const x of nonPeggedCoins) {

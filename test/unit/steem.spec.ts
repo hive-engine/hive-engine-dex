@@ -86,9 +86,9 @@ describe('Hive', () => {
 
         const spy = jest.spyOn(functions, 'popupCenter');
 
-        steemConnectTransfer('beggars', 'aggroed', '1.000 STEEM', 'Test', Function);
+        steemConnectTransfer('beggars', 'aggroed', '1.000 HIVE', 'Test', Function);
 
-        const url = 'https://hivesigner.com/sign/transfer?&from=beggars&to=aggroed&amount=1.000%20STEEM&memo=Test';
+        const url = 'https://hivesigner.com/sign/transfer?&from=beggars&to=aggroed&amount=1.000%20HIVE&memo=Test';
 
         expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
     });
