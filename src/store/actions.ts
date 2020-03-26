@@ -15,7 +15,7 @@ import {
     parseTokens,
     loadConversionSentReceived,
     loadPendingWithdrawals,
-} from 'common/steem-engine';
+} from 'common/hive-engine';
 
 import { ssc } from 'common/ssc';
 import moment from 'moment';

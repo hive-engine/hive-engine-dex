@@ -1,7 +1,7 @@
 export default [
     {
         "_id": 1,
-        "symbol": "ENG",
+        "symbol": 'BEE',
         "volume": "636.76589787",
         "volumeExpiration": 1572516918,
         "lastPrice": "0.85000000",

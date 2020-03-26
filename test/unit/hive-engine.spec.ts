@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import * as functions from 'common/steem-engine';
+import * as functions from 'common/hive-engine';
 //import { request, loadTokenMarketHistory, checkTransaction } from 'common/steem-engine';
 
 jest.mock('sscjs');
@@ -24,13 +24,13 @@ describe('Functions', () => {
     });
 
     test('loadTokenMarketHistory should return history for token', async () => {
-        const symbol = 'ENG';
+        const symbol = 'BEE';
 
         const resultData = [
             {
                 _id: '5dace26d3415dd328fef94dd',
                 timestamp: 1555286400,
-                symbol: 'ENG',
+                symbol: 'BEE',
                 volumeHive: '987.53000000',
                 volumeToken: '1156.1946',
                 lowestPrice: '0.81599681',
@@ -41,7 +41,7 @@ describe('Functions', () => {
             {
                 _id: '5dace24a3415dd328fef8ded',
                 timestamp: 1555200000,
-                symbol: 'ENG',
+                symbol: 'BEE',
                 volumeHive: '582.23100000',
                 volumeToken: '675.1977',
                 lowestPrice: '0.82100000',
@@ -52,7 +52,7 @@ describe('Functions', () => {
             {
                 _id: '5dace22b3415dd328fef87d9',
                 timestamp: 1555113600,
-                symbol: 'ENG',
+                symbol: 'BEE',
                 volumeHive: '397.11400000',
                 volumeToken: '423.04',
                 lowestPrice: '0.90000000',
@@ -70,7 +70,7 @@ describe('Functions', () => {
     });
 
     test('loadTokenMarketHistory should append timestampStart to url', async () => {
-        const symbol = 'ENG';
+        const symbol = 'BEE';
 
         fetchMock.mockResponseOnce(JSON.stringify({}));
 
@@ -85,7 +85,7 @@ describe('Functions', () => {
     });
 
     test('loadTokenMarketHistory should append timestampEnd to url', async () => {
-        const symbol = 'ENG';
+        const symbol = 'BEE';
 
         fetchMock.mockResponseOnce(JSON.stringify({}));
 
@@ -100,13 +100,13 @@ describe('Functions', () => {
     });
 
     test('loadAccountHistory should return account for token', async () => {
-        const symbol = 'ENG';
+        const symbol = 'BEE';
 
         const resultData = [
             {
                 _id: '5dace26d3415dd328fef94dd',
                 timestamp: 1555286400,
-                symbol: 'ENG',
+                symbol: 'BEE',
                 volumeHive: '987.53000000',
                 volumeToken: '1156.1946',
                 lowestPrice: '0.81599681',
@@ -117,7 +117,7 @@ describe('Functions', () => {
             {
                 _id: '5dace24a3415dd328fef8ded',
                 timestamp: 1555200000,
-                symbol: 'ENG',
+                symbol: 'BEE',
                 volumeHive: '582.23100000',
                 volumeToken: '675.1977',
                 lowestPrice: '0.82100000',
@@ -128,7 +128,7 @@ describe('Functions', () => {
             {
                 _id: '5dace22b3415dd328fef87d9',
                 timestamp: 1555113600,
-                symbol: 'ENG',
+                symbol: 'BEE',
                 volumeHive: '397.11400000',
                 volumeToken: '423.04',
                 lowestPrice: '0.90000000',
@@ -146,7 +146,7 @@ describe('Functions', () => {
     });
 
     test('loadAccountHistory should append timestampStart to url', async () => {
-        const symbol = 'ENG';
+        const symbol = 'BEE';
 
         fetchMock.mockResponseOnce(JSON.stringify({}));
 
@@ -161,7 +161,7 @@ describe('Functions', () => {
     });
 
     test('loadAccountHistory should append timestampEnd to url', async () => {
-        const symbol = 'ENG';
+        const symbol = 'BEE';
 
         fetchMock.mockResponseOnce(JSON.stringify({}));
 
@@ -180,8 +180,8 @@ describe('Functions', () => {
             {
                 _id: '5dace26d3415dd328fef94dd',
                 exchange_rate: '1234',
-                from_coin: 'ENG',
-                from_coin_symbol: 'ENG',
+                from_coin: 'BEE',
+                from_coin_symbol: 'BEE',
                 to_coin: 'BTC',
                 to_coin_symbol: 'BTC',
                 __str__: 'dasdas'
@@ -200,8 +200,8 @@ describe('Functions', () => {
             {
                 _id: '5dace26d3415dd328fef94dd',
                 exchange_rate: '1234',
-                from_coin: 'ENG',
-                from_coin_symbol: 'ENG',
+                from_coin: 'BEE',
+                from_coin_symbol: 'BEE',
                 to_coin: 'BTC',
                 to_coin_symbol: 'BTC',
                 __str__: 'dasdas'
@@ -229,7 +229,7 @@ describe('Functions', () => {
         const data = {
             tokens: [
                 { symbol: 'PAL', supply: 0, circulatingSupply: 0 },
-                { symbol: 'ENG', supply: 0, circulatingSupply: 0 },
+                { symbol: 'BEE', supply: 0, circulatingSupply: 0 },
                 { symbol: 'DISNEY', supply: 0, circulatingSupply: 0 },
                 { symbol: 'ASS', supply: 0, circulatingSupply: 0 }
             ]
@@ -245,7 +245,7 @@ describe('Functions', () => {
         const data = {
             tokens: [
                 { symbol: 'PAL', supply: 0, circulatingSupply: 0 },
-                { symbol: 'ENG', supply: 0, circulatingSupply: 0 },
+                { symbol: 'BEE', supply: 0, circulatingSupply: 0 },
                 { symbol: 'DISNEY', supply: 0, circulatingSupply: 0 },
                 { symbol: 'ASS', supply: 0, circulatingSupply: 0 },
                 { symbol: 'HIVEP', supply: 999, circulatingSupply: 95849485 }

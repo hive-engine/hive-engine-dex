@@ -2,12 +2,12 @@ export default [
     {
         "_id": 1,
         "issuer": "null",
-        "symbol": "ENG",
+        "symbol": 'BEE',
         "name": "Hive Engine Token",
         "metadata": {
-            "url": "https://steem-engine.com",
+            "url": "https://hive-engine.com",
             "icon": "https://s3.amazonaws.com/steem-engine/images/icon_steem-engine_gradient.svg",
-            "desc": "ENG is the native token for the Hive Engine platform"
+            "desc": "BEE is the native token for the Hive Engine platform"
         },
         "precision": 8,
         "maxSupply": 9007199254740991,
@@ -35,7 +35,7 @@ export default [
         "name": "STEEM Pegged",
         "metadata": {
             "desc": "STEEM backed by the steem-engine team",
-            "url": "https://steem-engine.com",
+            "url": "https://hive-engine.com",
             "icon": "https://cdn.steemitimages.com/DQmdo9WqQrT3ywGEfKY8b1uJvTR4KdNX9uFBXs5JPuPdvQz/image.png"
         },
         "precision": 8,
@@ -57,7 +57,7 @@ export default [
         "name": "BITCOIN Pegged",
         "metadata": {
             "desc": "BITCOIN backed by the steem-engine team",
-            "url": "https://steem-engine.com",
+            "url": "https://hive-engine.com",
             "icon": "https://cdn.steemitimages.com/DQmRHuGyFdNjpkiS3a97sqUCjocqrBQ7vH1AVYP4rm8Sec7/image.png"
         },
         "precision": 8,
@@ -103,7 +103,7 @@ export default [
         "name": "DOGECOIN Pegged",
         "metadata": {
             "desc": "DOGECOIN backed by the steem-engine team",
-            "url": "https://steem-engine.com",
+            "url": "https://hive-engine.com",
             "icon": "https://cdn.steemitimages.com/DQmSfe4sm91ac3YDovTutMT3mAs23VRNYq7wC3bh7mY6dAy/image.png"
         },
         "precision": 8,
@@ -126,7 +126,7 @@ export default [
         "name": "BITCOIN CASH Pegged",
         "metadata": {
             "desc": "BITCOIN CASH backed by the steem-engine team",
-            "url": "https://steem-engine.com",
+            "url": "https://hive-engine.com",
             "icon": "https://cdn.steemitimages.com/DQmYkEphtxBWx2NyLNKF3FwzrcK7TtNeZDKDAuSfvQSKpao/image.png"
         },
         "precision": 8,

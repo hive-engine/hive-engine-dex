@@ -27,7 +27,7 @@
                         }}
                     </strong>
                 </p>
-                <p>${'yourEngBalance' & t: { 'balance': engBalance, 'token': environment.nativeToken }}</p>
+                <p>${'yourbeeBalance' & t: { 'balance': beeBalance, 'token': environment.nativeToken }}</p>
             </div>
             <div class="col-sm-12 col-md-6 offset-md-3">
                 <div class="create-nft-card-form">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group">
                         <button type="button"
-                                disabled.bind="tokenCreationFee > engBalance"
+                                disabled.bind="tokenCreationFee > beeBalance"
                                 class="greenBtn"
                                 style="border: none;"
                                 click.delegate="createToken()">

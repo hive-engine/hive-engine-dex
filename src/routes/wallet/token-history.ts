@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { observable } from 'aurelia-binding';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
 import { TokenHistoryTransactionModal } from 'modals/wallet/token-history-transaction';
 import { SendTokensModal } from 'modals/wallet/send-tokens';
@@ -12,7 +12,7 @@ import styles from "./token-history.module.css";
 import { DialogService, DialogCloseResult } from 'aurelia-dialog';
 import moment from 'moment';
 import { stateTokensOnlyPegged } from 'common/functions';
-import { loadAccountHistory } from 'common/steem-engine';
+import { loadAccountHistory } from 'common/hive-engine';
 
 
 

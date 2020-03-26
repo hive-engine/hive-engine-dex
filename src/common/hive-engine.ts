@@ -3,7 +3,7 @@ import { usdFormat } from 'common/functions';
 /* eslint-disable no-undef */
 import { HttpClient } from 'aurelia-fetch-client';
 import { queryParam } from 'common/functions';
-import { environment } from './../environment';
+import { environment } from '../environment';
 import { ssc } from './ssc';
 
 const SCOT_API = 'https://scot-api.hive-engine.com/';
@@ -354,8 +354,8 @@ export async function loadConversions(account: string, type = 'from', limit = 20
     try {
         const request = await http.fetch(url, {
             headers: {
-                'Origin': 'https://steem-engine.com',
-                'Referer': 'https://steem-engine.com/?p=conversion_history',
+                'Origin': 'https://hive-engine.com',
+                'Referer': 'https://hive-engine.com/?p=conversion_history',
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
             }
         });
@@ -370,8 +370,8 @@ export async function getPrices() {
     try {
         const request = await http.fetch(`https://postpromoter.net/api/prices`, {
             headers: {
-                'Origin': 'https://steem-engine.com',
-                'Referer': 'https://steem-engine.com/?p=conversion_history',
+                'Origin': 'https://hive-engine.com',
+                'Referer': 'https://hive-engine.com/?p=conversion_history',
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
             }
         });

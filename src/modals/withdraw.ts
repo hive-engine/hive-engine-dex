@@ -1,6 +1,6 @@
-import { getFormattedCoinPairs } from 'common/steem-engine';
+import { getFormattedCoinPairs } from 'common/hive-engine';
 import { Store } from 'aurelia-store';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { ValidationControllerFactory, ControllerValidateResult, ValidationRules } from 'aurelia-validation';

@@ -2,7 +2,7 @@ import { query } from 'common/apollo';
 import { CallingAction, MiddlewarePlacement } from 'aurelia-store';
 /* eslint-disable no-undef */
 import { AuthorizeStep } from './resources/pipeline-steps/authorize';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { EventAggregator, Subscription } from 'aurelia-event-aggregator';
 import { Store, dispatchify } from 'aurelia-store';
 import { environment } from './environment';

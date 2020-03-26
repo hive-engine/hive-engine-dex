@@ -65,23 +65,23 @@ describe('Market', () => {
     });
 
     test('sendmarket order', async () => {
-        await sendMarketOrder('beggars', 'sell', 'ENG', '500', '0.90');
+        await sendMarketOrder('beggars', 'sell', 'BEE', '500', '0.90');
 
         expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('contractAction'), 'SELL Order', expect.any(Function));
     });
 
     test('sendmarket order invalid action', async () => {
-        await expect(sendMarketOrder('beggars', 'invalid', 'ENG', '500', '0.90')).rejects.toBe('Invalid order type: invalid');
+        await expect(sendMarketOrder('beggars', 'invalid', 'BEE', '500', '0.90')).rejects.toBe('Invalid order type: invalid');
     });
 
     test('cancelmarket order', async () => {
-        cancelMarketOrder('beggars', 'sell', '898fdsfkjk', 'ENG');
+        cancelMarketOrder('beggars', 'sell', '898fdsfkjk', 'BEE');
 
         expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('cancel'), 'Cancel SELL Order', expect.any(Function));
     });
 
     test('cancelmarket order invalid action', async () => {
-        await expect(cancelMarketOrder('beggars', 'invalid', '898fdsfkjk', 'ENG')).rejects.toBe('Invalid order type: invalid');
+        await expect(cancelMarketOrder('beggars', 'invalid', '898fdsfkjk', 'BEE')).rejects.toBe('Invalid order type: invalid');
     });
 
 });

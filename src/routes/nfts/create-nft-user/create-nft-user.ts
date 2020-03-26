@@ -1,5 +1,5 @@
 import { ssc } from 'common/ssc';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { Router } from 'aurelia-router';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-undef */
@@ -16,7 +16,7 @@ import styles from './create-nft-user.module.css';
 export class CreateNftUser {
     private renderer: BootstrapFormRenderer;
     private controller: ValidationController;
-    private engBalance;
+    private beeBalance;
     private tokenCreationFee;
 
     private tokenName = null;
@@ -90,10 +90,10 @@ export class CreateNftUser {
 
             // eslint-disable-next-line no-undef
             if (state?.account?.balances?.length) {
-                const engToken = state.account.balances.find(token => token.symbol === environment.nativeToken);
+                const beeToken = state.account.balances.find(token => token.symbol === environment.nativeToken);
 
-                if (engToken) {
-                    this.engBalance = engToken.balance;
+                if (beeToken) {
+                    this.beeBalance = beeToken.balance;
                 }
             }
         });
@@ -202,7 +202,7 @@ export class CreateNftUser {
             }
         }
 
-        const userHasFunds = this.tokenCreationFee <= this.engBalance;
+        const userHasFunds = this.tokenCreationFee <= this.beeBalance;
 
         if (validationResult.valid && userHasFunds) {
             const result = await createTransaction(

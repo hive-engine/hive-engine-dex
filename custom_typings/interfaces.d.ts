@@ -10,7 +10,6 @@ interface EnvironmentInterface {
     ACCOUNTS_API_URL: string;
     CONVERTER_API: string;
     NODE_API_URL: string;
-    GRAPHQL_API: string;
     HISTORY_API: string;
     SCOT_API: string;
     hivepAccount: string;

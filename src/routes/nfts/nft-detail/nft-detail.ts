@@ -2,10 +2,10 @@ import { NftChangeSellPriceModal } from './../../../modals/nft/nft-change-price'
 import { DialogService } from 'aurelia-dialog';
 import { NftPropertiesModal } from './../../../modals/nft/nft-properties';
 import { sleep } from 'common/functions';
-import { checkTransaction } from 'common/steem-engine';
+import { checkTransaction } from 'common/hive-engine';
 import { MarketService } from './../../../services/market-service';
 import { Router } from 'aurelia-router';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { slick } from 'slick-carousel/slick/slick';
 import ImageZoom from 'js-image-zoom/js-image-zoom';

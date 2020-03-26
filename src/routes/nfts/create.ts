@@ -1,5 +1,5 @@
 import { ssc } from 'common/ssc';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { Router } from 'aurelia-router';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-undef */
@@ -16,7 +16,7 @@ import { environment } from 'environment';
 export class CreateNft {
     private renderer: BootstrapFormRenderer;
     private controller: ValidationController;
-    private engBalance;
+    private beeBalance;
     private tokenCreationFee;
 
     private tokenName = null;
@@ -53,10 +53,10 @@ export class CreateNft {
 
             // eslint-disable-next-line no-undef
             if (state?.account?.balances?.length) {
-                const engToken = state.account.balances.find(token => token.symbol === environment.nativeToken);
+                const beeToken = state.account.balances.find(token => token.symbol === environment.nativeToken);
 
-                if (engToken) {
-                    this.engBalance = engToken.balance;
+                if (beeToken) {
+                    this.beeBalance = beeToken.balance;
                 }
             }
         });
@@ -181,7 +181,7 @@ export class CreateNft {
             }
         }
 
-        const userHasFunds = this.tokenCreationFee <= this.engBalance;
+        const userHasFunds = this.tokenCreationFee <= this.beeBalance;
 
         if (validationResult.valid && userHasFunds) {
             this.loading = true;

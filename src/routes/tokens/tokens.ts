@@ -1,5 +1,5 @@
 import { TokenInfoModal } from 'modals/wallet/token-info';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, observable, TaskQueue, bindable } from 'aurelia-framework';
 
 import { connectTo, dispatchify } from 'aurelia-store';
@@ -10,7 +10,7 @@ import { DialogService, DialogCloseResult } from 'aurelia-dialog';
 import { BuyTokenModal } from 'modals/buy-token';
 import { DepositModal } from 'modals/deposit';
 import { WithdrawModal } from 'modals/withdraw';
-import { loadTokens } from 'common/steem-engine';
+import { loadTokens } from 'common/hive-engine';
 
 @autoinject()
 @connectTo()
@@ -51,9 +51,9 @@ export class Tokens {
         await dispatchify(getCurrentFirebaseUser)();
     }
 
-    buyENG() {
+    buyBEE() {
         this.dialogService
-            .open({ viewModel: BuyTokenModal, model: 'ENG' })
+            .open({ viewModel: BuyTokenModal, model: 'BEE' })
             .whenClosed(x => this.walletDialogCloseResponse(x));
     }
 

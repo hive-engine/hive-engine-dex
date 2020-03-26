@@ -235,9 +235,9 @@ describe('Functions', () => {
     });
 
     test('create sell transaction through keychain and no successful response', async () => {
-        const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'ENG' }, 'Sell', 'sellSuccess', 'errorSuccess');
+        const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'BEE' }, 'Sell', 'sellSuccess', 'errorSuccess');
 
-        expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('ENG'), 'Sell', expect.any(Function));
+        expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
         expect(response).toBeFalsy();
     });
 
@@ -255,9 +255,9 @@ describe('Functions', () => {
             callback(null, { prop: true });
         });
 
-        const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'ENG' }, 'Sell', 'sellSuccess', 'errorSuccess');
+        const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'BEE' }, 'Sell', 'sellSuccess', 'errorSuccess');
 
-        expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('ENG'), 'Sell', expect.any(Function));
+        expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
         expect(response).not.toBeFalsy();
     });
 
@@ -268,7 +268,7 @@ describe('Functions', () => {
     test('should filter out non-pegged tokens', () => {
         expect(stateTokensOnlyPegged([
             { symbol: 'PAL' },
-            { symbol: 'ENG' },
+            { symbol: 'BEE' },
             { symbol: 'HIVEP' },
             { symbol: 'LTCP' }
         ])).toBeFalsy();

@@ -1,12 +1,12 @@
 import { dispatchify } from 'aurelia-store';
 import { sleep } from 'common/functions';
-import { checkTransaction } from 'common/steem-engine';
+import { checkTransaction } from 'common/hive-engine';
 import { I18N } from 'aurelia-i18n';
 import { ToastService, ToastMessage } from 'services/toast-service';
 import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
 import { ValidationControllerFactory, ValidationController, ValidationRules } from 'aurelia-validation';
 import { customJson } from 'common/keychain';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 

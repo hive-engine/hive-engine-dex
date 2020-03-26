@@ -22,7 +22,7 @@
                 <p style="margin-bottom: 15px;">
                     <strong>${'tokenCreationFee' & t: { 'tokenFee': tokenCreationFee }}</strong>
                 </p>
-                <p>${'yourEngBalance' & t: { 'balance': engBalance }}</p>
+                <p>${'yourbeeBalance' & t: { 'balance': beeBalance }}</p>
             </div>
             <div class="col-sm-12 col-md-6 offset-md-3">
                 <div class="create-token-card-form">
@@ -71,7 +71,7 @@
                     <div class="form-group">
                         <button
                             type="button"
-                            disabled.bind="tokenCreationFee > engBalance"
+                            disabled.bind="tokenCreationFee > beeBalance"
                             class="greenBtn"
                             style="border: none;"
                             click.delegate="createToken()"

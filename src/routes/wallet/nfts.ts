@@ -1,12 +1,12 @@
 import { NftSellModal } from './../../modals/nft/nft-sell';
 import { sleep } from 'common/functions';
-import { checkTransaction } from 'common/steem-engine';
+import { checkTransaction } from 'common/hive-engine';
 import { NftService } from './../../services/nft-service';
 import { NftTransferModal } from './../../modals/nft/nft-transfer';
 import { NftPropertiesModal } from './../../modals/nft/nft-properties';
 import { DialogService } from 'aurelia-dialog';
 import { connectTo, dispatchify } from 'aurelia-store';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject } from 'aurelia-framework';
 import { getUserNfts, loading } from 'store/actions';
 

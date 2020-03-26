@@ -13,7 +13,7 @@ import steem from 'steem';
 import { Store } from 'aurelia-store';
 import { Subscription } from 'rxjs';
 
-import { loadTokens, checkTransaction, loadCoinPairs, loadCoins, getFormattedCoinPairs } from 'common/steem-engine';
+import { loadTokens, checkTransaction, loadCoinPairs, loadCoins, getFormattedCoinPairs } from 'common/hive-engine';
 import { hiveSignerJsonId, hiveSignerJson, getAccount, steemConnectTransfer } from 'common/hive';
 
 import { ToastService, ToastMessage } from './toast-service';
@@ -1305,7 +1305,7 @@ export class HiveEngine {
         });
     }
 
-    buyENG(amount) {
+    buyBEE(amount) {
         return new Promise(async (resolve) => {
             // Show loading
             const username = this.getUser();
@@ -1325,16 +1325,16 @@ export class HiveEngine {
             };
 
             if (window && window.steem_keychain) {
-                const buyEngRes = await requestTransfer(username, 'steemsc', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'STEEM');
+                const buyBeeRes = await requestTransfer(username, 'steemsc', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'STEEM');
 
-                if (buyEngRes && buyEngRes.success && buyEngRes.result) {
+                if (buyBeeRes && buyBeeRes.success && buyBeeRes.result) {
                     try {
-                        await checkTransaction(buyEngRes.result.id, 3);
+                        await checkTransaction(buyBeeRes.result.id, 3);
 
                         const toast = new ToastMessage();
                         const symbol = environment.nativeToken;
 
-                        toast.message = this.i18n.tr('buyEngSucceeded', {                                
+                        toast.message = this.i18n.tr('buyBeeSucceeded', {                                
                             amount,
                             symbol,
                             ns: 'notifications'

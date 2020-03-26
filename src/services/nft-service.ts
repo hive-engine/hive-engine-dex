@@ -1,6 +1,6 @@
 import { ssc } from 'common/ssc';
-import { checkTransaction } from 'common/steem-engine';
-import { HiveEngine } from 'services/steem-engine';
+import { checkTransaction } from 'common/hive-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject } from 'aurelia-framework';
 import { hiveSignerJson } from 'common/hive';
 import { customJson } from 'common/keychain';
@@ -10,7 +10,7 @@ import moment from 'moment';
 import { ToastService, ToastMessage } from './toast-service';
 import { I18N } from 'aurelia-i18n';
 
-type NftFees = 'ENG' | 'PAL';
+type NftFees = 'BEE' | 'PAL';
 type NftType = 'contract' | 'user';
 
 @autoinject()

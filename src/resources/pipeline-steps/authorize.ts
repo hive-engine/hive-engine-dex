@@ -2,7 +2,7 @@ import { log } from './../../services/log';
 import { Redirect, RouteConfig } from 'aurelia-router';
 import firebase from 'firebase/app';
 import { autoinject } from 'aurelia-framework';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 
 @autoinject()
 export class AuthorizeStep {

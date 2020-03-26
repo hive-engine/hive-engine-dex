@@ -1,5 +1,5 @@
-import { getFormattedCoinPairs } from 'common/steem-engine';
-import { HiveEngine } from 'services/steem-engine';
+import { getFormattedCoinPairs } from 'common/hive-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { environment } from 'environment';

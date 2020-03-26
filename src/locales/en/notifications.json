@@ -19,7 +19,7 @@
     "enableStakingSucceeded": "Token Staking Enabled",
     "withdrawHiveSuccess": "Withdraw transaction successfully transmitted",
     "issueSucceeded": "{{quantity}} {{symbol}} tokens successfully issued to {{username}}",
-    "buyEngSucceeded": "Successfully bought {{amount}} {{symbol}}",
+    "buyBeeSucceeded": "Successfully bought {{amount}} {{symbol}}",
     "tokenCreateSuccess": "Token created successfully",
     "tokenCreateError": "There was an error creating your token",
     "nftCreateSuccess": "NFT created successfully",

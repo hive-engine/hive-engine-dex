@@ -31,7 +31,7 @@
                         }}</strong
                     >
                 </p>
-                <p>${'yourEngBalance' & t: { 'balance': engBalance, 'token': environment.nativeToken }}</p>
+                <p>${'yourbeeBalance' & t: { 'balance': beeBalance, 'token': environment.nativeToken }}</p>
             </div>
             <stepsnav selected="step-one" style="width: 100%;"></stepsnav>
         </div>
@@ -231,7 +231,7 @@
                         <button
                             id="submit-btn"
                             type="button"
-                            disabled.bind="tokenCreationFee > engBalance"
+                            disabled.bind="tokenCreationFee > beeBalance"
                             class="greenBtn custom-tabs hide-ts"
                             style="border: none; display: none;"
                             click.delegate="createToken()"

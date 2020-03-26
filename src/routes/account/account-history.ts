@@ -3,9 +3,9 @@ import { Store, dispatchify } from 'aurelia-store';
 import { autoinject, bindable } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
 import firebase from 'firebase/app';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import moment from 'moment';
-import { loadAccountHistory } from 'common/steem-engine';
+import { loadAccountHistory } from 'common/hive-engine';
 
 @autoinject()
 export class AccountHistory {

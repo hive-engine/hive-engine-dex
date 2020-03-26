@@ -1,5 +1,5 @@
 import { dispatchify, Store } from 'aurelia-store';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
 import { environment } from 'environment';
@@ -10,7 +10,7 @@ import { BootstrapFormRenderer } from '../resources/bootstrap-form-renderer';
 import { I18N } from 'aurelia-i18n';
 import styles from './buy-token.module.css';
 import { loadTokensList, loadAccountBalances } from 'store/actions';
-import { getAccount } from 'common/steem';
+import { getAccount } from 'common/hive';
 import { stateTokensOnlyPegged } from 'common/functions';
 
 @autoinject()
@@ -23,7 +23,7 @@ export class BuyTokenModal {
     private subscription: Subscription;
     private user: any;
     private steemBalance: any;
-    private engBalance: any;
+    private beeBalance: any;
     private username: any;
     private validationController;
     private renderer;
@@ -64,10 +64,10 @@ export class BuyTokenModal {
         const user = await getAccount(this.username);
         this.steemBalance = user.balance.replace('STEEM', '').trim();
 
-        this.engBalance = 0;
-        const engToken = this.state.account.balances.find(x => x.symbol === environment.nativeToken);
-        if (engToken)
-            this.engBalance = engToken.balance;
+        this.beeBalance = 0;
+        const beeToken = this.state.account.balances.find(x => x.symbol === environment.nativeToken);
+        if (beeToken)
+            this.beeBalance = beeToken.balance;
 
         this.loading = false;
     }
@@ -89,7 +89,7 @@ export class BuyTokenModal {
 
                 return (amount <= object.steemBalance);
             })
-            .withMessageKey('errors:insufficientBalanceForBuyEng')
+            .withMessageKey('errors:insufficientBalanceForbuyBee')
             .rules;
 
         this.validationController.addObject(this, rules);
@@ -116,7 +116,7 @@ export class BuyTokenModal {
 
         if (validationResult.valid) {
 
-            const result = await this.se.buyENG(this.amount);
+            const result = await this.se.buyBEE(this.amount);
 
             if (result) {
                 this.controller.ok();

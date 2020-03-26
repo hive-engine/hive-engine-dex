@@ -4,7 +4,7 @@ import { ChartComponent } from './../../components/chart/chart';
 import { I18N } from 'aurelia-i18n';
 import { ToastService } from '../../services/toast-service';
 import { BootstrapFormRenderer } from '../../resources/bootstrap-form-renderer';
-import { HiveEngine } from '../../services/steem-engine';
+import { HiveEngine } from '../../services/hive-engine';
 import { autoinject, computedFrom, observable } from 'aurelia-framework';
 import { ValidationControllerFactory, ValidationController } from 'aurelia-validation';
 
@@ -13,7 +13,7 @@ import { environment } from 'environment';
 import moment from 'moment';
 import { uniq, fill } from 'lodash';
 
-import { loadTokenMarketHistory } from 'common/steem-engine';
+import { loadTokenMarketHistory } from 'common/hive-engine';
 
 import { DepositModal } from 'modals/deposit';
 import { WithdrawModal } from 'modals/withdraw';
@@ -102,7 +102,7 @@ export class Exchange {
 
     canActivate({ symbol }) {
         if (!symbol || symbol === 'HIVEP') {
-            return new Redirect('/exchange/ENG');
+            return new Redirect('/exchange/BEE');
         }
     }
 

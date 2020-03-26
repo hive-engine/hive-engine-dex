@@ -7,7 +7,7 @@
     "LOW": "LOW",
     "VOLUME": "VOLUME",
     "tokenCreationFee": "NOTE: Token Creation costs {{tokenFee}} {{token}} (Hive Engine Native Tokens)",
-    "yourEngBalance": "Your Current {{token}} Balance: {{balance}} {{token}}",
+    "yourbeeBalance": "Your Current {{token}} Balance: {{balance}} {{token}}",
     "tokenCreationHeading": "Create a token",
     "tokenCreationSubheading": "Are you ready to make history? Let's make a new token on the Hive blockchain!",
     "authorisedIssuingAccounts": "Authorized Issuing Accounts",
