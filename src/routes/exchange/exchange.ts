@@ -101,7 +101,7 @@ export class Exchange {
     }
 
     canActivate({ symbol }) {
-        if (!symbol || symbol === 'HIVEP') {
+        if (!symbol || symbol === 'SWAP.HIVE') {
             return new Redirect('/exchange/BEE');
         }
     }
@@ -210,7 +210,7 @@ export class Exchange {
     loadUserExchangeData() {
         dispatchify(exchangeData)(this.currentToken).then(async () => {
             this.tokenData = this.state.tokens
-                .filter(t => t.symbol !== 'HIVEP')
+                .filter(t => t.symbol !== 'SWAP.HIVE')
                 .filter(t => t.metadata && !t.metadata.hide_in_market);
 
             this.data = this.tokenData.find(t => t.symbol === this.currentToken);
@@ -220,7 +220,7 @@ export class Exchange {
             }
 
             // eslint-disable-next-line no-undef
-            this.hivepBalance = this.state.account.balances.find(token => token.symbol === 'HIVEP')?.balance;
+            this.hivepBalance = this.state.account.balances.find(token => token.symbol === 'SWAP.HIVE')?.balance;
 
             if (this.state.loggedIn) {
                 this.tokenBalance = this.state.account.balances.find(token => token.symbol === this.currentToken)?.balance ?? 0;

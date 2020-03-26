@@ -2,7 +2,7 @@
     "amountGreaterThanZero": "Please enter an amount greater than 0",
     "bidPriceRequired": "Please enter a bid price",
     "bidQuantityRequired": "Please enter a quantity",
-    "insufficientHiveForOrder": "You do not have enough HIVEP. Your balance is: {{balance}} and your order totalled: {{total}}",
+    "insufficientHiveForOrder": "You do not have enough HIVE. Your balance is: {{balance}} and your order totalled: {{total}}",
     "sendTokenAmountRequired": "Please enter an amount",
     "sendTokenUsernameRequired": "Please enter a username",
     "insufficientBalanceForSendToken": "You do not have enough {{symbol}}. Your balance is: {{balance}}",

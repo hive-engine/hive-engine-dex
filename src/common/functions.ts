@@ -235,7 +235,7 @@ export function trimUsername(username) {
 }
 
 export function stateTokensOnlyPegged(tokens) {
-    const peggedTokens = ['BCHP', 'BTCP', 'DOGEP', 'HIVEP', 'BRIDGEBTCP', 'BTSCNYP', 'BTSP', 'LTCP', 'PEOSP', 'SWIFTP', 'TLOSP', 'WEKUP'];
+    const peggedTokens = ['BCHP', 'BTCP', 'DOGEP', 'SWAP.HIVE', 'BRIDGEBTCP', 'BTSCNYP', 'BTSP', 'LTCP', 'PEOSP', 'SWIFTP', 'TLOSP', 'WEKUP'];
 
     const unpeggedTokens = tokens.filter(x => !peggedTokens.includes(x.symbol));
 

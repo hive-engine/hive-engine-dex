@@ -807,7 +807,7 @@ export class HiveEngine {
             return false;
         }
 
-        return this.ssc.find('tokens', 'balances', { account: account, symbol: { '$in': [symbol, 'HIVEP'] } }, 2, 0, '', false);
+        return this.ssc.find('tokens', 'balances', { account: account, symbol: { '$in': [symbol, 'SWAP.HIVE'] } }, 2, 0, '', false);
     }
 
     async issueToken(symbol, to, quantity) {
@@ -1326,7 +1326,7 @@ export class HiveEngine {
             };
 
             if (window && window.steem_keychain) {
-                const buyBeeRes = await requestTransfer(username, 'steemsc', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'HIVE');
+                const buyBeeRes = await requestTransfer(username, 'hive-engine', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'HIVE');
 
                 if (buyBeeRes && buyBeeRes.success && buyBeeRes.result) {
                     try {

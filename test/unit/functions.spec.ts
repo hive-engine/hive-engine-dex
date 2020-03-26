@@ -269,14 +269,14 @@ describe('Functions', () => {
         expect(stateTokensOnlyPegged([
             { symbol: 'PAL' },
             { symbol: 'BEE' },
-            { symbol: 'HIVEP' },
+            { symbol: 'SWAP.HIVE' },
             { symbol: 'LTCP' }
         ])).toBeFalsy();
     });
 
     test('should filter out all tokens', () => {
         expect(stateTokensOnlyPegged([
-            { symbol: 'HIVEP' },
+            { symbol: 'SWAP.HIVE' },
             { symbol: 'LTCP' }
         ])).toBeTruthy();
     });

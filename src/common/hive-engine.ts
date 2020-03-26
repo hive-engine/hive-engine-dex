@@ -102,7 +102,7 @@ export async function getFormattedCoinPairs() {
     let tokenPairs = [];
     const nonPeggedCoins = coins.filter(x => x.coin_type !== 'steemengine');
 
-    const steem = { name: 'HIVE', symbol: 'HIVE', pegged_token_symbol: 'HIVEP' };
+    const steem = { name: 'HIVE', symbol: 'HIVE', pegged_token_symbol: 'SWAP.HIVE' };
     tokenPairs.push(steem);
 
     for (const x of nonPeggedCoins) {
@@ -141,7 +141,7 @@ export function parseTokens(data: any): State {
     const tokens = data.tokens.filter(t => !environment.disabledTokens.includes(t.symbol));
 
     if (data.hivepBalance && data.hivepBalance.balance) {
-        const token = tokens.find(t => t.symbol === 'HIVEP');
+        const token = tokens.find(t => t.symbol === 'SWAP.HIVE');
 
         if (token) {
             token.supply -= parseFloat(data.hivepBalance.balance);
@@ -154,7 +154,7 @@ export function parseTokens(data: any): State {
 
 export async function loadHivepBalance() {
     try {
-        const result: any = await ssc.findOne('tokens', 'balances', { account: 'steem-peg', symbol: 'HIVEP' });
+        const result: any = await ssc.findOne('tokens', 'balances', { account: 'steem-peg', symbol: 'SWAP.HIVE' });
 
         return result;
     } catch (e) {
@@ -225,7 +225,7 @@ export async function loadTokens(symbols = [], limit = 50, offset = 0): Promise<
             }
         }
 
-        if (token.symbol === 'HIVEP') {
+        if (token.symbol === 'SWAP.HIVE') {
             token.lastPrice = 1;
         }
 
@@ -241,7 +241,7 @@ export async function loadTokens(symbols = [], limit = 50, offset = 0): Promise<
     const finalTokens = results.filter(t => !environment.disabledTokens.includes(t.symbol));
 
     if (hivepBalance && hivepBalance.balance) {
-        const token = finalTokens.find(t => t.symbol === 'HIVEP');
+        const token = finalTokens.find(t => t.symbol === 'SWAP.HIVE');
 
         if (token) {
             token.supply -= parseFloat(hivepBalance.balance);
@@ -273,12 +273,12 @@ export async function loadTradesHistory(symbol, limit = 30, offset = 0) {
 }
 
 export async function loadAccountTokenBalances(account, symbol, limit = 2, offset = 0) {
-    return ssc.find('tokens', 'balances', { account: account, symbol : { '$in' : [symbol, 'HIVEP'] } }, limit, offset, '', false);
+    return ssc.find('tokens', 'balances', { account: account, symbol : { '$in' : [symbol, 'SWAP.HIVE'] } }, limit, offset, '', false);
 }
 
 /* istanbul ignore next */
 export async function loadExchangeUiLoggedIn(account, symbol) {
-    const tokens = await loadTokens([`${symbol}`, 'HIVEP']);
+    const tokens = await loadTokens([`${symbol}`, 'SWAP.HIVE']);
     const hivepBalance = await loadHivepBalance();
     const userBalances = await loadUserBalances(account, 1000, 0);
     const buyBook = await loadBuyBook(symbol, 1000, 0);
@@ -315,7 +315,7 @@ export async function loadExchangeUiLoggedIn(account, symbol) {
 
 /* istanbul ignore next */
 export async function loadExchangeUiLoggedOut(symbol) {
-    const tokens = await loadTokens([`${symbol}`, 'HIVEP']);
+    const tokens = await loadTokens([`${symbol}`, 'SWAP.HIVE']);
     const hivepBalance = await loadHivepBalance();
     const buyBook = await loadBuyBook(symbol, 1000, 0);
     const sellBook = await loadSellBook(symbol, 1000, 0);

@@ -248,7 +248,7 @@ describe('Functions', () => {
                 { symbol: 'BEE', supply: 0, circulatingSupply: 0 },
                 { symbol: 'DISNEY', supply: 0, circulatingSupply: 0 },
                 { symbol: 'ASS', supply: 0, circulatingSupply: 0 },
-                { symbol: 'HIVEP', supply: 999, circulatingSupply: 95849485 }
+                { symbol: 'SWAP.HIVE', supply: 999, circulatingSupply: 95849485 }
             ],
             hivepBalance: {
                 balance: 598
@@ -256,7 +256,7 @@ describe('Functions', () => {
         };
 
         const parsed = functions.parseTokens(data);
-        const token = (parsed as any).find(t => t.symbol === 'HIVEP');
+        const token = (parsed as any).find(t => t.symbol === 'SWAP.HIVE');
 
         expect(token.supply).toEqual(401);
         expect(token.circulatingSupply).toEqual(95849485 - data.hivepBalance.balance);

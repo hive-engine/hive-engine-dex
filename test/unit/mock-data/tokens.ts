@@ -31,7 +31,7 @@ export default [
     {
         "_id": 2,
         "issuer": "steem-peg",
-        "symbol": "HIVEP",
+        "symbol": "SWAP.HIVE",
         "name": "HIVE Pegged",
         "metadata": {
             "desc": "HIVE backed by the steem-engine team",

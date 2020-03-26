@@ -68,7 +68,7 @@ export class WithdrawModal {
                 const token = this.token.pegged_token_symbol;
 
                 this.amount = '0.000';
-                if (token !== 'HIVEP') {                    
+                if (token !== 'SWAP.HIVE') {                    
                     this.address = "";
                 } else {
                     this.address = this.se.user.name;

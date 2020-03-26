@@ -7,7 +7,7 @@ export const baseEnvironmentConfiguration: Partial<EnvironmentInterface> = {
     FIREBASE_API: 'https://us-central1-steem-engine-dex.cloudfunctions.net/api/',
     maintenanceMode: false,
     disabledTokens: ['BTC', 'LTC', 'HIVE', 'HBD', 'BCC', 'XAP', 'XRP', 'GOLOS', 'DISNEY', 'AMAZON', 'VOICE', 'ETH', 'EOS', 'LASSE', 'TIME', 'R', 'SCTR', 'ALLAH', 'BNB', 'DONE', 'ETHER', 'LTCPEG', 'SBC'],
-    peggedToken: 'HIVEP',
+    peggedToken: 'SWAP.HIVE',
     features: {
         nfts: {
             enabled: true

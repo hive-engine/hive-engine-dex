@@ -30,7 +30,7 @@ export class Tokens {
          this.peggedTokens = await loadTokens(['BCHP',
                     'BTCP',
                     'DOGEP',
-                    'HIVEP',
+                    'SWAP.HIVE',
                     'BRIDGEBTCP',
                     'BTSCNYP',
                     'BTSP',
