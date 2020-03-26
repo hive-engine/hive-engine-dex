@@ -2,7 +2,7 @@ import { environment } from 'environment';
 import { PLATFORM } from 'aurelia-pal';
 import { Router, RouterConfiguration } from 'aurelia-router';
 import { autoinject, customElement, bindable } from 'aurelia-framework';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 
 import { DepositModal } from 'modals/deposit';
 import { WithdrawModal } from 'modals/withdraw';

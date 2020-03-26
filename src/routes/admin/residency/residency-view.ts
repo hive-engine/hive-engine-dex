@@ -1,4 +1,4 @@
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { computedFrom, autoinject } from 'aurelia-framework';
 import { Redirect, RouteConfig, AppRouter } from 'aurelia-router';
 

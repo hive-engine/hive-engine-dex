@@ -2,7 +2,7 @@ import { usdFormat, toFixedNoRounding, addCommas } from 'common/functions';
 import { Subscription } from 'rxjs';
 import { Redirect } from 'aurelia-router';
 import { observable } from 'aurelia-binding';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { TokenInfoModal } from 'modals/wallet/token-info';
 import { SendTokensModal } from 'modals/wallet/send-tokens';

@@ -1,7 +1,7 @@
 import { Container } from 'aurelia-framework';
 import { I18N } from 'aurelia-i18n';
 import { ToastMessage, ToastService } from './../services/toast-service';
-import { checkTransaction } from 'common/steem-engine';
+import { checkTransaction } from 'common/hive-engine';
 import { environment } from 'environment';
 import { hiveSignerJson } from 'common/hive';
 import { HttpClient } from 'aurelia-fetch-client';

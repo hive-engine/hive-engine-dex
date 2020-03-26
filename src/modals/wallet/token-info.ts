@@ -1,4 +1,4 @@
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { EditTokenModal } from 'modals/wallet/issuers/edit-token';

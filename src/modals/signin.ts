@@ -2,7 +2,7 @@ import { Router } from 'aurelia-router';
 import { ToastMessage } from './../services/toast-service';
 import { I18N } from 'aurelia-i18n';
 import { dispatchify } from 'aurelia-store';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject } from 'aurelia-framework';
 import { Subscription } from 'rxjs';

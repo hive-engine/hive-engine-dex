@@ -2,7 +2,7 @@ import { SendNotification } from './modals/send';
 import { DialogService } from 'aurelia-dialog';
 import { BootstrapFormRenderer } from './../../../resources/bootstrap-form-renderer';
 import { ValidationControllerFactory, ValidationController } from 'aurelia-validation';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { Redirect, RouteConfig, AppRouter } from 'aurelia-router';
 

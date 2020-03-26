@@ -1,11 +1,11 @@
 import { Store } from 'aurelia-store';
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-undef */
-import { AuthService } from './../../src/services/auth-service';
+import { AuthService } from '../../src/services/auth-service';
 import { I18N } from 'aurelia-i18n';
 import { HttpClient } from 'aurelia-fetch-client';
 import { Container } from 'aurelia-framework';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 
 jest.mock('sscjs');
 jest.mock('steem');

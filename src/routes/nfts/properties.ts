@@ -3,7 +3,7 @@ import { environment } from 'environment';
 import { Redirect } from 'aurelia-router';
 import { pluck } from 'rxjs/operators';
 import { DialogService } from 'aurelia-dialog';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 

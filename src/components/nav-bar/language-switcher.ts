@@ -1,4 +1,4 @@
-import { HiveEngine } from './../../services/steem-engine';
+import { HiveEngine } from '../../services/hive-engine';
 import { customElement, autoinject, containerless } from 'aurelia-framework';
 import { I18N } from 'aurelia-i18n';
 

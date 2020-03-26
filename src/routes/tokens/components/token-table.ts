@@ -1,7 +1,7 @@
 import { TokenInfoModal } from 'modals/wallet/token-info';
 import styles from './token-table.module.css';
 import { bindable, TaskQueue, autoinject } from 'aurelia-framework';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogService } from 'aurelia-dialog';
 import { dispatchify, connectTo } from 'aurelia-store';
 import { getCurrentFirebaseUser } from 'store/actions';

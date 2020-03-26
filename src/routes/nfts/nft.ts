@@ -3,7 +3,7 @@ import { NftSellModal } from './../../modals/nft/nft-sell';
 import { NftService } from './../../services/nft-service';
 import { NftPropertiesModal } from './../../modals/nft/nft-properties';
 import { DialogService } from 'aurelia-dialog';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 

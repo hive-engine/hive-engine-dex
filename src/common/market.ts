@@ -6,7 +6,7 @@ import { ToastMessage, ToastService } from 'services/toast-service';
 import moment from 'moment';
 import { ssc } from './ssc';
 import { I18N } from 'aurelia-i18n';
-import { checkTransaction } from './steem-engine';
+import { checkTransaction } from './hive-engine';
 import { hiveSignerJson } from './hive';
 
 const ALLOWED_MARKET_ACTIONS = ['buy', 'sell'];

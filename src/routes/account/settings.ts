@@ -4,7 +4,7 @@ import { UploadType, FirebaseService } from './../../services/firebase-service';
 import { Subscription } from 'rxjs';
 import { loadTokensList, getCurrentFirebaseUser } from 'store/actions';
 import { autoinject, TaskQueue, computedFrom } from 'aurelia-framework';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { dispatchify, Store } from 'aurelia-store';
 import { faCheckCircle, faImagePolaroid, faPassport } from '@fortawesome/pro-duotone-svg-icons';
 

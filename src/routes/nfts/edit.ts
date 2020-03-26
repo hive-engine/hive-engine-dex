@@ -3,7 +3,7 @@ import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
 import { ValidationController, ValidationRules } from 'aurelia-validation';
 import { Redirect } from 'aurelia-router';
 import { DialogService } from 'aurelia-dialog';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { NewInstance, TaskQueue } from 'aurelia-framework';
 
 import cloneDeep from 'lodash/cloneDeep';

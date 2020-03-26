@@ -1,4 +1,4 @@
-import { checkTransaction } from 'common/steem-engine';
+import { checkTransaction } from 'common/hive-engine';
 import { sleep } from 'common/functions';
 import { loading } from 'store/actions';
 import { dispatchify } from 'aurelia-store';

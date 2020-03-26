@@ -3,7 +3,7 @@ import { NftOwnershipModal } from './../../modals/nft/nft-ownership';
 import { customJson } from 'common/keychain';
 import { TokenInfoModal } from 'modals/wallet/token-info';
 import { NftEnableModal } from 'modals/nft/nft-enable';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 import { environment } from 'environment';

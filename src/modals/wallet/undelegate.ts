@@ -1,5 +1,5 @@
 import { Store } from 'aurelia-store';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
 import { Subscription } from 'rxjs';

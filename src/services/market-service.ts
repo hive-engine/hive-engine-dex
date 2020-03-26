@@ -1,7 +1,7 @@
 import { hiveSignerJson } from 'common/hive';
 import { customJson } from 'common/keychain';
 import { autoinject } from 'aurelia-framework';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 
 import { environment } from 'environment';
 

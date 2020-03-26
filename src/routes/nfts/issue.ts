@@ -2,7 +2,6 @@ import { sleep } from 'common/functions';
 import { loading } from 'store/actions';
 import { AppRouter } from 'aurelia-router';
 import { checkTransaction } from 'common/hive-engine';
-import { query } from 'common/apollo';
 import { NftService } from './../../services/nft-service';
 import { DialogService } from 'aurelia-dialog';
 import { HiveEngine } from '../../services/hive-engine';

@@ -1,6 +1,6 @@
 import { sendMarketOrder } from 'common/market';
 import { Store } from 'aurelia-store';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { pluck } from 'rxjs/operators';

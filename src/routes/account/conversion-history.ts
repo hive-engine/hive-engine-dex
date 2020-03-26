@@ -3,7 +3,7 @@ import { Store, dispatchify } from 'aurelia-store';
 import { autoinject } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
 import firebase from 'firebase/app';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import moment from 'moment';
 
 @autoinject()

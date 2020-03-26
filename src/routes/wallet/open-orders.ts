@@ -1,5 +1,5 @@
 import { getUserOpenOrders, cancelMarketOrder } from 'common/market';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject } from 'aurelia-framework';
 
 @autoinject()

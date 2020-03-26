@@ -1,6 +1,6 @@
 import { customElement, bindable } from 'aurelia-framework';
 import { cancelMarketOrder } from 'common/market';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
 @customElement('token-open-orders')

@@ -1,4 +1,3 @@
-import { query } from 'common/apollo';
 import { AuthService } from './auth-service';
 import { I18N } from 'aurelia-i18n';
 import { HttpClient, json } from 'aurelia-fetch-client';
@@ -13,7 +12,7 @@ import steem from 'steem';
 import { Store } from 'aurelia-store';
 import { Subscription } from 'rxjs';
 
-import { loadTokens, checkTransaction, loadCoinPairs, loadCoins, getFormattedCoinPairs } from 'common/hive-engine';
+import { loadTokens, checkTransaction, getFormattedCoinPairs } from 'common/hive-engine';
 import { hiveSignerJsonId, hiveSignerJson, getAccount, steemConnectTransfer } from 'common/hive';
 
 import { ToastService, ToastMessage } from './toast-service';

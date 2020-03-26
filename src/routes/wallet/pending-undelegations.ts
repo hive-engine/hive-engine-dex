@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { Redirect } from 'aurelia-router';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 import { dispatchify, Store } from 'aurelia-store';

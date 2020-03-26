@@ -1,4 +1,4 @@
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { DialogService, DialogCloseResult } from 'aurelia-dialog';
 import { connectTo, dispatchify } from 'aurelia-store';

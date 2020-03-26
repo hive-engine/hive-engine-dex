@@ -1,4 +1,4 @@
-import { HiveEngine } from './../../services/steem-engine';
+import { HiveEngine } from '../../services/hive-engine';
 import { SigninModal } from './../../modals/signin';
 import { DialogService } from 'aurelia-dialog';
 import { customElement, bindable } from 'aurelia-framework';

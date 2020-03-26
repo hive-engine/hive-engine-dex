@@ -1,7 +1,7 @@
 import { first, pluck } from 'rxjs/operators';
 import { dispatchify, Store } from 'aurelia-store';
 import { Redirect } from 'aurelia-router';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { autoinject } from 'aurelia-framework';
 import { getPendingWithdrawals } from 'store/actions';
 import { Observable } from 'rxjs';

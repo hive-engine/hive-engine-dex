@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { HiveEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/hive-engine';
 import { TaskQueue, autoinject, bindable } from "aurelia-framework";
 import { Store } from 'aurelia-store';
 
