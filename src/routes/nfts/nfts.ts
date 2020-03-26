@@ -3,7 +3,7 @@ import { NftOwnershipModal } from './../../modals/nft/nft-ownership';
 import { customJson } from 'common/keychain';
 import { TokenInfoModal } from 'modals/wallet/token-info';
 import { NftEnableModal } from 'modals/nft/nft-enable';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 import { environment } from 'environment';
@@ -21,7 +21,7 @@ export class Nfts {
     private tokenTable: HTMLTableElement;
     private state: State;
 
-    constructor(private se: SteemEngine, private taskQueue: TaskQueue, private dialogService: DialogService, private nftService: NftService) {}
+    constructor(private se: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService, private nftService: NftService) {}
 
     async canActivate() {
         await dispatchify(getNfts)();
@@ -77,7 +77,7 @@ export class Nfts {
                 });
             }
         } else {
-            window.alert('You need a supported browser and the Steem Keychain browser extension to perform this action');
+            window.alert('You need a supported browser and the Hive Keychain browser extension to perform this action');
         }
     }
 

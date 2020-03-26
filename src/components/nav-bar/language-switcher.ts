@@ -1,4 +1,4 @@
-import { SteemEngine } from './../../services/steem-engine';
+import { HiveEngine } from './../../services/steem-engine';
 import { customElement, autoinject, containerless } from 'aurelia-framework';
 import { I18N } from 'aurelia-i18n';
 
@@ -19,7 +19,7 @@ export class LanguageSwitcher {
 
     private selectedLanguage = this.languages[0];
 
-    constructor(private i18n: I18N, private se: SteemEngine) {
+    constructor(private i18n: I18N, private se: HiveEngine) {
 
     }
 

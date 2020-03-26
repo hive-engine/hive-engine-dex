@@ -13,7 +13,7 @@ interface EnvironmentInterface {
     GRAPHQL_API: string;
     HISTORY_API: string;
     SCOT_API: string;
-    steempAccount: string;
+    hivepAccount: string;
     nativeToken: string;
     disabledTokens: string[];
     peggedToken: string;
@@ -22,7 +22,7 @@ interface EnvironmentInterface {
 
 interface BalanceInterface {
     metric: any;
-    priceChangeSteem: number;
+    priceChangeHive: number;
     _id: number;
     account: string;
     balance: string;
@@ -41,7 +41,7 @@ interface IHistoryApiItem {
     _id: string;
     timestamp: number;
     symbol: string;
-    volumeSteem: string;
+    volumeHive: string;
     volumeToken: string;
     lowestPrice: string;
     highestPrice: string;
@@ -98,7 +98,7 @@ interface IToken {
     numberTransactions: number;
     precision: number;
     priceChangePercent: number;
-    priceChangeSteem: number;
+    priceChangeHive: number;
     stakingEnabled: boolean;
     supply: number;
     symbol: string;
@@ -116,7 +116,7 @@ interface IMetric {
     lastPrice: number;
     lowestAsk: number;
     priceChangePercent: number;
-    priceChangeSteem: number;
+    priceChangeHive: number;
     symbol: string;
     volume: number;
     volumeExpiration: number;
@@ -219,7 +219,7 @@ interface IAccountHistoryItemResult {
     to: string;
     symbol: string;
     quantityTokens: string;
-    quantitySteem: string;    
+    quantityHive: string;    
     quantity: string;
     balance: string;
     timestamp_string: string;

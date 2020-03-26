@@ -2,7 +2,7 @@ import { query } from 'common/apollo';
 import { CallingAction, MiddlewarePlacement } from 'aurelia-store';
 /* eslint-disable no-undef */
 import { AuthorizeStep } from './resources/pipeline-steps/authorize';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { EventAggregator, Subscription } from 'aurelia-event-aggregator';
 import { Store, dispatchify } from 'aurelia-store';
 import { environment } from './environment';
@@ -40,7 +40,7 @@ export class App {
     constructor(
         private ea: EventAggregator,
         private store: Store<State>,
-        private se: SteemEngine
+        private se: HiveEngine
     ) {
         this.store.registerMiddleware(lastCalledActionMiddleware, MiddlewarePlacement.After);
     }

@@ -3,7 +3,7 @@ import { Store, dispatchify } from 'aurelia-store';
 import { autoinject } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
 import firebase from 'firebase/app';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import moment from 'moment';
 
 @autoinject()
@@ -15,7 +15,7 @@ export class ConversionHistory {
 
     private conversionsTable: HTMLTableElement;
 
-    constructor(private se: SteemEngine, private store: Store<State>) {
+    constructor(private se: HiveEngine, private store: Store<State>) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;

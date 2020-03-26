@@ -5,13 +5,13 @@ import { AuthService } from './../../src/services/auth-service';
 import { I18N } from 'aurelia-i18n';
 import { HttpClient } from 'aurelia-fetch-client';
 import { Container } from 'aurelia-framework';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 
 jest.mock('sscjs');
 jest.mock('steem');
 
 describe('Hive Engine Service', () => {
-    let sut: SteemEngine;
+    let sut: HiveEngine;
     const mockHttp = () => Container.instance.get(HttpClient);
     const mockI18n = Container.instance.get(I18N);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,7 +20,7 @@ describe('Hive Engine Service', () => {
     const store = Container.instance.get(Store) as Store<State>;
 
     beforeEach(() => {
-        sut = new SteemEngine(mockHttp, mockI18n, store, mockToast, mockAuth);
+        sut = new HiveEngine(mockHttp, mockI18n, store, mockToast, mockAuth);
 
         (window as any).steem_keychain = {
             requestCustomJson: jest

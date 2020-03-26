@@ -1,4 +1,4 @@
-import { SteemEngine } from './../../services/steem-engine';
+import { HiveEngine } from './../../services/steem-engine';
 import { SigninModal } from './../../modals/signin';
 import { DialogService } from 'aurelia-dialog';
 import { customElement, bindable } from 'aurelia-framework';
@@ -21,7 +21,7 @@ export class NavBar {
 
     private state: State;
 
-    constructor(private dialogService: DialogService, private se: SteemEngine) {        
+    constructor(private dialogService: DialogService, private se: HiveEngine) {        
     }
 
     async logout() {

@@ -2,7 +2,7 @@ import { environment } from 'environment';
 import { PLATFORM } from 'aurelia-pal';
 import { Router, RouterConfiguration } from 'aurelia-router';
 import { autoinject, customElement, bindable } from 'aurelia-framework';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 
 import { DepositModal } from 'modals/deposit';
 import { WithdrawModal } from 'modals/withdraw';
@@ -20,7 +20,7 @@ export class Wallet {
     // @bindable token;
     // @bindable hideButtons = false;
 
-    constructor(private se: SteemEngine, private dialogService: DialogService) {}
+    constructor(private se: HiveEngine, private dialogService: DialogService) {}
 
     configureRouter(config: RouterConfiguration, router: Router) {
         const routes = [

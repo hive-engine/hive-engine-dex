@@ -9,7 +9,7 @@ export default [
         "highestBid": "0.81104000",
         "lastDayPrice": "0.89979000",
         "lastDayPriceExpiration": 1572515577,
-        "priceChangeSteem": "-0.04979000",
+        "priceChangeHive": "-0.04979000",
         "priceChangePercent": "-5.53%"
     },
     {
@@ -22,7 +22,7 @@ export default [
         "highestBid": "60001.00212000",
         "lastDayPrice": "84860.00000000",
         "lastDayPriceExpiration": 1572465882,
-        "priceChangeSteem": "-4915.00000000",
+        "priceChangeHive": "-4915.00000000",
         "priceChangePercent": "-5.79%"
     },
     {
@@ -35,7 +35,7 @@ export default [
         "highestBid": "351.00000410",
         "lastDayPrice": "350.02040000",
         "lastDayPriceExpiration": 1572394074,
-        "priceChangeSteem": "0.00000000",
+        "priceChangeHive": "0.00000000",
         "priceChangePercent": "0.00%"
     },
     {
@@ -48,7 +48,7 @@ export default [
         "highestBid": "0.02800000",
         "lastDayPrice": "0.02800000",
         "lastDayPriceExpiration": 1572364056,
-        "priceChangeSteem": "0.00000000",
+        "priceChangeHive": "0.00000000",
         "priceChangePercent": "0.00%"
     },
     {
@@ -61,7 +61,7 @@ export default [
         "highestBid": "1564.00000000",
         "lastDayPrice": "2999.00000000",
         "lastDayPriceExpiration": 1572364866,
-        "priceChangeSteem": "0",
+        "priceChangeHive": "0",
         "priceChangePercent": "0%"
     },
     {
@@ -74,7 +74,7 @@ export default [
         "highestBid": "0.03023000",
         "lastDayPrice": "0.03023000",
         "lastDayPriceExpiration": 1572517275,
-        "priceChangeSteem": "0.01400000",
+        "priceChangeHive": "0.01400000",
         "priceChangePercent": "46.31%"
     },
 ]

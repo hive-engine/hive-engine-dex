@@ -6,7 +6,7 @@ import { ToastService, ToastMessage } from 'services/toast-service';
 import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
 import { ValidationControllerFactory, ValidationController, ValidationRules } from 'aurelia-validation';
 import { customJson } from 'common/keychain';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
@@ -31,7 +31,7 @@ export class NftEditModal {
 
     private selectedTab = 'name';
 
-    constructor(private controllerFactory: ValidationControllerFactory, private i18n, I18N, private toast: ToastService, private controller: DialogController, private se: SteemEngine, private taskQueue: TaskQueue) {
+    constructor(private controllerFactory: ValidationControllerFactory, private i18n, I18N, private toast: ToastService, private controller: DialogController, private se: HiveEngine, private taskQueue: TaskQueue) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;
 

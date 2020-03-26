@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { Redirect } from 'aurelia-router';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject } from 'aurelia-framework';
 
 import { dispatchify, Store } from 'aurelia-store';
@@ -18,7 +18,7 @@ export class PendingUnstakes {
 
     private transactionsTable: HTMLTableElement;
     
-    constructor(private se: SteemEngine, private store: Store<State>) {
+    constructor(private se: HiveEngine, private store: Store<State>) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;

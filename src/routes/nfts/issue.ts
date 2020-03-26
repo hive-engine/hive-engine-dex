@@ -5,7 +5,7 @@ import { checkTransaction } from 'common/steem-engine';
 import { query } from 'common/apollo';
 import { NftService } from './../../services/nft-service';
 import { DialogService } from 'aurelia-dialog';
-import { SteemEngine } from './../../services/steem-engine';
+import { HiveEngine } from './../../services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { connectTo, dispatchify } from 'aurelia-store';
 
@@ -29,7 +29,7 @@ export class Issue {
 
     private errors: string[] = [];
 
-    constructor(private se: SteemEngine, private nftService: NftService, private taskQueue: TaskQueue, private dialogService: DialogService, private router: AppRouter) {}
+    constructor(private se: HiveEngine, private nftService: NftService, private taskQueue: TaskQueue, private dialogService: DialogService, private router: AppRouter) {}
 
     async canActivate({ symbol }) {
         if (symbol) {

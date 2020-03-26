@@ -3,7 +3,7 @@ import { NftSellModal } from './../../modals/nft/nft-sell';
 import { NftService } from './../../services/nft-service';
 import { NftPropertiesModal } from './../../modals/nft/nft-properties';
 import { DialogService } from 'aurelia-dialog';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 
@@ -19,7 +19,7 @@ export class Nft {
     private styles = styles;
     private state: State;
 
-    constructor(private se: SteemEngine, private nftService: NftService, private taskQueue: TaskQueue, private dialogService: DialogService) {}
+    constructor(private se: HiveEngine, private nftService: NftService, private taskQueue: TaskQueue, private dialogService: DialogService) {}
 
     async activate({ symbol }) {
         await dispatchify(getNft)(symbol);

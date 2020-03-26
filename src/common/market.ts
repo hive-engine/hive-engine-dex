@@ -7,7 +7,7 @@ import moment from 'moment';
 import { ssc } from './ssc';
 import { I18N } from 'aurelia-i18n';
 import { checkTransaction } from './steem-engine';
-import { steemConnectJson } from './steem';
+import { hiveSignerJson } from './hive';
 
 const ALLOWED_MARKET_ACTIONS = ['buy', 'sell'];
 
@@ -104,7 +104,7 @@ export async function sendMarketOrder(username: string, type: string, symbol: st
                 }
             });
         } else {
-            steemConnectJson(username, 'active', transaction_data);
+            hiveSignerJson(username, 'active', transaction_data);
         }
     });
 }
@@ -162,7 +162,7 @@ export async function cancelMarketOrder(username: string, type: string, orderId:
                 }
             });
         } else {
-            steemConnectJson(username, 'active', transaction_data, () => {
+            hiveSignerJson(username, 'active', transaction_data, () => {
 
             });
         }

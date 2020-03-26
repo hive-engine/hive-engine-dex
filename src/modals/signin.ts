@@ -2,7 +2,7 @@ import { Router } from 'aurelia-router';
 import { ToastMessage } from './../services/toast-service';
 import { I18N } from 'aurelia-i18n';
 import { dispatchify } from 'aurelia-store';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
@@ -23,7 +23,7 @@ export class SigninModal {
     private privateKey;
     private useKeychain = false;
 
-    constructor(private controller: DialogController, private se: SteemEngine, 
+    constructor(private controller: DialogController, private se: HiveEngine, 
         private i18n: I18N, private router: Router, private toast: ToastService) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;

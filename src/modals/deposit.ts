@@ -1,5 +1,5 @@
 import { getFormattedCoinPairs } from 'common/steem-engine';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { environment } from 'environment';
@@ -15,7 +15,7 @@ export class DepositModal {
     
     private amount = '0.000';
 
-    constructor(private controller: DialogController, private se: SteemEngine, private taskQueue: TaskQueue) {
+    constructor(private controller: DialogController, private se: HiveEngine, private taskQueue: TaskQueue) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;        
     }
@@ -46,11 +46,11 @@ export class DepositModal {
         });
     }
 
-    async depositSteem() {
+    async depositHive() {
         this.loading = true;
 
         try {
-            const result = await this.se.depositSteem(parseFloat(this.amount).toFixed(3));
+            const result = await this.se.depositHive(parseFloat(this.amount).toFixed(3));
 
             if (result) {
                 this.loading = false;

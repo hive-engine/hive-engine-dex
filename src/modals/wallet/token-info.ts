@@ -1,4 +1,4 @@
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { EditTokenModal } from 'modals/wallet/issuers/edit-token';
@@ -11,7 +11,7 @@ export class TokenInfoModal {
     private isNft: boolean;
     private styles = styles;
 
-    constructor(private controller: DialogController, private se: SteemEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {
+    constructor(private controller: DialogController, private se: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;    
     }

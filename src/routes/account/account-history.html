@@ -22,7 +22,7 @@
                         <th>From</th>
                         <th>To</th>
                         <th class="text-right">Quantity (Token)</th>
-                        <th class="text-right">Quantity (Steem)</th>
+                        <th class="text-right">Quantity (Hive)</th>
                         <th>Memo</th>
                         <th>Tx ID</th>
                     </tr>
@@ -39,7 +39,7 @@
                         <td if.bind="t.operation == 'market_placeOrder'" class="text-right">${t.quantityLocked}</td>
                         <td if.bind="t.operation.startsWith('tokens')" class="text-right">${t.quantity ? t.quantity + ' ' + t.symbol : '-'}</td>
                         <td if.bind="t.operation.startsWith('market') && t.operation != 'market_placeOrder'" class="text-right">${t.quantityTokens ? t.quantityTokens : '-'}</td>                        
-                        <td class="text-right">${t.quantitySteem ? t.quantitySteem : '-'}</td>
+                        <td class="text-right">${t.quantityHive ? t.quantityHive : '-'}</td>
                         <td><font-awesome-icon icon.bind="['fas', 'info-circle']" title="${t.memo ? t.memo : 'No memo'}"></font-awesome-icon></td>
                         <td><font-awesome-icon icon.bind="['fas', 'info-circle']" title="${t.transactionId}"></font-awesome-icon></td>
                     </tr>

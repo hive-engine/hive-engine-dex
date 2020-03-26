@@ -6,7 +6,7 @@ import { NftTransferModal } from './../../modals/nft/nft-transfer';
 import { NftPropertiesModal } from './../../modals/nft/nft-properties';
 import { DialogService } from 'aurelia-dialog';
 import { connectTo, dispatchify } from 'aurelia-store';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject } from 'aurelia-framework';
 import { getUserNfts, loading } from 'store/actions';
 
@@ -17,7 +17,7 @@ export class MyNfts {
     private loading = false;
     private errors: string[] = [];
     
-    constructor(private se: SteemEngine, private nftService: NftService, private dialogService: DialogService) {
+    constructor(private se: HiveEngine, private nftService: NftService, private dialogService: DialogService) {
 
     }
 

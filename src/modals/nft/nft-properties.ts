@@ -1,4 +1,4 @@
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import styles from './nft-properties.module.css';
@@ -9,7 +9,7 @@ export class NftPropertiesModal {
     private lockedTokens: Map<string, string>;
     private styles = styles;
 
-    constructor(private controller: DialogController, private se: SteemEngine, private taskQueue: TaskQueue) {
+    constructor(private controller: DialogController, private se: HiveEngine, private taskQueue: TaskQueue) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;    
     }

@@ -1,13 +1,13 @@
-import { steemConnectJson } from 'common/steem';
+import { hiveSignerJson } from 'common/hive';
 import { customJson } from 'common/keychain';
 import { autoinject } from 'aurelia-framework';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 
 import { environment } from 'environment';
 
 @autoinject()
 export class MarketService {
-    constructor(private se: SteemEngine) {
+    constructor(private se: HiveEngine) {
 
     }
 
@@ -26,7 +26,7 @@ export class MarketService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Place buy order`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -50,7 +50,7 @@ export class MarketService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Place sell order`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -72,7 +72,7 @@ export class MarketService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Change sell price`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -93,7 +93,7 @@ export class MarketService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Cancel order`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }

@@ -3,7 +3,7 @@ import { I18N } from 'aurelia-i18n';
 import { ToastMessage, ToastService } from './../services/toast-service';
 import { checkTransaction } from 'common/steem-engine';
 import { environment } from 'environment';
-import { steemConnectJson } from 'common/steem';
+import { hiveSignerJson } from 'common/hive';
 import { HttpClient } from 'aurelia-fetch-client';
 import trim from 'trim-character';
 
@@ -130,7 +130,7 @@ export function tryParse(json: any) {
 }
 
 
-export function formatSteemAmount(num) {
+export function formatHiveAmount(num) {
     return num ? parseFloat(num).toFixed(3).match(/^-?\d+(?:\.\d{0,3})?/)[0] : null;
 }
 
@@ -138,7 +138,7 @@ export function percentageOf(amount: number, percentOf: number) {
     return !isNaN(amount) && !isNaN(percentOf) ? percentOf * amount / 100 : null;
 }
 
-export async function getSteemPrice() {
+export async function getHivePrice() {
     try {
         const request = await http.fetch('https://postpromoter.net/api/prices', {
             method: 'GET'
@@ -213,7 +213,7 @@ export function createTransaction(username: string, contractName: string, contra
             });
         } else {
             /* istanbul ignore next */
-            steemConnectJson(username, 'active', transactionData, () => {
+            hiveSignerJson(username, 'active', transactionData, () => {
                 resolve(true);
             });
         }
@@ -235,7 +235,7 @@ export function trimUsername(username) {
 }
 
 export function stateTokensOnlyPegged(tokens) {
-    const peggedTokens = ['BCHP', 'BTCP', 'DOGEP', 'STEEMP', 'BRIDGEBTCP', 'BTSCNYP', 'BTSP', 'LTCP', 'PEOSP', 'SWIFTP', 'TLOSP', 'WEKUP'];
+    const peggedTokens = ['BCHP', 'BTCP', 'DOGEP', 'HIVEP', 'BRIDGEBTCP', 'BTSCNYP', 'BTSP', 'LTCP', 'PEOSP', 'SWIFTP', 'TLOSP', 'WEKUP'];
 
     const unpeggedTokens = tokens.filter(x => !peggedTokens.includes(x.symbol));
 

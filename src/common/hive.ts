@@ -13,8 +13,8 @@ export async function getAccount(username: string) {
     }
 }
 
-export async function steemConnectJson(username: string, auth_type: AuthType, data: any, callback?) {
-    let url = 'https://steemconnect.com/sign/custom-json?';
+export async function hiveSignerJson(username: string, auth_type: AuthType, data: any, callback?) {
+    let url = 'https://hivesigner.com/sign/custom-json?';
 
     if (auth_type == 'active') {
         url += 'required_posting_auths=' + encodeURI('[]');
@@ -34,8 +34,8 @@ export async function steemConnectJson(username: string, auth_type: AuthType, da
     }
 }
 
-export async function steemConnectJsonId(username: string, auth_type: AuthType, id: string, data: any, callback) {
-    let url = 'https://steemconnect.com/sign/custom-json?';
+export async function hiveSignerJsonId(username: string, auth_type: AuthType, id: string, data: any, callback) {
+    let url = 'https://hivesigner.com/sign/custom-json?';
 
     if (auth_type == 'active') {
         url += 'required_posting_auths=' + encodeURI('[]');
@@ -54,7 +54,7 @@ export async function steemConnectJsonId(username: string, auth_type: AuthType, 
 }
 
 export async function steemConnectTransfer(from: string, to: string, amount: string, memo: string, callback: any) {
-    let url = 'https://steemconnect.com/sign/transfer?';
+    let url = 'https://hivesigner.com/sign/transfer?';
     url += '&from=' + encodeURI(from);
     url += '&to=' + encodeURI(to);
     url += '&amount=' + encodeURI(amount);

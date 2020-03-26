@@ -28,7 +28,7 @@
                     class="form-control auth-input"
                     value.bind="privateKey"
                     id="inputActiveKey"
-                    placeholder="Steem Password or Private Key"
+                    placeholder="Hive Password or Private Key"
                 />
             </div>
 
@@ -49,7 +49,7 @@
                 >
             </template>
 
-            <template if.bind="!useKeychain || usePrivateKey">
+<template if.bind="!useKeychain || usePrivateKey">
                 <button
                     class="active-key-btn"
                     type="button"
@@ -59,6 +59,6 @@
                 </button>
 
             </template>
-        </ux-dialog-body>
-    </ux-dialog>
+</ux-dialog-body>
+</ux-dialog>
 </template>

@@ -1,5 +1,5 @@
 import { TokenInfoModal } from 'modals/wallet/token-info';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, observable, TaskQueue, bindable } from 'aurelia-framework';
 
 import { connectTo, dispatchify } from 'aurelia-store';
@@ -24,13 +24,13 @@ export class Tokens {
         
     @bindable tab = 'engine';
 
-    constructor(private se: SteemEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {}
+    constructor(private se: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {}
 
     async canActivate() {
          this.peggedTokens = await loadTokens(['BCHP',
                     'BTCP',
                     'DOGEP',
-                    'STEEMP',
+                    'HIVEP',
                     'BRIDGEBTCP',
                     'BTSCNYP',
                     'BTSP',

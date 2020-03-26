@@ -52,7 +52,7 @@ library.add(fas as any, far, fad);
 
 // Disable connect queue to speed up application
 import { disableConnectQueue } from 'aurelia-binding';
-import { getSteemPrice } from 'common/functions';
+import { getHivePrice } from 'common/functions';
 disableConnectQueue();
 
 Mousetrap.bind('ctrl+shift+f10', () => {
@@ -60,9 +60,9 @@ Mousetrap.bind('ctrl+shift+f10', () => {
     LogManager.setLevel(LogManager.logLevel.debug);
 });
 
-// Gets the latest Steem price periodically
-getSteemPrice();
-setInterval(() => getSteemPrice, 300000);
+// Gets the latest Hive price periodically
+getHivePrice();
+setInterval(() => getHivePrice, 300000);
 
 export async function configure(aurelia: Aurelia) {
     aurelia.use

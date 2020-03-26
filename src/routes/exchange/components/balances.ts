@@ -4,6 +4,6 @@ import { customElement, bindable } from 'aurelia-framework';
 export class Balances {    
     @bindable deposit;
     @bindable data;
-    @bindable steempBalance;
+    @bindable hivepBalance;
     @bindable tokenBalance;
 }

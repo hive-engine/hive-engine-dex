@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
-import { getAccount, steemConnectJson, steemConnectJsonId, steemConnectTransfer } from 'common/steem';
+import { getAccount, hiveSignerJson, hiveSignerJsonId, steemConnectTransfer } from 'common/hive';
 import * as functions from 'common/functions';
 
 import steem from 'steem';
 
 jest.mock('steem');
 
-describe('Steem', () => {
+describe('Hive', () => {
     afterEach(() => {
         jest.resetAllMocks();
         jest.restoreAllMocks();
@@ -35,48 +35,48 @@ describe('Steem', () => {
         await expect(getAccount('doesnotexist123')).rejects.toStrictEqual(new Error('There was a problem'));
     });
 
-    test('steemConnectJson calls popupCenter with formatted arguments, active key and url', () => {
+    test('hiveSignerJson calls popupCenter with formatted arguments, active key and url', () => {
         window.open = jest.fn();
 
         const spy = jest.spyOn(functions, 'popupCenter');
 
-        steemConnectJson('beggars', 'active', { value: 'aggroed' }, Function);
+        hiveSignerJson('beggars', 'active', { value: 'aggroed' }, Function);
 
         expect(spy).toHaveBeenCalledWith(expect.stringContaining('json=%7B%22value%22:%22aggroed%22%7D'), 'steemconnect', 500, 560);
     });
 
-    test('steemConnectJson calls popupCenter with formatted arguments, posting key and url', () => {
+    test('hiveSignerJson calls popupCenter with formatted arguments, posting key and url', () => {
         window.open = jest.fn();
 
         const spy = jest.spyOn(functions, 'popupCenter');
 
-        steemConnectJson('beggars', 'posting', { value: 'aggroed' }, Function);
+        hiveSignerJson('beggars', 'posting', { value: 'aggroed' }, Function);
 
         expect(spy).toHaveBeenCalledWith(expect.stringContaining('json=%7B%22value%22:%22aggroed%22%7D'), 'steemconnect', 500, 560);
     });
 
-    test('steemConnectJsonId calls popupCenter with formatted arguments, active key and url', () => {
+    test('hiveSignerJsonId calls popupCenter with formatted arguments, active key and url', () => {
         window.open = jest.fn();
 
         const spy = jest.spyOn(functions, 'popupCenter');
 
-        steemConnectJsonId('beggars', 'active', 'test', { value: 'aggroed' }, Function);
+        hiveSignerJsonId('beggars', 'active', 'test', { value: 'aggroed' }, Function);
 
         const url =
-            'https://steemconnect.com/sign/custom-json?required_posting_auths=%5B%5D&required_auths=%5B%22beggars%22%5D&authority=active&id=test&json=%7B%22value%22:%22aggroed%22%7D';
+            'https://hivesigner.com/sign/custom-json?required_posting_auths=%5B%5D&required_auths=%5B%22beggars%22%5D&authority=active&id=test&json=%7B%22value%22:%22aggroed%22%7D';
 
         expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
     });
 
-    test('steemConnectJsonId calls popupCenter with formatted arguments, posting key and url', () => {
+    test('hiveSignerJsonId calls popupCenter with formatted arguments, posting key and url', () => {
         window.open = jest.fn();
 
         const spy = jest.spyOn(functions, 'popupCenter');
 
-        steemConnectJsonId('beggars', 'posting', 'test', { value: 'aggroed' }, Function);
+        hiveSignerJsonId('beggars', 'posting', 'test', { value: 'aggroed' }, Function);
 
         const url =
-            'https://steemconnect.com/sign/custom-json?required_posting_auths=%5B%22beggars%22%5D&id=test&json=%7B%22value%22:%22aggroed%22%7D';
+            'https://hivesigner.com/sign/custom-json?required_posting_auths=%5B%22beggars%22%5D&id=test&json=%7B%22value%22:%22aggroed%22%7D';
 
         expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
     });
@@ -88,7 +88,7 @@ describe('Steem', () => {
 
         steemConnectTransfer('beggars', 'aggroed', '1.000 STEEM', 'Test', Function);
 
-        const url = 'https://steemconnect.com/sign/transfer?&from=beggars&to=aggroed&amount=1.000%20STEEM&memo=Test';
+        const url = 'https://hivesigner.com/sign/transfer?&from=beggars&to=aggroed&amount=1.000%20STEEM&memo=Test';
 
         expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
     });

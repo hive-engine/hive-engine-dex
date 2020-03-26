@@ -4,7 +4,7 @@ import { UploadType, FirebaseService } from './../../services/firebase-service';
 import { Subscription } from 'rxjs';
 import { loadTokensList, getCurrentFirebaseUser } from 'store/actions';
 import { autoinject, TaskQueue, computedFrom } from 'aurelia-framework';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { dispatchify, Store } from 'aurelia-store';
 import { faCheckCircle, faImagePolaroid, faPassport } from '@fortawesome/pro-duotone-svg-icons';
 
@@ -56,7 +56,7 @@ export class Settings {
     private document1ImageIsImage = false;
     private document2ImageIsImage = false;
 
-    constructor(private se: SteemEngine, private controllerFactory: ValidationControllerFactory, private firebase: FirebaseService, private store: Store<State>, private taskQueue: TaskQueue) {
+    constructor(private se: HiveEngine, private controllerFactory: ValidationControllerFactory, private firebase: FirebaseService, private store: Store<State>, private taskQueue: TaskQueue) {
         this.validationController = controllerFactory.createForCurrentScope();
 
         this.renderer = new BootstrapFormRenderer();

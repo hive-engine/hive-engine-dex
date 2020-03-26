@@ -2,11 +2,11 @@ import { log } from './../../services/log';
 import { Redirect, RouteConfig } from 'aurelia-router';
 import firebase from 'firebase/app';
 import { autoinject } from 'aurelia-framework';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 
 @autoinject()
 export class AuthorizeStep {
-    constructor(private se: SteemEngine) {
+    constructor(private se: HiveEngine) {
 
     }
 

@@ -1,8 +1,8 @@
 import { ssc } from 'common/ssc';
 import { checkTransaction } from 'common/steem-engine';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject } from 'aurelia-framework';
-import { steemConnectJson } from 'common/steem';
+import { hiveSignerJson } from 'common/hive';
 import { customJson } from 'common/keychain';
 
 import { environment } from 'environment';
@@ -15,7 +15,7 @@ type NftType = 'contract' | 'user';
 
 @autoinject()
 export class NftService {
-    constructor(private se: SteemEngine, private toast: ToastService, private i18n: I18N) {
+    constructor(private se: HiveEngine, private toast: ToastService, private i18n: I18N) {
 
     }
 
@@ -250,7 +250,7 @@ export class NftService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Issue NFT Token ${symbol}`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -274,7 +274,7 @@ export class NftService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Transfer NFT Token ${symbol} ${id}`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -354,7 +354,7 @@ export class NftService {
                     }
                 });                
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -375,7 +375,7 @@ export class NftService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Change NFT Ownership`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -397,7 +397,7 @@ export class NftService {
             if (window.steem_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Burn NFT Token ${symbol} ${id}`));
             } else {
-                steemConnectJson(this.se.getUser(), 'active', transactionData, () => {
+                hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -475,7 +475,7 @@ export class NftService {
                 }
                 
             } else {
-                steemConnectJson(this.se.getUser(), 'active', payloads, () => {
+                hiveSignerJson(this.se.getUser(), 'active', payloads, () => {
                     resolve(true);
                 });
             }

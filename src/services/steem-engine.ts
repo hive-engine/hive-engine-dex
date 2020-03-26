@@ -14,15 +14,15 @@ import { Store } from 'aurelia-store';
 import { Subscription } from 'rxjs';
 
 import { loadTokens, checkTransaction, loadCoinPairs, loadCoins, getFormattedCoinPairs } from 'common/steem-engine';
-import { steemConnectJsonId, steemConnectJson, getAccount, steemConnectTransfer } from 'common/steem';
+import { hiveSignerJsonId, hiveSignerJson, getAccount, steemConnectTransfer } from 'common/hive';
 
 import { ToastService, ToastMessage } from './toast-service';
-import { queryParam, formatSteemAmount, getSteemPrice, toFixedNoRounding } from 'common/functions';
+import { queryParam, formatHiveAmount, getHivePrice, toFixedNoRounding } from 'common/functions';
 import { customJson, requestTransfer } from 'common/keychain';
 import moment from 'moment';
 
 @autoinject()
-export class SteemEngine {
+export class HiveEngine {
     public accountsApi: HttpClient;
     public http: HttpClient;
     public ssc;
@@ -312,7 +312,7 @@ export class SteemEngine {
                 this.toast.error(toast);
             }
         } else {
-            steemConnectJsonId(this.user.name, 'posting', 'scot_claim_token', claimData, () => {
+            hiveSignerJsonId(this.user.name, 'posting', 'scot_claim_token', claimData, () => {
                 claimTokenResult = true;
             });
         }
@@ -376,7 +376,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transaction_data, () => {
+                hiveSignerJson(this.user.name, 'active', transaction_data, () => {
                     resolve(true);
                 });
             }
@@ -441,7 +441,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -508,7 +508,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -574,7 +574,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transaction_data, () => {
+                hiveSignerJson(this.user.name, 'active', transaction_data, () => {
                     resolve(true);
                 });
             }
@@ -634,7 +634,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transaction_data, () => {
+                hiveSignerJson(this.user.name, 'active', transaction_data, () => {
                     resolve(true);
                 });
             }
@@ -678,7 +678,7 @@ export class SteemEngine {
             }
         });
 
-        getSteemPrice().then(() => {
+        getHivePrice().then(() => {
             if (++loaded >= 3) {
                 return this.params;
             }
@@ -743,7 +743,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transaction_data, () => {
+                hiveSignerJson(this.user.name, 'active', transaction_data, () => {
                     resolve(true);
                 });
             }
@@ -806,7 +806,7 @@ export class SteemEngine {
             return false;
         }
 
-        return this.ssc.find('tokens', 'balances', { account: account, symbol: { '$in': [symbol, 'STEEMP'] } }, 2, 0, '', false);
+        return this.ssc.find('tokens', 'balances', { account: account, symbol: { '$in': [symbol, 'HIVEP'] } }, 2, 0, '', false);
     }
 
     async issueToken(symbol, to, quantity) {
@@ -869,7 +869,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -935,7 +935,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -1000,21 +1000,21 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
         });
     }
 
-    async withdrawSteem(amount: string) {
+    async withdrawHive(amount: string) {
         const username = this.getUser();
 
         const transaction_data = {
-            contractName: 'steempegged',
+            contractName: 'hivepegged',
             contractAction: 'withdraw',
             contractPayload: {
-                'quantity': formatSteemAmount(amount)
+                'quantity': formatHiveAmount(amount)
             }
         };
 
@@ -1027,10 +1027,10 @@ export class SteemEngine {
 
                     const toast = new ToastMessage();
 
-                    toast.message = this.i18n.tr('withdrawSteemSuccess', {
+                    toast.message = this.i18n.tr('withdrawHiveSuccess', {
                         ns: 'notifications',
                         from: username,
-                        to: environment.steempAccount,
+                        to: environment.hivepAccount,
                         amount,
                         jsonData: JSON.stringify(transaction_data)
                     });
@@ -1041,10 +1041,10 @@ export class SteemEngine {
                 } catch (e) {
                     const toast = new ToastMessage();
 
-                    toast.message = this.i18n.tr('withdrawSteemError', {
+                    toast.message = this.i18n.tr('withdrawHiveError', {
                         ns: 'notifications',
                         from: username,
-                        to: environment.steempAccount,
+                        to: environment.hivepAccount,
                         amount,
                         jsonData: JSON.stringify(transaction_data)
                     });
@@ -1053,27 +1053,27 @@ export class SteemEngine {
                 }
             }
         } else {
-            steemConnectJson(this.user.name, 'active', transaction_data, () => {
+            hiveSignerJson(this.user.name, 'active', transaction_data, () => {
                 return true;
             });
         }
     }
 
-    depositSteem(amount: string) {
+    depositHive(amount: string) {
         return new Promise(async (resolve) => {
             const username = this.getUser();
 
             const transaction_data = {
                 id: environment.chainId,
                 json: {
-                    'contractName': 'steempegged',
+                    'contractName': 'hivepegged',
                     'contractAction': 'buy',
                     'contractPayload': {}
                 }
             };
 
             if (window.steem_keychain) {
-                const deposit = await requestTransfer(username, environment.steempAccount, amount, JSON.stringify(transaction_data), 'STEEM');
+                const deposit = await requestTransfer(username, environment.hivepAccount, amount, JSON.stringify(transaction_data), 'STEEM');
 
                 if (deposit && deposit.success && deposit.result) {
                     try {
@@ -1081,9 +1081,9 @@ export class SteemEngine {
 
                         const toast = new ToastMessage();
 
-                        toast.message = this.i18n.tr('depositSteemSuccess', {
+                        toast.message = this.i18n.tr('depositHiveSuccess', {
                             from: username,
-                            to: environment.steempAccount,
+                            to: environment.hivepAccount,
                             amount,
                             memo: JSON.stringify(transaction_data),
                             ns: 'notifications'
@@ -1095,9 +1095,9 @@ export class SteemEngine {
                     } catch (e) {
                         const toast = new ToastMessage();
 
-                        toast.message = this.i18n.tr('depositSteemError', {
+                        toast.message = this.i18n.tr('depositHiveError', {
                             from: username,
-                            to: environment.steempAccount,
+                            to: environment.hivepAccount,
                             amount,
                             memo: JSON.stringify(transaction_data),
                             ns: 'notifications'
@@ -1111,7 +1111,7 @@ export class SteemEngine {
                     resolve(false);
                 }
             } else {
-                steemConnectTransfer(username, environment.steempAccount, `${amount} STEEM`, JSON.stringify(transaction_data), () => {
+                steemConnectTransfer(username, environment.hivepAccount, `${amount} STEEM`, JSON.stringify(transaction_data), () => {
                     resolve(true);
                 });
             }
@@ -1231,7 +1231,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -1298,7 +1298,7 @@ export class SteemEngine {
                     }
                 });
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }
@@ -1364,7 +1364,7 @@ export class SteemEngine {
                 }
                 
             } else {
-                steemConnectJson(this.user.name, 'active', transactionData, () => {
+                hiveSignerJson(this.user.name, 'active', transactionData, () => {
                     resolve(true);
                 });
             }

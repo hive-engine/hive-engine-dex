@@ -1,6 +1,6 @@
 import { getFormattedCoinPairs } from 'common/steem-engine';
 import { Store } from 'aurelia-store';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { ValidationControllerFactory, ControllerValidateResult, ValidationRules } from 'aurelia-validation';
@@ -28,7 +28,7 @@ export class WithdrawModal {
 
     private amount = '0.000';
 
-    constructor(private controller: DialogController, private se: SteemEngine, private store: Store<State>, private taskQueue: TaskQueue, private controllerFactory: ValidationControllerFactory, private i18n: I18N, private toast: ToastService) {       
+    constructor(private controller: DialogController, private se: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue, private controllerFactory: ValidationControllerFactory, private i18n: I18N, private toast: ToastService) {       
         this.validationController = controllerFactory.createForCurrentScope();
 
         this.renderer = new BootstrapFormRenderer();
@@ -68,7 +68,7 @@ export class WithdrawModal {
                 const token = this.token.pegged_token_symbol;
 
                 this.amount = '0.000';
-                if (token !== 'STEEMP') {                    
+                if (token !== 'HIVEP') {                    
                     this.address = "";
                 } else {
                     this.address = this.se.user.name;
@@ -86,11 +86,11 @@ export class WithdrawModal {
         });
     }
 
-    async depositSteem() {
+    async depositHive() {
         this.loading = true;
 
         try {
-            const result = await this.se.depositSteem(parseFloat(this.amount).toFixed(3));
+            const result = await this.se.depositHive(parseFloat(this.amount).toFixed(3));
 
             if (result) {
                 this.loading = false;
@@ -139,7 +139,7 @@ export class WithdrawModal {
             const amountFixed = toFixedNoRounding(parseFloat(this.amount), 3);
 
             if (this.token.symbol === 'STEEM') {
-                result = await this.se.withdrawSteem(amountFixed);
+                result = await this.se.withdrawHive(amountFixed);
             } else {
                 this.getDepositInfo();
 

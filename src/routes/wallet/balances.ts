@@ -2,7 +2,7 @@ import { usdFormat, toFixedNoRounding, addCommas } from 'common/functions';
 import { Subscription } from 'rxjs';
 import { Redirect } from 'aurelia-router';
 import { observable } from 'aurelia-binding';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { TokenInfoModal } from 'modals/wallet/token-info';
 import { SendTokensModal } from 'modals/wallet/send-tokens';
@@ -41,7 +41,7 @@ export class Balances {
 
     @observable() private hideZeroBalances = false;
 
-    constructor(private se: SteemEngine, private store: Store<State>, private taskQueue: TaskQueue, private dialogService: DialogService) {
+    constructor(private se: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue, private dialogService: DialogService) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;

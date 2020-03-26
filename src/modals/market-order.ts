@@ -1,6 +1,6 @@
 import { sendMarketOrder } from 'common/market';
 import { Store } from 'aurelia-store';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { pluck } from 'rxjs/operators';
@@ -36,7 +36,7 @@ export class MarketOrderModal {
         reloadTokenOpenOrders: false
     };
 
-    constructor(private controller: DialogController, private se: SteemEngine, private store: Store<State>, private taskQueue: TaskQueue, private ea: EventAggregator) {
+    constructor(private controller: DialogController, private se: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue, private ea: EventAggregator) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;
         this.eventAggregator = ea;

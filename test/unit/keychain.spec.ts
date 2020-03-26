@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { customJson, requestTransfer } from 'common/keychain';
 
-describe('Steem Keychain', () => {
+describe('Hive Keychain', () => {
     beforeEach(() => {
         (window as any).steem_keychain = {
             requestCustomJson: jest

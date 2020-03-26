@@ -1,5 +1,5 @@
 import { getUserOpenOrders, cancelMarketOrder } from 'common/market';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject } from 'aurelia-framework';
 
 @autoinject()
@@ -9,7 +9,7 @@ export class OpenOrders {
 
     private openOrdersTable: HTMLTableElement;
     
-    constructor(private se: SteemEngine) {
+    constructor(private se: HiveEngine) {
 
     }
 

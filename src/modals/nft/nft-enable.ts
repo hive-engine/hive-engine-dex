@@ -1,5 +1,5 @@
 import { customJson } from 'common/keychain';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue, valueConverter } from 'aurelia-framework';
 import styles from './nft-enable.module.css';
@@ -13,7 +13,7 @@ export class NftEnableModal {
     private properties: any[] = [];
     private validProperties: string[] = [];
 
-    constructor(private controller: DialogController, private se: SteemEngine, private taskQueue: TaskQueue) {
+    constructor(private controller: DialogController, private se: HiveEngine, private taskQueue: TaskQueue) {
         this.controller.settings.lock = false;
         this.controller.settings.centerHorizontalOnly = true;    
     }

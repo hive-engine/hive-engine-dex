@@ -1,7 +1,7 @@
 import { stateTokensOnlyPegged } from 'common/functions';
 /* eslint-disable no-undef */
 
-import { addCommas, usdFormat, largeNumber, formatSteemAmount, percentageOf, getSteemPrice, queryParam, popupCenter, tryParse, toFixedNoRounding, createTransaction, sleep, trimUsername } from 'common/functions';
+import { addCommas, usdFormat, largeNumber, formatHiveAmount, percentageOf, getHivePrice, queryParam, popupCenter, tryParse, toFixedNoRounding, createTransaction, sleep, trimUsername } from 'common/functions';
 
 jest.mock('sscjs');
 
@@ -121,13 +121,13 @@ describe('Functions', () => {
     });
 
     test('should format steem amount', () => {
-        const returnedValue = formatSteemAmount(257.135678);
+        const returnedValue = formatHiveAmount(257.135678);
 
         expect(returnedValue).toEqual('257.136');
     });
 
-    test('invalid amount passed to formatSteemAmount', () => {
-        const returnedValue = formatSteemAmount(undefined);
+    test('invalid amount passed to formatHiveAmount', () => {
+        const returnedValue = formatHiveAmount(undefined);
 
         expect(returnedValue).toBeNull();
     });
@@ -159,17 +159,17 @@ describe('Functions', () => {
         expect(returnedValue).toBeNull();
     });
 
-    test('getSteemPrice should return mock steem price', async () => {
+    test('getHivePrice should return mock steem price', async () => {
         fetchMock.mockResponseOnce(JSON.stringify({ steem_price: 0.389283 }));
 
-        const response = await getSteemPrice();
+        const response = await getHivePrice();
         expect(response).toEqual(0.389283)
     });
 
-    test('getSteemPrice should return 0 if request fails', async () => {
+    test('getHivePrice should return 0 if request fails', async () => {
         fetchMock.mockRejectOnce(new Error('fake error message'));
 
-        const returnedValue = await getSteemPrice();
+        const returnedValue = await getHivePrice();
 
         expect(returnedValue).toEqual(0);
     });
@@ -181,7 +181,7 @@ describe('Functions', () => {
             }
         });
 
-        const returnedValue = popupCenter('https://steemconnect.com', 'Testing', '100px', '300px');
+        const returnedValue = popupCenter('https://hivesigner.com', 'Testing', '100px', '300px');
 
         expect(returnedValue).toEqual({ focus: expect.any(Function) });
     });
@@ -269,14 +269,14 @@ describe('Functions', () => {
         expect(stateTokensOnlyPegged([
             { symbol: 'PAL' },
             { symbol: 'ENG' },
-            { symbol: 'STEEMP' },
+            { symbol: 'HIVEP' },
             { symbol: 'LTCP' }
         ])).toBeFalsy();
     });
 
     test('should filter out all tokens', () => {
         expect(stateTokensOnlyPegged([
-            { symbol: 'STEEMP' },
+            { symbol: 'HIVEP' },
             { symbol: 'LTCP' }
         ])).toBeTruthy();
     });

@@ -1,5 +1,5 @@
 import { ssc } from 'common/ssc';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { Router } from 'aurelia-router';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-undef */
@@ -32,7 +32,7 @@ export class CreateNft {
     private environment = environment;
     private loading = false;
 
-    constructor(private controllerFactory: ValidationControllerFactory, private se: SteemEngine, private router: Router, private store: Store<State>) {
+    constructor(private controllerFactory: ValidationControllerFactory, private se: HiveEngine, private router: Router, private store: Store<State>) {
         this.controller = controllerFactory.createForCurrentScope();
 
         this.renderer = new BootstrapFormRenderer();

@@ -1,5 +1,5 @@
 import { dispatchify, Store } from 'aurelia-store';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
 import { environment } from 'environment';
@@ -29,7 +29,7 @@ export class BuyTokenModal {
     private renderer;
     private environment;
 
-    constructor(private controller: DialogController, private se: SteemEngine, private toast: ToastService, private taskQueue: TaskQueue, private store: Store<State>, private controllerFactory: ValidationControllerFactory, private i18n: I18N) {
+    constructor(private controller: DialogController, private se: HiveEngine, private toast: ToastService, private taskQueue: TaskQueue, private store: Store<State>, private controllerFactory: ValidationControllerFactory, private i18n: I18N) {
         this.validationController = controllerFactory.createForCurrentScope();
 
         this.renderer = new BootstrapFormRenderer();

@@ -1,5 +1,5 @@
 import { ssc } from 'common/ssc';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { Router } from 'aurelia-router';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-undef */
@@ -56,7 +56,7 @@ export class CreateNftUser {
         <hr> Tell us what this collection represents <br>
         <h4>Examples</h4>
         <p>All the arts in this collection is a reminder of my grandma's painting</p>`,
-        `[OPTIONAL] A list of Steem accounts which are authorized to issue new tokens on behalf of the NFT owner. If no list is provided, then the NFT owner (the account that calls create) will be the only such authorized account by default.`,
+        `[OPTIONAL] A list of Hive accounts which are authorized to issue new tokens on behalf of the NFT owner. If no list is provided, then the NFT owner (the account that calls create) will be the only such authorized account by default.`,
         `[REQUIRED] Symbol of the token (uppercase letters only, max length of 10)`,
         `[OPTIONAL] Maximum supply for the token (between 1 and 9,007,199,254,740,991). If max supply is not specified, then the supply will be unlimited.`,
         `[REQUIRED] This will be the a link that leads to the main image associated with this collection.<hr>You will not be able to edit this link later so make sure it is the right one.`,
@@ -66,7 +66,7 @@ export class CreateNftUser {
 
     constructor(
         private controllerFactory: ValidationControllerFactory,
-        private se: SteemEngine,
+        private se: HiveEngine,
         private router: Router,
         private store: Store<State>,
     ) {

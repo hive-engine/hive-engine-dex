@@ -1,6 +1,6 @@
 import { customElement, bindable } from 'aurelia-framework';
 import { cancelMarketOrder } from 'common/market';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
 @customElement('token-open-orders')
@@ -17,7 +17,7 @@ export class TokenOpenOrders {
         reloadTokenOpenOrders: false
     };
 
-    constructor(private se: SteemEngine, private ea: EventAggregator) {
+    constructor(private se: HiveEngine, private ea: EventAggregator) {
         this.eventAggregator = ea;
     }
 

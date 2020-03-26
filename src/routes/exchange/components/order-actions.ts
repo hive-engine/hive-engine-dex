@@ -15,7 +15,7 @@ export class OrderActions {
     @bindable({ defaultBindingMode: bindingMode.twoWay }) mode;
     @bindable confirm;
     @bindable data;
-    @bindable steempBalance;
+    @bindable hivepBalance;
     @bindable tokenBalance;
     @bindable({ defaultBindingMode: bindingMode.twoWay }) total;
 
@@ -41,7 +41,7 @@ export class OrderActions {
                 const toast = new ToastMessage();
 
                 toast.message = this.i18n.tr(result.rule.messageKey, {
-                    balance: this.steempBalance,
+                    balance: this.hivepBalance,
                     tokenBalance: this.tokenBalance,
                     total: parseFloat(this.quantity) * parseFloat(this.price), 
                     ns: 'errors' 
@@ -59,7 +59,7 @@ export class OrderActions {
     async maxBuySell() {
         if (this.mode == "buy") {
             if (this.price > 0) {
-                this.quantity = this.steempBalance / this.price;
+                this.quantity = this.hivepBalance / this.price;
             }
         } else if (this.mode == "sell") {
             this.quantity = this.tokenBalance;
@@ -79,15 +79,15 @@ export class OrderActions {
                         const price = parseFloat(object.price);
                         const total = quantity * price;                        
 
-                        return (total <= object.steempBalance);
+                        return (total <= object.hivepBalance);
                     }).when((object: OrderActions) => object.mode === 'buy')
-                    .withMessageKey('errors:insufficientSteemForOrder')                
+                    .withMessageKey('errors:insufficientHiveForOrder')                
                     .satisfies((value: any, object: OrderActions) => {
                         const quantity = parseFloat(value);
 
                         return (quantity <= object.tokenBalance);
                     }).when((object: OrderActions) => object.mode === 'sell')
-                    .withMessageKey('errors:insufficientSteemForOrder')
+                    .withMessageKey('errors:insufficientHiveForOrder')
             .ensure('price')
                 .required()
                     .withMessageKey('errors:bidPriceRequired')

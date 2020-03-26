@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { observable } from 'aurelia-binding';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
 import { TokenHistoryTransactionModal } from 'modals/wallet/token-history-transaction';
 import { SendTokensModal } from 'modals/wallet/send-tokens';
@@ -35,7 +35,7 @@ export class TokenHistory {
 
     @observable() private hideZeroBalances = false;
 
-    constructor(private se: SteemEngine, private store: Store<State>, private taskQueue: TaskQueue, private dialogService: DialogService) {
+    constructor(private se: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue, private dialogService: DialogService) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;

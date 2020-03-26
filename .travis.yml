@@ -3,7 +3,7 @@ language: node_js
 node_js:
 - '10'
 addons:
-  ssh_known_hosts: steem-engine.com
+  ssh_known_hosts: hive-engine.com
 deploy:
 - provider: script
   skip_cleanup: true
@@ -24,7 +24,7 @@ deploy:
 - provider: script
   skip_cleanup: true
   script: cd $TRAVIS_BUILD_DIR/dist && rsync -auvhp --delete --exclude=node_modules
-    --delete-after --quiet ./ $REMOTE_USER@$HOST:qa.steem-engine
+    --delete-after --quiet ./ $REMOTE_USER@$HOST:qa.hive-engine
   on:
     branch: develop
 before_install:

@@ -4,7 +4,7 @@ import { ChartComponent } from './../../components/chart/chart';
 import { I18N } from 'aurelia-i18n';
 import { ToastService } from '../../services/toast-service';
 import { BootstrapFormRenderer } from '../../resources/bootstrap-form-renderer';
-import { SteemEngine } from '../../services/steem-engine';
+import { HiveEngine } from '../../services/steem-engine';
 import { autoinject, computedFrom, observable } from 'aurelia-framework';
 import { ValidationControllerFactory, ValidationController } from 'aurelia-validation';
 
@@ -60,7 +60,7 @@ export class Exchange {
     private loadingUserSellBook = false;
     private loadingUserBalances = false;
 
-    private steempBalance = 0;
+    private hivepBalance = 0;
     private tokenBalance = 0;
     private orderDataSetLength = 0;
 
@@ -74,7 +74,7 @@ export class Exchange {
     private chartRef: ChartComponent;
 
     constructor(
-        private se: SteemEngine,
+        private se: HiveEngine,
         private dialogService: DialogService,
         private i18n: I18N,
         private controllerFactory: ValidationControllerFactory,
@@ -101,7 +101,7 @@ export class Exchange {
     }
 
     canActivate({ symbol }) {
-        if (!symbol || symbol === 'STEEMP') {
+        if (!symbol || symbol === 'HIVEP') {
             return new Redirect('/exchange/ENG');
         }
     }
@@ -210,7 +210,7 @@ export class Exchange {
     loadUserExchangeData() {
         dispatchify(exchangeData)(this.currentToken).then(async () => {
             this.tokenData = this.state.tokens
-                .filter(t => t.symbol !== 'STEEMP')
+                .filter(t => t.symbol !== 'HIVEP')
                 .filter(t => t.metadata && !t.metadata.hide_in_market);
 
             this.data = this.tokenData.find(t => t.symbol === this.currentToken);
@@ -220,7 +220,7 @@ export class Exchange {
             }
 
             // eslint-disable-next-line no-undef
-            this.steempBalance = this.state.account.balances.find(token => token.symbol === 'STEEMP')?.balance;
+            this.hivepBalance = this.state.account.balances.find(token => token.symbol === 'HIVEP')?.balance;
 
             if (this.state.loggedIn) {
                 this.tokenBalance = this.state.account.balances.find(token => token.symbol === this.currentToken)?.balance ?? 0;

@@ -3,7 +3,7 @@ import { environment } from 'environment';
 import { Redirect } from 'aurelia-router';
 import { pluck } from 'rxjs/operators';
 import { DialogService } from 'aurelia-dialog';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 
 
@@ -24,7 +24,7 @@ export class PropertiesNft {
     private tokenProperties: { name: string; type: string; isReadOnly: boolean; editMode: boolean, newName: string, newType: string, newIsReadOnly: boolean}[] = [];
     private loading = false;
 
-    constructor(private se: SteemEngine, private nftService: NftService, private taskQueue: TaskQueue, private dialogService: DialogService) {}
+    constructor(private se: HiveEngine, private nftService: NftService, private taskQueue: TaskQueue, private dialogService: DialogService) {}
 
     async canActivate({ symbol }) {
         try {

@@ -1,5 +1,5 @@
 import { Store } from 'aurelia-store';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogController } from 'aurelia-dialog';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
@@ -17,7 +17,7 @@ export class TokenHistoryTransactionModal {
     private transaction: IAccountHistoryItemResult;
     private username: string;
 
-    constructor(private controller: DialogController, private se: SteemEngine, private taskQueue: TaskQueue, private store: Store<State>) {
+    constructor(private controller: DialogController, private se: HiveEngine, private taskQueue: TaskQueue, private store: Store<State>) {
         
 
         this.controller.settings.lock = false;

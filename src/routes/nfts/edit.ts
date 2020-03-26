@@ -3,7 +3,7 @@ import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
 import { ValidationController, ValidationRules } from 'aurelia-validation';
 import { Redirect } from 'aurelia-router';
 import { DialogService } from 'aurelia-dialog';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { NewInstance, TaskQueue } from 'aurelia-framework';
 
 import cloneDeep from 'lodash/cloneDeep';
@@ -29,13 +29,13 @@ export class EditNft {
     private name;
     private loading = false;
 
-    static inject = [NewInstance.of(ValidationController), NewInstance.of(ValidationController), NewInstance.of(ValidationController), NewInstance.of(ValidationController), SteemEngine, TaskQueue, DialogService];
+    static inject = [NewInstance.of(ValidationController), NewInstance.of(ValidationController), NewInstance.of(ValidationController), NewInstance.of(ValidationController), HiveEngine, TaskQueue, DialogService];
 
     constructor(private nameController: ValidationController,
         private metadataController: ValidationController,
         private orgNameController: ValidationController,
         private productNameController: ValidationController,
-        private se: SteemEngine,
+        private se: HiveEngine,
         private taskQueue: TaskQueue,
         private dialogService: DialogService) {
 

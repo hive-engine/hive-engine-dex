@@ -31,7 +31,7 @@ describe('Functions', () => {
                 _id: '5dace26d3415dd328fef94dd',
                 timestamp: 1555286400,
                 symbol: 'ENG',
-                volumeSteem: '987.53000000',
+                volumeHive: '987.53000000',
                 volumeToken: '1156.1946',
                 lowestPrice: '0.81599681',
                 highestPrice: '0.94927172',
@@ -42,7 +42,7 @@ describe('Functions', () => {
                 _id: '5dace24a3415dd328fef8ded',
                 timestamp: 1555200000,
                 symbol: 'ENG',
-                volumeSteem: '582.23100000',
+                volumeHive: '582.23100000',
                 volumeToken: '675.1977',
                 lowestPrice: '0.82100000',
                 highestPrice: '0.92000296',
@@ -53,7 +53,7 @@ describe('Functions', () => {
                 _id: '5dace22b3415dd328fef87d9',
                 timestamp: 1555113600,
                 symbol: 'ENG',
-                volumeSteem: '397.11400000',
+                volumeHive: '397.11400000',
                 volumeToken: '423.04',
                 lowestPrice: '0.90000000',
                 highestPrice: '0.95006803',
@@ -107,7 +107,7 @@ describe('Functions', () => {
                 _id: '5dace26d3415dd328fef94dd',
                 timestamp: 1555286400,
                 symbol: 'ENG',
-                volumeSteem: '987.53000000',
+                volumeHive: '987.53000000',
                 volumeToken: '1156.1946',
                 lowestPrice: '0.81599681',
                 highestPrice: '0.94927172',
@@ -118,7 +118,7 @@ describe('Functions', () => {
                 _id: '5dace24a3415dd328fef8ded',
                 timestamp: 1555200000,
                 symbol: 'ENG',
-                volumeSteem: '582.23100000',
+                volumeHive: '582.23100000',
                 volumeToken: '675.1977',
                 lowestPrice: '0.82100000',
                 highestPrice: '0.92000296',
@@ -129,7 +129,7 @@ describe('Functions', () => {
                 _id: '5dace22b3415dd328fef87d9',
                 timestamp: 1555113600,
                 symbol: 'ENG',
-                volumeSteem: '397.11400000',
+                volumeHive: '397.11400000',
                 volumeToken: '423.04',
                 lowestPrice: '0.90000000',
                 highestPrice: '0.95006803',
@@ -248,18 +248,18 @@ describe('Functions', () => {
                 { symbol: 'ENG', supply: 0, circulatingSupply: 0 },
                 { symbol: 'DISNEY', supply: 0, circulatingSupply: 0 },
                 { symbol: 'ASS', supply: 0, circulatingSupply: 0 },
-                { symbol: 'STEEMP', supply: 999, circulatingSupply: 95849485 }
+                { symbol: 'HIVEP', supply: 999, circulatingSupply: 95849485 }
             ],
-            steempBalance: {
+            hivepBalance: {
                 balance: 598
             }
         };
 
         const parsed = functions.parseTokens(data);
-        const token = (parsed as any).find(t => t.symbol === 'STEEMP');
+        const token = (parsed as any).find(t => t.symbol === 'HIVEP');
 
         expect(token.supply).toEqual(401);
-        expect(token.circulatingSupply).toEqual(95849485 - data.steempBalance.balance);
+        expect(token.circulatingSupply).toEqual(95849485 - data.hivepBalance.balance);
     });
 
     test('loadPendingUnstakes succeeds', async () => {

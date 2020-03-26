@@ -1,4 +1,4 @@
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { DialogService, DialogCloseResult } from 'aurelia-dialog';
 import { connectTo, dispatchify } from 'aurelia-store';
@@ -15,7 +15,7 @@ export class userReview {
     private Slick = slick;
     private tokenTable: HTMLTableElement;
 
-    constructor(private se: SteemEngine, private taskQueue: TaskQueue) {}
+    constructor(private se: HiveEngine, private taskQueue: TaskQueue) {}
 
     async canActivate() {
         await dispatchify(getNftsWithSellBook)();

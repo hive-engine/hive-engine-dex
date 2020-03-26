@@ -2,7 +2,7 @@ import { SendNotification } from './modals/send';
 import { DialogService } from 'aurelia-dialog';
 import { BootstrapFormRenderer } from './../../../resources/bootstrap-form-renderer';
 import { ValidationControllerFactory, ValidationController } from 'aurelia-validation';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { Redirect, RouteConfig, AppRouter } from 'aurelia-router';
 
@@ -15,7 +15,7 @@ export class AdminKycView {
     private validationController: ValidationController;
     private user;
 
-    constructor(private se: SteemEngine, private controllerFactory: ValidationControllerFactory, private router: AppRouter, private dialogService: DialogService, private taskQueue: TaskQueue) {
+    constructor(private se: HiveEngine, private controllerFactory: ValidationControllerFactory, private router: AppRouter, private dialogService: DialogService, private taskQueue: TaskQueue) {
         this.validationController = controllerFactory.createForCurrentScope();
 
         this.renderer = new BootstrapFormRenderer();

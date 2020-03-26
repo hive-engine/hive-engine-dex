@@ -5,7 +5,7 @@ import { sleep } from 'common/functions';
 import { checkTransaction } from 'common/steem-engine';
 import { MarketService } from './../../../services/market-service';
 import { Router } from 'aurelia-router';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { autoinject, TaskQueue } from 'aurelia-framework';
 import { slick } from 'slick-carousel/slick/slick';
 import ImageZoom from 'js-image-zoom/js-image-zoom';
@@ -34,7 +34,7 @@ export class NftDetail {
         offset: { vertical: 0, horizontal: 10 },
     };
 
-    constructor(private se: SteemEngine, private dialogService: DialogService, private marketService: MarketService, private taskQueue: TaskQueue) {}
+    constructor(private se: HiveEngine, private dialogService: DialogService, private marketService: MarketService, private taskQueue: TaskQueue) {}
 
     // public configureRouter(config: RouterConfiguration, router: Router) {
     //     config.map([

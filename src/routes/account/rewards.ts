@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { TaskQueue, autoinject, bindable } from "aurelia-framework";
 import { Store } from 'aurelia-store';
 
@@ -13,7 +13,7 @@ export class Rewards {
     private rewardTokens: IRewardToken[] = [];
     private rewardsTable: HTMLTableElement;
 
-    constructor(private se: SteemEngine, private store: Store<State>, private taskQueue: TaskQueue) {
+    constructor(private se: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;

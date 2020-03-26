@@ -1,7 +1,7 @@
 import { TokenInfoModal } from 'modals/wallet/token-info';
 import styles from './token-table.module.css';
 import { bindable, TaskQueue, autoinject } from 'aurelia-framework';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { DialogService } from 'aurelia-dialog';
 import { dispatchify, connectTo } from 'aurelia-store';
 import { getCurrentFirebaseUser } from 'store/actions';
@@ -18,7 +18,7 @@ export class TokenTable {
     private state: State;
     private loading = true;    
 
-    constructor(private se: SteemEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {
+    constructor(private se: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {
         this.loading = true;
     }
 

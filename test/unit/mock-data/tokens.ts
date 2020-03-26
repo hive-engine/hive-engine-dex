@@ -25,13 +25,13 @@ export default [
         "marketCap": 3262130,
         "volume": 636.76589787,
         "priceChangePercent": -5.53,
-        "priceChangeSteem": -0.04979,
+        "priceChangeHive": -0.04979,
         "usdValue": "$0.117"
     },
     {
         "_id": 2,
         "issuer": "steem-peg",
-        "symbol": "STEEMP",
+        "symbol": "HIVEP",
         "name": "STEEM Pegged",
         "metadata": {
             "desc": "STEEM backed by the steem-engine team",
@@ -48,7 +48,7 @@ export default [
         "marketCap": 0,
         "volume": 0,
         "priceChangePercent": 0,
-        "priceChangeSteem": 0
+        "priceChangeHive": 0
     },
     {
         "_id": 3,
@@ -70,7 +70,7 @@ export default [
         "marketCap": 104491.19208305,
         "volume": 286.9921456,
         "priceChangePercent": -5.79,
-        "priceChangeSteem": -4915,
+        "priceChangeHive": -4915,
         "usdValue": "$11,025.33"
     },
     {
@@ -93,7 +93,7 @@ export default [
         "marketCap": 23845.83215685508,
         "volume": 0,
         "priceChangePercent": 0,
-        "priceChangeSteem": 0,
+        "priceChangeHive": 0,
         "usdValue": "$48.27"
     },
     {
@@ -116,7 +116,7 @@ export default [
         "marketCap": 8723.88612113228,
         "volume": 0,
         "priceChangePercent": 0,
-        "priceChangeSteem": 0,
+        "priceChangeHive": 0,
         "usdValue": "$0.00386"
     },
     {
@@ -139,7 +139,7 @@ export default [
         "marketCap": 11593.83637924,
         "volume": 0,
         "priceChangePercent": 0,
-        "priceChangeSteem": 0,
+        "priceChangeHive": 0,
         "usdValue": "$413.60"
     },
     {
@@ -168,7 +168,7 @@ export default [
         "marketCap": 693435.6825892599,
         "volume": 211.0688767,
         "priceChangePercent": 46.31,
-        "priceChangeSteem": 0.014,
+        "priceChangeHive": 0.014,
         "usdValue": "$0.00610"
     },
 ];

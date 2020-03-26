@@ -31,7 +31,7 @@
 
             <div if.bind="token && token == 'STEEM'">
                 <div class="form-group">
-                    <h4>${'STEEMP Balance' & t}</h4>
+                    <h4>${'HIVEP Balance' & t}</h4>
                     <p class="mb-4">${tokenBalance | comma}</p>
                 </div>
 
@@ -55,7 +55,7 @@
                 <div class="ssc-cost">
                     You will receive:
                     <span id="receive_amt">${amount * 0.99 | toFixed: 3}</span>
-                    STEEMP
+                    HIVEP
                 </div>
             </div>
 
@@ -113,7 +113,7 @@
 
             <button
                 class="btn btn-lg greenBtns"
-                click.trigger="depositSteem()"
+                click.trigger="depositHive()"
                 if.bind="token && token == 'STEEM'"
             >
                 ${'Deposit' & t} ${token & t}

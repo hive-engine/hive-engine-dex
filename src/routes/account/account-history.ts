@@ -3,7 +3,7 @@ import { Store, dispatchify } from 'aurelia-store';
 import { autoinject, bindable } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
 import firebase from 'firebase/app';
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import moment from 'moment';
 import { loadAccountHistory } from 'common/steem-engine';
 
@@ -18,7 +18,7 @@ export class AccountHistory {
     private symbol;
     @bindable displayShowMore: boolean = true;
 
-    constructor(private se: SteemEngine, private store: Store<State>) {
+    constructor(private se: HiveEngine, private store: Store<State>) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;

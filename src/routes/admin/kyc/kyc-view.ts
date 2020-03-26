@@ -1,4 +1,4 @@
-import { SteemEngine } from 'services/steem-engine';
+import { HiveEngine } from 'services/steem-engine';
 import { computedFrom, autoinject } from 'aurelia-framework';
 import { Redirect, RouteConfig, AppRouter } from 'aurelia-router';
 
@@ -23,7 +23,7 @@ export class AdminKycView {
     private showPassportReject = false;
     private showSelfieReject = false;
 
-    constructor(private se: SteemEngine, private router: AppRouter) {
+    constructor(private se: HiveEngine, private router: AppRouter) {
 
     }
 

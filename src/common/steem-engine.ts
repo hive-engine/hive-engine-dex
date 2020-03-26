@@ -6,7 +6,7 @@ import { queryParam } from 'common/functions';
 import { environment } from './../environment';
 import { ssc } from './ssc';
 
-const SCOT_API = 'https://scot-api.steem-engine.com/';
+const SCOT_API = 'https://scot-api.hive-engine.com/';
 
 const http = new HttpClient();
 
@@ -23,7 +23,7 @@ export async function request(url: string, params: any = {}) {
 
 /**
  *
- * @param symbol a Steem-Engine token symbol (required)
+ * @param symbol a Hive-Engine token symbol (required)
  * @param timestampStart a unix timestamp that represents the start of the dataset (optional)
  * @param timestampEnd a unix timestamp that represents the end of the dataset (optional)
  */
@@ -102,7 +102,7 @@ export async function getFormattedCoinPairs() {
     let tokenPairs = [];
     const nonPeggedCoins = coins.filter(x => x.coin_type !== 'steemengine');
 
-    const steem = { name: 'STEEM', symbol: 'STEEM', pegged_token_symbol: 'STEEMP' };
+    const steem = { name: 'STEEM', symbol: 'STEEM', pegged_token_symbol: 'HIVEP' };
     tokenPairs.push(steem);
 
     for (const x of nonPeggedCoins) {
@@ -134,27 +134,27 @@ export function loadPendingWithdrawals(account: string, limit = 1000, offset = 0
         recipient: account
     };
 
-    return ssc.find('steempegged', 'withdrawals', queryConfig, limit, offset);
+    return ssc.find('hivepegged', 'withdrawals', queryConfig, limit, offset);
 }
 
 export function parseTokens(data: any): State {
     const tokens = data.tokens.filter(t => !environment.disabledTokens.includes(t.symbol));
 
-    if (data.steempBalance && data.steempBalance.balance) {
-        const token = tokens.find(t => t.symbol === 'STEEMP');
+    if (data.hivepBalance && data.hivepBalance.balance) {
+        const token = tokens.find(t => t.symbol === 'HIVEP');
 
         if (token) {
-            token.supply -= parseFloat(data.steempBalance.balance);
-            (token as any).circulatingSupply -= parseFloat(data.steempBalance.balance);
+            token.supply -= parseFloat(data.hivepBalance.balance);
+            (token as any).circulatingSupply -= parseFloat(data.hivepBalance.balance);
         }
     }
 
     return tokens;
 }
 
-export async function loadSteempBalance() {
+export async function loadHivepBalance() {
     try {
-        const result: any = await ssc.findOne('tokens', 'balances', { account: 'steem-peg', symbol: 'STEEMP' });
+        const result: any = await ssc.findOne('tokens', 'balances', { account: 'steem-peg', symbol: 'HIVEP' });
 
         return result;
     } catch (e) {
@@ -201,7 +201,7 @@ export async function loadTokens(symbols = [], limit = 50, offset = 0): Promise<
         token.marketCap = 0;
         token.volume = 0;
         token.priceChangePercent = 0;
-        token.priceChangeSteem = 0;
+        token.priceChangeHive = 0;
 
         const metric = limitedMetrics.find(m => token.symbol == m.symbol);
 
@@ -221,11 +221,11 @@ export async function loadTokens(symbols = [], limit = 50, offset = 0): Promise<
 
             if (Date.now() / 1000 < metric.lastDayPriceExpiration) {
                 token.priceChangePercent = parseFloat(metric.priceChangePercent);
-                token.priceChangeSteem = parseFloat(metric.priceChangeSteem);
+                token.priceChangeHive = parseFloat(metric.priceChangeHive);
             }
         }
 
-        if (token.symbol === 'STEEMP') {
+        if (token.symbol === 'HIVEP') {
             token.lastPrice = 1;
         }
 
@@ -236,16 +236,16 @@ export async function loadTokens(symbols = [], limit = 50, offset = 0): Promise<
         return (b.volume > 0 ? b.volume : b.marketCap / 1000000000000) - (a.volume > 0 ? a.volume : a.marketCap / 1000000000000);
     });
 
-    const steempBalance = await loadSteempBalance();
+    const hivepBalance = await loadHivepBalance();
 
     const finalTokens = results.filter(t => !environment.disabledTokens.includes(t.symbol));
 
-    if (steempBalance && steempBalance.balance) {
-        const token = finalTokens.find(t => t.symbol === 'STEEMP');
+    if (hivepBalance && hivepBalance.balance) {
+        const token = finalTokens.find(t => t.symbol === 'HIVEP');
 
         if (token) {
-            token.supply -= parseFloat(steempBalance.balance);
-            (token as any).circulatingSupply -= parseFloat(steempBalance.balance);
+            token.supply -= parseFloat(hivepBalance.balance);
+            (token as any).circulatingSupply -= parseFloat(hivepBalance.balance);
         }
     }
 
@@ -273,13 +273,13 @@ export async function loadTradesHistory(symbol, limit = 30, offset = 0) {
 }
 
 export async function loadAccountTokenBalances(account, symbol, limit = 2, offset = 0) {
-    return ssc.find('tokens', 'balances', { account: account, symbol : { '$in' : [symbol, 'STEEMP'] } }, limit, offset, '', false);
+    return ssc.find('tokens', 'balances', { account: account, symbol : { '$in' : [symbol, 'HIVEP'] } }, limit, offset, '', false);
 }
 
 /* istanbul ignore next */
 export async function loadExchangeUiLoggedIn(account, symbol) {
-    const tokens = await loadTokens([`${symbol}`, 'STEEMP']);
-    const steempBalance = await loadSteempBalance();
+    const tokens = await loadTokens([`${symbol}`, 'HIVEP']);
+    const hivepBalance = await loadHivepBalance();
     const userBalances = await loadUserBalances(account, 1000, 0);
     const buyBook = await loadBuyBook(symbol, 1000, 0);
     const sellBook = await loadSellBook(symbol, 1000, 0);
@@ -290,7 +290,7 @@ export async function loadExchangeUiLoggedIn(account, symbol) {
 
     const response = {
         tokens: tokens,
-        steempBalance: steempBalance,
+        hivepBalance: hivepBalance,
         userBalances: userBalances,
         buyBook: buyBook,
         sellBook: sellBook,
@@ -300,7 +300,7 @@ export async function loadExchangeUiLoggedIn(account, symbol) {
         tokenBalance: tokenBalance
     } as {
         tokens: IToken[];
-        steempBalance: IBalance;
+        hivepBalance: IBalance;
         userBalances: IBalance[];
         buyBook: any;
         sellBook: any;
@@ -315,21 +315,21 @@ export async function loadExchangeUiLoggedIn(account, symbol) {
 
 /* istanbul ignore next */
 export async function loadExchangeUiLoggedOut(symbol) {
-    const tokens = await loadTokens([`${symbol}`, 'STEEMP']);
-    const steempBalance = await loadSteempBalance();
+    const tokens = await loadTokens([`${symbol}`, 'HIVEP']);
+    const hivepBalance = await loadHivepBalance();
     const buyBook = await loadBuyBook(symbol, 1000, 0);
     const sellBook = await loadSellBook(symbol, 1000, 0);
     const tradesHistory = await loadTradesHistory(symbol, 30, 0);
 
     const response = {
         tokens: tokens,
-        steempBalance: steempBalance,
+        hivepBalance: hivepBalance,
         buyBook: buyBook,
         sellBook: sellBook,
         tradesHistory: tradesHistory
     } as {
         tokens: IToken[];
-        steempBalance: IBalance;
+        hivepBalance: IBalance;
         userBalances: IBalance[];
         buyBook: any;
         sellBook: any;
@@ -447,7 +447,7 @@ export async function loadUserBalances(account: string, limit = 1000, offset = 0
 
             if (Date.now() / 1000 < metric.lastDayPriceExpiration) {
                 token.priceChangePercent = parseFloat(metric.priceChangePercent);
-                token.priceChangeSteem = parseFloat(metric.priceChangeSteem);
+                token.priceChangeHive = parseFloat(metric.priceChangeHive);
             }
         }
         
