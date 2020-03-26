@@ -1,0 +1,37 @@
+<template>
+        <div class="table-wrapper">
+                <loader loading.bind="loading" mode="tiny"></loader>
+
+                <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>${'ID' & t}</th>
+                                <th>${'Account' & t}</th>
+                                <th>${'Owner' & t}</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr repeat.for="token of state.account.nfts">
+                                <td>${token.symbol}${token._id}</td>
+                                <td>${token.account}</td>
+                                <td>${token.ownedBy === 'u' ? 'Steem Account' : 'Smart Contract'}</td>
+                                <td class="table-buttons">
+                                    <button click.delegate="sellNft(token)" title="Sell NFT token" if.bind="token.marketEnabled">
+                                        <font-awesome-icon icon.bind="['fas', 'usd-circle']"></font-awesome-icon>
+                                    </button>
+                                    <button click.delegate="showNftProperties(token)" title="NFT Properties">
+                                        <font-awesome-icon icon.bind="['fas', 'info-circle']"></font-awesome-icon>
+                                    </button>
+                                    <button click.delegate="transferNft(token)" title="Transfer NFT">
+                                        <font-awesome-icon icon.bind="['fas', 'share']"></font-awesome-icon>
+                                    </button>
+                                    <button click.delegate="burnNft(token)" title="Burn NFT" class="text-orange">
+                                        <font-awesome-icon icon.bind="['fas', 'burn']"></font-awesome-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+</template>

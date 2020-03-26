@@ -1,0 +1,218 @@
+.exchange-columns > div:first-child,
+.exchange-columns > div:last-child {
+    background-color: #fefefe;
+    padding-top: 20px;
+}
+
+tr td:nth-child(2),
+tr td:last-child {
+    text-align: right;
+}
+
+.token-metrics-margin-top {
+    margin-top: 40px;
+}
+
+.table-wrapper {
+    position: relative;
+}
+
+.best-price {
+    background: #0048b3;
+    border-radius: 4px;
+    color: #fff;
+    margin: 15px 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.best-price > div:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.best-price > div:last-child {
+    color: #FFF;
+    font-weight: bold;
+}
+
+.exchange-chart {
+    background: #fff;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.balances-heading {
+    color: #0048b4;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    padding-top: 6px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.buy-table,
+.sell-table {
+    color: #0048b3;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 100%;
+}
+
+.sell-table {
+    margin-bottom: 20px;
+}
+
+.buy-table thead,
+.sell-table thead {
+    background: #0048b3;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.buy-table th,
+.buy-table td,
+.sell-table th,
+.sell-table td {
+    font-weight: 400;
+    padding: 5px 15px;
+}
+
+.balance-label {
+    color: #525853;
+    font-size: 12px;
+    margin: 0;
+}
+
+.form-control-dark,
+.form-control-dark:focus,
+.form-control-dark:disabled,
+.form-control-dark[readonly] {
+    background: #ececec;
+    border: none;
+    box-shadow: none;
+    color: #0048b3;
+    outline: none;
+}
+
+.input-group-text-dark {
+    background: #0048b3;
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.form-control-dark::-webkit-input-placeholder {
+    color: #000;
+}
+
+.form-control-dark::-moz-placeholder {
+    color: #000;
+}
+
+.form-control-dark:-ms-input-placeholder {
+    color: #000;
+}
+
+.form-control-dark:-moz-placeholder {
+    color: #000;
+}
+
+.form-control-light,
+.form-control-light:focus,
+.form-control-light:disabled,
+.form-control-light[readonly] {
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+    color: #002b33;
+    outline: none;
+}
+
+.form-control-light::-webkit-input-placeholder {
+    color: #002b33;
+}
+
+.form-control-light::-moz-placeholder {
+    color: #002b33;
+}
+
+.form-control-light:-ms-input-placeholder {
+    color: #002b33;
+}
+
+.form-control-light:-moz-placeholder {
+    color: #002b33;
+}
+
+.input-group-text-light {
+    background: #21be3d;
+    border: none;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.order-buttons {
+    text-align: center;
+}
+
+.order-buttons button {
+    margin-right: 15px;
+}
+
+.order-buttons button:last-child {
+    margin-right: 0;
+}
+
+.token-open-orders-table .red,
+.token-open-orders-table .green,
+.history .red,
+.history .green{
+    font-weight: bold;
+}
+
+.token-open-orders-table .red,
+.history .red {
+    color: red;
+}
+
+.token-open-orders-table .green,
+.history .green {
+    color: green;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .hide-lg {
+        display: none;
+    }
+}
+
+
+.hideSeeMoreBtn {
+    display: none;
+    
+}
+.showSeeMoreBtn {
+    display: block!important;
+}
+/* .buy-percentage-buttons {
+}
+.buy-percentage-buttons button {
+    appearance: none;
+    background: #324c4d;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    margin-right: 6px;
+    padding: 6px 15px;
+}
+
+.buy-percentage-buttons button:last-child {
+    margin-right: 0;
+} */

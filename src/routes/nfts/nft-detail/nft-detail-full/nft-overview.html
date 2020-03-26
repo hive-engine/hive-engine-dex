@@ -1,0 +1,10 @@
+<template>
+    <div class="container-fluid" if.bind="state.nft.metadata.desc">
+        <div class="row">
+            <div class="col-md-8 text-justify">
+                <h3 style="margin-top: 20px;">Description</h3>
+                <div innerhtml.bind="state.nft.metadata.desc"></div>
+            </div>
+        </div>
+    </div>
+</template>

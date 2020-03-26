@@ -1,0 +1,80 @@
+<template>
+    <ux-dialog>
+        <loader mode="tiny" loading.bind="loading"></loader>
+
+        <ux-dialog-header>
+            <h2 if.bind="!isNft">${'Token information' & t}</h2>
+            <h2 if.bind="isNft">${'NFT information' & t}</h2>
+        </ux-dialog-header>
+        <ux-dialog-body>
+            <div if.bind="token">
+                <div class="form-group">
+                    <img class="tokenInfoIcon" src="${token.token.metadata.icon}" alt="${token.symbol}" title="${token.symbol}" />
+                    <h1 class="tokenInfoTitle">${token.symbol}</h1>
+                </div>
+
+                <div class="form-group">
+                    <h4 if.bind="!isNft">${'Token Name' & t}</h4>
+                    <h4 if.bind="isNft">${'NFT Name' & t}</h4>
+                    <h3>${token.token.name}</h3>
+                </div>
+
+                <div if.bind="isNft">
+                    <div class="form-group">
+                        <h4>${'Company / Organization Name' & t}</h4>
+                        <h3>${token.orgName ? token.orgName : '-'}</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <h4>${'Product Name' & t}</h4>
+                        <h3>${token.productName ? token.productName : '-'}</h3>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h4>${'Supply (Circulating / Total / Max)' & t}</h4>
+                    <h3>${token.token.circulatingSupply} / ${token.token.supply} / ${token.token.maxSupply}</h3>
+                </div>
+
+                <div class="form-group">
+                    <h4>${'Issuer' & t}</h4>
+                    <h3>
+                        <a href="${'https://steempeak.com/@' + token.token.issuer}" target="_blank">
+                            ${token.token.issuer}
+                            <font-awesome-icon icon.bind="['fas', 'external-link']"></font-awesome-icon>
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="form-group">
+                    <h4>${'Website URL' & t}</h4>
+                    <h3>
+                        <a href="${token.token.metadata.url}" target="_blank">
+                            ${token.token.metadata.url}
+                            <font-awesome-icon icon.bind="['fas', 'external-link']"></font-awesome-icon>
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="form-group">
+                    <h4>${'Description' & t}</h4>
+                    <h5>${token.token.metadata.desc}</h5>
+                </div>
+
+                <button if.bind="token.token.issuer === token.account" class="btn btn-lg btn-primary"
+                        click.delegate="editToken(token.token)">
+                    ${'Edit token' & t}
+                </button>
+            </div>
+        </ux-dialog-body>
+
+        <ux-dialog-footer>
+            <button
+                class="btn btn-lg redBtn"
+                click.trigger="controller.cancel()"
+            >
+                ${'Close' & t}
+            </button>
+        </ux-dialog-footer>
+    </ux-dialog>
+</template>

@@ -1,0 +1,265 @@
+.navbar {
+    /*background: linear-gradient(280deg, #160033 0%, #008b80 51.72%, #00323e 100%);*/
+    /*background: url(https://s3.amazonaws.com/steem-engine/images/bg_header.jpg) black repeat-x top right;*/
+    background-color: #fff;
+    color: #0048b3!important;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow:  0 1px 9px rgba(0,0,0,.05);
+    z-index: 980;
+    padding: 20px;
+    margin: 0;
+    border: none;
+    z-index: 999;
+}
+
+.space-navbar {
+    display: block;
+    min-height: 100%;
+    padding-top: 60px;
+    position: relative;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link,
+.navbar-nav > li > a {
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 6px 20px;
+    text-transform: initial;
+}
+
+/* .navbar-nav > li.active:not(.button) > a,
+.navbar-nav > li > a:hover {
+    color: lightblue!important;
+} */
+
+.navbar-nav > li.language-option > a {
+    margin-right: 10px;
+}
+
+.navbar-nav > li.language-option > a {
+    padding: 5px 20px !important;
+    border: 1px solid #0048b3;
+    border-radius: 5px;
+}
+
+.language-option .dropdown-menu .nav-link {
+    color: #0048b3;
+}
+
+.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link {
+    background: transparent;
+    border: 1px solid transparent;
+}
+.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link:focus,
+.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link:focus:active,
+.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link:hover {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #fff;
+    color: #0048b3;
+}
+
+.navbar-expand-lg .navbar-nav > li.button.active > .btn.nav-link {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-expand-lg .navbar-nav > li.button > .nav-link:hover,
+.navbar-nav > li.button > a:hover {
+    background-color: #ffffff;
+    color: #009efd;
+}
+
+.navigation-two .navbar {
+    position: relative;
+    background: #1f2738;
+    padding: 0 35px;
+    border-color: transparent;
+}
+
+.navbar-brand img {
+    width: 238px;
+    height: 32px;
+}
+
+@media all and (min-width: 992px) {
+    .dropdown-menu {
+        transition: all 0.3s ease-out;
+    }
+}
+
+@media all and (max-width: 991px) {
+    .navbar-expand-lg > .container {
+        position: relative;
+    }
+    .navbar {
+        min-height: 80px;
+        background: #fff!important;
+    }
+    .navbar-toggler {
+        background: transparent;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        transform: translate(0%, -50%);
+        padding: 0;
+        border-radius: 5px;
+    }
+    .navbar-toggler:focus {
+        outline: none;
+    }
+    .navbar-toggler span,
+    .navbar-toggler span:before,
+    .navbar-toggler span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 2px;
+        width: 35px;
+        background: #0048b3;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        display: block;
+        content: '';
+    }
+    .navbar-toggler span {
+        background-color: transparent;
+    }
+    .navbar-toggler span:before,
+    .navbar-toggler span:after {
+        top: 0;
+    }
+    .navbar-toggler span,
+    .navbar-toggler span:before,
+    .navbar-toggler span:after {
+        transition: all 0.5s ease-in-out;
+    }
+    .navbar-toggler.collapsed span {
+        background-color: #ffffff;
+    }
+    .navbar-toggler.collapsed span:before {
+        top: -10px;
+    }
+    .navbar-toggler.collapsed span:after {
+        top: 10px;
+    }
+    .navbar-toggler span:before {
+        transform: rotate(135deg);
+    }
+    .navbar-toggler span:after {
+        transform: rotate(-135deg);
+    }
+    .navbar-toggler.collapsed span:before,
+    .navbar-toggler.collapsed span:after {
+        transform: rotate(0deg);
+    }
+    .navbar-collapse {
+        position: absolute;
+        background-color: #ffffff;
+        -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+        top: 100%;
+        right: 15px;
+        min-width: 320px;
+    }
+    .navbar-collapse .navbar-nav {
+        max-height: 400px;
+        overflow: auto;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link,
+    .navbar-nav > li > a {
+        color: #505050;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link,
+    .main-nav .navbar-nav li {
+        display: block;
+        clear: both;
+        text-align: left;
+    }
+    .dropdown-menu {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        clear: both;
+        padding: 5px 0 5px 8px;
+        display: none;
+    }
+    .dropdown-menu .dropdown-menu {
+        padding-left: 15px;
+    }
+    .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link,
+    .navbar-nav .dropdown-menu > li > a {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link:before,
+    .navbar-nav .dropdown-menu > li > a:before {
+        content: '-';
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .navbar-expand-lg .navbar-nav .dropdown .nav-link,
+    .navbar-nav > li.dropdown > a {
+        padding-right: 50px;
+    }
+    .dropdown > a:after {
+        content: '\e61a';
+        font-family: 'themify';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 9px 15px;
+    }
+    .dropdown-menu .dropdown > a:after {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    .dropdown a.sm-shown:after {
+        content: '\e622';
+    }
+    .navbar-expand-lg .navbar-nav > li.button > .nav-link,
+    .navbar-nav > li.button > a {
+        margin: 0 5px 5px;
+        background-color: #009efd;
+        color: #ffffff;
+        border-radius: 0;
+    }
+    .navbar-white .navbar-toggler span:before,
+    .navbar-white .navbar-toggler span:after {
+        background-color: #009efd;
+    }
+    .navbar-white .navbar-toggler.collapsed span {
+        background-color: #009efd;
+    }
+    .navbar-white .navbar-toggler span {
+        background-color: transparent;
+    }
+    .navbar {
+        background-color: #1c276a;
+        min-height: 60px;
+    }
+    .navbar.navbar-white {
+        background-color: #ffffff;
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+    }
+    .navbar > .container {
+        width: 100%;
+        max-width: none;
+        padding: 0 15px;
+    }
+    .navbar-collapse {
+        right: 0;
+        left: 0;
+    }
+}

@@ -1,0 +1,31 @@
+<template>
+    <loader loading.bind="loading" mode="tiny"></loader>
+
+    <div class="table-wrapper">
+        <table class="buy-table table-striped">
+            <thead>
+                <tr>
+                    <th width="135">${'Price' & t} (STEEMP)</th>
+                    <th class="text-right">
+                        ${'QTY' & t} (${data.symbol & t})
+                    </th>
+                    <th class="text-right">${'Total' & t} (STEEMP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr repeat.for="order of buyData">
+                    <td click.delegate="setBidPrice(order.price)">
+                        ${order.price | toFixed:6}
+                    </td>
+                    <td>${order.quantity | toFixed:3}</td>
+                    <td>${order.amountLocked | toFixed:6}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="see-more hideSeeMoreBtn text-center" id="loadMoreBuy">
+            <button click.delegate="seeMoreBuy(buyBook)" class="moreBtn seeMoreBtn" style="margin-top: 0px">
+                see more
+            </button>
+        </div>
+    </div>
+</template>
