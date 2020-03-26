@@ -20,21 +20,21 @@ describe('Array Filter', () => {
 
     test('filter array based on property name', () => {
         const mockData = [
-            { username: 'beggars', blockchain: 'steem' },
-            { username: 'aggroed', blockchain: 'steem' },
-            { username: 'bait002', blockchain: 'steem' }
+            { username: 'beggars', blockchain: 'hive' },
+            { username: 'aggroed', blockchain: 'hive' },
+            { username: 'bait002', blockchain: 'hive' }
         ];
 
         const result = sut.toView(mockData, { search: 'username', term: 'beggars' });
 
-        expect(result).toEqual([{ username: 'beggars', blockchain: 'steem' }]);
+        expect(result).toEqual([{ username: 'beggars', blockchain: 'hive' }]);
     });
 
     test('filter array based on property name and case sensitivity', () => {
         const mockData = [
-            { username: 'beggars', blockchain: 'steem' },
-            { username: 'aggroed', blockchain: 'steem' },
-            { username: 'bait002', blockchain: 'steem' }
+            { username: 'beggars', blockchain: 'hive' },
+            { username: 'aggroed', blockchain: 'hive' },
+            { username: 'bait002', blockchain: 'hive' }
         ];
 
         const result = sut.toView(mockData, { search: 'username', term: 'BEGGARS', caseSensitive: true });
@@ -44,9 +44,9 @@ describe('Array Filter', () => {
 
     test('filter array with empty term value', () => {
         const mockData = [
-            { username: 'beggars', blockchain: 'steem' },
-            { username: 'aggroed', blockchain: 'steem' },
-            { username: 'bait002', blockchain: 'steem' }
+            { username: 'beggars', blockchain: 'hive' },
+            { username: 'aggroed', blockchain: 'hive' },
+            { username: 'bait002', blockchain: 'hive' }
         ];
 
         const result = sut.toView(mockData, { search: 'username', term: '' });
@@ -56,24 +56,24 @@ describe('Array Filter', () => {
 
     test('filter array and sort array with no provided sort order', () => {
         const mockData = [
-            { username: 'beggars', blockchain: 'steem' },
-            { username: 'aggroed', blockchain: 'steem' },
-            { username: 'bait002', blockchain: 'steem' }
+            { username: 'beggars', blockchain: 'hive' },
+            { username: 'aggroed', blockchain: 'hive' },
+            { username: 'bait002', blockchain: 'hive' }
         ];
 
-        const result = sut.toView(mockData, { search: 'blockchain', term: 'steem', sort: { key: 'username' } });
+        const result = sut.toView(mockData, { search: 'blockchain', term: 'hive', sort: { key: 'username' } });
 
         expect(result[0].username).toBe('aggroed');
     });
 
     test('filter array and sort array and descending sort order', () => {
         const mockData = [
-            { username: 'beggars', blockchain: 'steem' },
-            { username: 'aggroed', blockchain: 'steem' },
-            { username: 'bait002', blockchain: 'steem' }
+            { username: 'beggars', blockchain: 'hive' },
+            { username: 'aggroed', blockchain: 'hive' },
+            { username: 'bait002', blockchain: 'hive' }
         ];
 
-        const result = sut.toView(mockData, { search: 'blockchain', term: 'steem', sort: { key: 'username', direction: 'desc' } });
+        const result = sut.toView(mockData, { search: 'blockchain', term: 'hive', sort: { key: 'username', direction: 'desc' } });
 
         expect(result[1].username).toBe('bait002');
     });

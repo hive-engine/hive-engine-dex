@@ -7,7 +7,7 @@ import { environment } from 'environment';
 import firebase from 'firebase/app';
 
 import SSC from 'sscjs';
-import steem from 'steem';
+import hive from 'steem';
 
 import { Store } from 'aurelia-store';
 import { Subscription } from 'rxjs';
@@ -19,6 +19,8 @@ import { ToastService, ToastMessage } from './toast-service';
 import { queryParam, formatHiveAmount, getHivePrice, toFixedNoRounding } from 'common/functions';
 import { customJson, requestTransfer } from 'common/keychain';
 import moment from 'moment';
+
+hive.api.setOptions({url: 'https://api.openhive.network'});
 
 @autoinject()
 export class HiveEngine {
@@ -121,8 +123,8 @@ export class HiveEngine {
                 });
             } else {
                 try {
-                    if (key && !steem.auth.isWif(key)) {
-                        key = steem.auth.getPrivateKeys(username, key, ['posting']).posting;
+                    if (key && !hive.auth.isWif(key)) {
+                        key = hive.auth.getPrivateKeys(username, key, ['posting']).posting;
                     }
                 } catch (err) {
                     const toast = new ToastMessage();
@@ -140,12 +142,12 @@ export class HiveEngine {
 
                     if (user) {
                         try {
-                            if (steem.auth.wifToPublic(key) == user.memo_key || steem.auth.wifToPublic(key) === user.posting.key_auths[0][0]) {
+                            if (hive.auth.wifToPublic(key) == user.memo_key || hive.auth.wifToPublic(key) === user.posting.key_auths[0][0]) {
                                 // Get an encrypted memo only the user can decrypt with their private key
                                 const encryptedMemo = await this.authService.getUserAuthMemo(username);
 
                                 // Decrypt the private memo to get the encrypted string
-                                const signedKey = steem.memo.decode(key, encryptedMemo).substring(1);
+                                const signedKey = hive.memo.decode(key, encryptedMemo).substring(1);
 
                                 // The decrypted memo is an encrypted string, so pass this to the server to get back refresh and access tokens
                                 const token = await this.authService.verifyUserAuthMemo(username, signedKey) as string;
@@ -785,7 +787,7 @@ export class HiveEngine {
     }   
 
     async checkAccount(name) {
-        const response = await steem.api.getAccountsAsync([name]);
+        const response = await hive.api.getAccountsAsync([name]);
 
         if (response && response.length) {
             return response[0];

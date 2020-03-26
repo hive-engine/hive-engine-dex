@@ -1,11 +1,11 @@
 import { environment } from 'environment';
 import { AuthType } from './types';
-import steem from 'steem';
+import hive from 'steem';
 import { popupCenter } from './functions';
 
 export async function getAccount(username: string) {
     try {
-        const user = await steem.api.getAccountsAsync([username]);
+        const user = await hive.api.getAccountsAsync([username]);
     
         return user && user.length > 0 ? user[0] : null;
     } catch (e) {

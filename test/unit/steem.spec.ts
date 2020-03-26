@@ -2,7 +2,7 @@
 import { getAccount, hiveSignerJson, hiveSignerJsonId, steemConnectTransfer } from 'common/hive';
 import * as functions from 'common/functions';
 
-import steem from 'steem';
+import hive from 'steem';
 
 jest.mock('steem');
 
@@ -14,7 +14,7 @@ describe('Hive', () => {
     });
 
     test('getAccount returns a found user', async () => {
-        steem.api.getAccountsAsync.mockReturnValue(Promise.resolve([{ username: 'beggars' }]));
+        hive.api.getAccountsAsync.mockReturnValue(Promise.resolve([{ username: 'beggars' }]));
 
         const user = await getAccount('beggars');
 
@@ -22,7 +22,7 @@ describe('Hive', () => {
     });
 
     test('getAccount cannot find a user', async () => {
-        steem.api.getAccountsAsync.mockReturnValue(Promise.resolve([]));
+        hive.api.getAccountsAsync.mockReturnValue(Promise.resolve([]));
 
         const user = await getAccount('fsdfsdf');
 
@@ -30,7 +30,7 @@ describe('Hive', () => {
     });
 
     test('getAccount is rejected', async () => {
-        steem.api.getAccountsAsync.mockReturnValue(Promise.reject('There was a problem'));
+        hive.api.getAccountsAsync.mockReturnValue(Promise.reject('There was a problem'));
 
         await expect(getAccount('doesnotexist123')).rejects.toStrictEqual(new Error('There was a problem'));
     });
