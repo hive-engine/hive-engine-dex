@@ -12,7 +12,7 @@ interface EnvironmentInterface {
     NODE_API_URL: string;
     HISTORY_API: string;
     SCOT_API: string;
-    hivepAccount: string;
+    hivePegAccount: string;
     nativeToken: string;
     disabledTokens: string[];
     peggedToken: string;

@@ -1031,7 +1031,7 @@ export class HiveEngine {
                     toast.message = this.i18n.tr('withdrawHiveSuccess', {
                         ns: 'notifications',
                         from: username,
-                        to: environment.hivepAccount,
+                        to: environment.hivePegAccount,
                         amount,
                         jsonData: JSON.stringify(transaction_data)
                     });
@@ -1045,7 +1045,7 @@ export class HiveEngine {
                     toast.message = this.i18n.tr('withdrawHiveError', {
                         ns: 'notifications',
                         from: username,
-                        to: environment.hivepAccount,
+                        to: environment.hivePegAccount,
                         amount,
                         jsonData: JSON.stringify(transaction_data)
                     });
@@ -1074,7 +1074,7 @@ export class HiveEngine {
             };
 
             if (window.steem_keychain) {
-                const deposit = await requestTransfer(username, environment.hivepAccount, amount, JSON.stringify(transaction_data), 'HIVE');
+                const deposit = await requestTransfer(username, environment.hivePegAccount, amount, JSON.stringify(transaction_data), 'HIVE');
 
                 if (deposit && deposit.success && deposit.result) {
                     try {
@@ -1084,7 +1084,7 @@ export class HiveEngine {
 
                         toast.message = this.i18n.tr('depositHiveSuccess', {
                             from: username,
-                            to: environment.hivepAccount,
+                            to: environment.hivePegAccount,
                             amount,
                             memo: JSON.stringify(transaction_data),
                             ns: 'notifications'
@@ -1098,7 +1098,7 @@ export class HiveEngine {
 
                         toast.message = this.i18n.tr('depositHiveError', {
                             from: username,
-                            to: environment.hivepAccount,
+                            to: environment.hivePegAccount,
                             amount,
                             memo: JSON.stringify(transaction_data),
                             ns: 'notifications'
@@ -1112,7 +1112,7 @@ export class HiveEngine {
                     resolve(false);
                 }
             } else {
-                steemConnectTransfer(username, environment.hivepAccount, `${amount} HIVE`, JSON.stringify(transaction_data), () => {
+                steemConnectTransfer(username, environment.hivePegAccount, `${amount} HIVE`, JSON.stringify(transaction_data), () => {
                     resolve(true);
                 });
             }
