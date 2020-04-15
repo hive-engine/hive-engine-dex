@@ -88,7 +88,7 @@ describe('Functions', () => {
     });
 
     test('usdFormat gets steem price from window object', () => {
-        window.steem_price = 0.1354;
+        window.hive_price = 0.1354;
         
         const returnedValue = usdFormat(0.7, null);
 
@@ -160,7 +160,7 @@ describe('Functions', () => {
     });
 
     test('getHivePrice should return mock steem price', async () => {
-        fetchMock.mockResponseOnce(JSON.stringify({ steem_price: 0.389283 }));
+        fetchMock.mockResponseOnce(JSON.stringify({ hive_price: 0.389283 }));
 
         const response = await getHivePrice();
         expect(response).toEqual(0.389283)

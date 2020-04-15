@@ -484,8 +484,8 @@ export async function loadUserBalances(account: string, limit = 1000, offset = 0
         balances.sort(
             (a, b) =>
                 parseFloat(b.balance) * b?.lastPrice ??
-                0 * window.steem_price - parseFloat(b.balance) * a?.lastPrice ??
-                0 * window.steem_price,
+                0 * window.hive_price - parseFloat(b.balance) * a?.lastPrice ??
+                0 * window.hive_price,
         );
 
         return balances;

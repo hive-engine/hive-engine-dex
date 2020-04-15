@@ -30,7 +30,7 @@ export async function hiveSignerJson(username: string, auth_type: AuthType, data
     popupCenter(url, 'steemconnect', 500, 560);
 
     if (callback) {
-        window._sc_callback = callback;
+        window._hs_callback = callback;
     }
 }
 
@@ -50,7 +50,7 @@ export async function hiveSignerJsonId(username: string, auth_type: AuthType, id
 
     popupCenter(url, 'steemconnect', 500, 560);
 
-    this._sc_callback = callback;
+    this._hs_callback = callback;
 }
 
 export async function steemConnectTransfer(from: string, to: string, amount: string, memo: string, callback: any) {
@@ -61,5 +61,5 @@ export async function steemConnectTransfer(from: string, to: string, amount: str
     url += '&memo=' + encodeURI(memo);
 
     popupCenter(url, 'steemconnect', 500, 560);
-    window._sc_callback = callback;
+    window._hs_callback = callback;
 }

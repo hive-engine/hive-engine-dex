@@ -45,12 +45,12 @@ export function addCommas(nStr, currency?) {
     return x1 + x2;
 }
 
-export function usdFormat(val, decimal_limit?, steemPrice?, withoutFormatting = false) {
-    if (!steemPrice) {
-        steemPrice = window.steem_price;
+export function usdFormat(val, decimal_limit?, hivePrice?, withoutFormatting = false) {
+    if (!hivePrice) {
+        hivePrice = window.hive_price;
     }
 
-    const usd = val * steemPrice;
+    const usd = val * hivePrice;
 
     if (decimal_limit != null && !isNaN(parseInt(decimal_limit))) {
         if (withoutFormatting) {
@@ -146,11 +146,11 @@ export async function getHivePrice() {
 
         const response = await request.json();
 
-        window.steem_price = parseFloat(response.steem_price);
+        window.hive_price = parseFloat(response.steem_price);
 
-        return window.steem_price;
+        return window.hive_price;
     } catch {
-        window.steem_price = 0;
+        window.hive_price = 0;
 
         return 0;
     }

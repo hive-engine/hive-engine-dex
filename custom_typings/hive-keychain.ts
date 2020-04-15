@@ -1,4 +1,4 @@
-// Copyright (c) 2019 Dwayne Charrington <dwaynecharrington@gmail.com>
+// Copyright (c) 2020 Dwayne Charrington <dwaynecharrington@gmail.com>
 // This code is licensed under MIT license (see LICENSE for details)
 
 declare namespace HiveKeychain {
@@ -133,8 +133,8 @@ declare namespace HiveKeychain {
     }    
 }
 
-declare const steem_keychain: HiveKeychain.Keychain;
+declare const hive_keychain: HiveKeychain.Keychain;
 
 interface Window {
-    steem_keychain: HiveKeychain.Keychain;
+    hive_keychain: HiveKeychain.Keychain;
 }

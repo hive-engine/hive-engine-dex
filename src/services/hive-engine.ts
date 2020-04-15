@@ -43,7 +43,7 @@ export class HiveEngine {
     public scotTokens = {};
     public steemPrice = 0;
     public storeSubscription: Subscription;
-    public _sc_callback;
+    public _hs_callback;
 
     constructor(
         @lazy(HttpClient) getHttpClient: () => HttpClient,
@@ -643,14 +643,14 @@ export class HiveEngine {
     }
 
     steemConnectCallback() {
-        if (this._sc_callback) {
+        if (this._hs_callback) {
             // Show loading
 
             setTimeout(() => {
                 // Hide loading
 
-                this._sc_callback();
-                this._sc_callback = null;
+                this._hs_callback();
+                this._hs_callback = null;
 
             }, 10000);
         }
