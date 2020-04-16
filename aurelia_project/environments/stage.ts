@@ -4,7 +4,7 @@ export const environment: Partial<EnvironmentInterface> = {
     ...baseEnvironmentConfiguration,
     debug: false,
     testing: false,
-    chainId: 'mainnet-hive',
+    chainId: 'ssc-mainnet-hive',
     RPC_URL: 'https://testapi.hive-engine.com/',
     NODE_API_URL: 'https://node-api.hive-engine.com/v1/',
 	ACCOUNTS_API_URL: 'https://api.hive-engine.com/accounts',
