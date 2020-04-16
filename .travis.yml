@@ -3,7 +3,7 @@ language: node_js
 node_js:
 - '10'
 addons:
-  ssh_known_hosts: hive-engine.com
+  ssh_known_hosts: 35.169.111.152
 deploy:
 - provider: script
   skip_cleanup: true
