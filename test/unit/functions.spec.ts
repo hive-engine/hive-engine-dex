@@ -159,13 +159,6 @@ describe('Functions', () => {
         expect(returnedValue).toBeNull();
     });
 
-    test('getHivePrice should return mock steem price', async () => {
-        fetchMock.mockResponseOnce(JSON.stringify({ hive_price: 0.389283 }));
-
-        const response = await getHivePrice();
-        expect(response).toEqual(0.389283)
-    });
-
     test('getHivePrice should return 0 if request fails', async () => {
         fetchMock.mockRejectOnce(new Error('fake error message'));
 
