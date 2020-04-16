@@ -78,3 +78,7 @@ test/coverage-jest/
 
 .npmrc
 
+
+deploy_rsa.pub
+
+deploy_rsa
