@@ -68,7 +68,7 @@ export class Nfts {
             }
         };
 
-        if (window.steem_keychain) {
+        if (window.hive_keychain) {
             const response = await customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(payload), `Enable Market`);
 
             if (response.success) {

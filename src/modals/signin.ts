@@ -30,8 +30,8 @@ export class SigninModal {
     }
 
     attached() {
-        if (window.steem_keychain) {
-            window.steem_keychain.requestHandshake(() => {
+        if (window.hive_keychain) {
+            window.hive_keychain.requestHandshake(() => {
                 this.useKeychain = true;
             });
         }

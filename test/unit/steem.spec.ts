@@ -42,7 +42,7 @@ describe('Hive', () => {
 
         hiveSignerJson('beggars', 'active', { value: 'aggroed' }, Function);
 
-        expect(spy).toHaveBeenCalledWith(expect.stringContaining('json=%7B%22value%22:%22aggroed%22%7D'), 'steemconnect', 500, 560);
+        expect(spy).toHaveBeenCalledWith(expect.stringContaining('json=%7B%22value%22:%22aggroed%22%7D'), 'hivesigner', 500, 560);
     });
 
     test('hiveSignerJson calls popupCenter with formatted arguments, posting key and url', () => {
@@ -52,7 +52,7 @@ describe('Hive', () => {
 
         hiveSignerJson('beggars', 'posting', { value: 'aggroed' }, Function);
 
-        expect(spy).toHaveBeenCalledWith(expect.stringContaining('json=%7B%22value%22:%22aggroed%22%7D'), 'steemconnect', 500, 560);
+        expect(spy).toHaveBeenCalledWith(expect.stringContaining('json=%7B%22value%22:%22aggroed%22%7D'), 'hivesigner', 500, 560);
     });
 
     test('hiveSignerJsonId calls popupCenter with formatted arguments, active key and url', () => {
@@ -65,7 +65,7 @@ describe('Hive', () => {
         const url =
             'https://hivesigner.com/sign/custom-json?required_posting_auths=%5B%5D&required_auths=%5B%22beggars%22%5D&authority=active&id=test&json=%7B%22value%22:%22aggroed%22%7D';
 
-        expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
+        expect(spy).toHaveBeenCalledWith(url, 'hivesigner', 500, 560);
     });
 
     test('hiveSignerJsonId calls popupCenter with formatted arguments, posting key and url', () => {
@@ -78,7 +78,7 @@ describe('Hive', () => {
         const url =
             'https://hivesigner.com/sign/custom-json?required_posting_auths=%5B%22beggars%22%5D&id=test&json=%7B%22value%22:%22aggroed%22%7D';
 
-        expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
+        expect(spy).toHaveBeenCalledWith(url, 'hivesigner', 500, 560);
     });
 
     test('steemConnectTransfer creates transaction url for steem connect', () => {
@@ -90,6 +90,6 @@ describe('Hive', () => {
 
         const url = 'https://hivesigner.com/sign/transfer?&from=beggars&to=aggroed&amount=1.000%20HIVE&memo=Test';
 
-        expect(spy).toHaveBeenCalledWith(url, 'steemconnect', 500, 560);
+        expect(spy).toHaveBeenCalledWith(url, 'hivesigner', 500, 560);
     });
 });

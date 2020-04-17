@@ -96,11 +96,11 @@ export class HiveEngine {
     async login(username: string, key?: string): Promise<unknown> {
         // eslint-disable-next-line no-async-promise-executor
         return new Promise(async (resolve) => {
-            if (window.steem_keychain && !key) {
+            if (window.hive_keychain && !key) {
                 // Get an encrypted memo only the user can decrypt with their private key
                 const encryptedMemo = await this.authService.getUserAuthMemo(username) as string;
 
-                window.steem_keychain.requestVerifyKey(username, encryptedMemo, 'Posting', async response => {
+                window.hive_keychain.requestVerifyKey(username, encryptedMemo, 'Posting', async response => {
                     if (response.error) {
                         const toast = new ToastMessage();
 
@@ -290,7 +290,7 @@ export class HiveEngine {
         const username = this.getUser();
         let claimTokenResult = false;
 
-        if (window && window.steem_keychain) {
+        if (window && window.hive_keychain) {
             const response = await customJson(username, 'scot_claim_token', 'Posting', JSON.stringify(claimData), displayName);
 
             if (response.success && response.result) {
@@ -341,8 +341,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Enable Token Delegation', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Enable Token Delegation', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -405,7 +405,7 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
+            if (window && window.hive_keychain) {
                 steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Enable Token Staking', async (response) => {
 
                     if (response.success && response.result) {
@@ -469,8 +469,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Stake Token', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Stake Token', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -536,8 +536,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Unstake Token', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Unstake Token', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -601,8 +601,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Cancel Unstake Tokens', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Cancel Unstake Tokens', async (response) => {
                     if (response.success && response.result) {
                         try {
                             await checkTransaction(response.result.id, 3);
@@ -708,8 +708,8 @@ export class HiveEngine {
 
             console.log('SENDING: ' + symbol);
 
-            if (window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Token Transfer: ' + symbol, async (response) => {
+            if (window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Token Transfer: ' + symbol, async (response) => {
                     if (response.success && response.result) {
                         try {
                             await checkTransaction(response.result.id, 3);
@@ -830,8 +830,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Token Issue: ' + symbol, async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Token Issue: ' + symbol, async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -896,8 +896,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Update Token Precision', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Update Token Precision', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -962,8 +962,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Update Token Metadata', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Update Token Metadata', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -1019,7 +1019,7 @@ export class HiveEngine {
             }
         };
 
-        if (window.steem_keychain) {
+        if (window.hive_keychain) {
             const withdraw = await customJson(username, environment.chainId, 'Active', JSON.stringify(transaction_data), 'Withdraw HIVE');
 
             if (withdraw && withdraw.success && withdraw.result) {
@@ -1073,7 +1073,7 @@ export class HiveEngine {
                 }
             };
 
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 const deposit = await requestTransfer(username, environment.hivePegAccount, amount, JSON.stringify(transaction_data), 'HIVE');
 
                 if (deposit && deposit.success && deposit.result) {
@@ -1192,8 +1192,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Delegate Token', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Delegate Token', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -1259,8 +1259,8 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Undelegate Token', async (response) => {
+            if (window && window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Undelegate Token', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -1325,7 +1325,7 @@ export class HiveEngine {
                 }
             };
 
-            if (window && window.steem_keychain) {
+            if (window && window.hive_keychain) {
                 const buyBeeRes = await requestTransfer(username, 'hive-engine', toFixedNoRounding(amount, 3), JSON.stringify(transactionData), 'HIVE');
 
                 if (buyBeeRes && buyBeeRes.success && buyBeeRes.result) {

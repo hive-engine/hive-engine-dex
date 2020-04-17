@@ -100,10 +100,10 @@ export async function getFormattedCoinPairs() {
     const pairs = await loadCoinPairs();
 
     let tokenPairs = [];
-    const nonPeggedCoins = coins.filter(x => x.coin_type !== 'steemengine');
+    const nonPeggedCoins = coins.filter(x => x.coin_type !== 'hiveengine');
 
-    const steem = { name: 'HIVE', symbol: 'HIVE', pegged_token_symbol: 'SWAP.HIVE' };
-    tokenPairs.push(steem);
+    const hive = { name: 'HIVE', symbol: 'HIVE', pegged_token_symbol: 'SWAP.HIVE' };
+    tokenPairs.push(hive);
 
     for (const x of nonPeggedCoins) {
         // find pegged coin for each non-pegged coin

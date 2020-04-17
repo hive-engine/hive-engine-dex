@@ -169,6 +169,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         contentBase: outDir,
         historyApiFallback: true,
         http2: true,
+        stats: 'errors-only'
     },
     devtool: production ? 'source-maps' : 'inline-source-map',
     module: {

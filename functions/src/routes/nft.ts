@@ -8,8 +8,8 @@ export const nftRouter = express.Router();
 import { Storage } from '@google-cloud/storage';
 const storage = new Storage();
 
-const bucket = storage.bucket('steem-engine-dex.appspot.com', {
-    userProject: 'steem-engine-dex'
+const bucket = storage.bucket('hive-engine.appspot.com', {
+    userProject: 'hive-engine'
 });
 
 // @ts-ignore
@@ -76,7 +76,7 @@ nftRouter.post('/upload', uploadMiddleware, async (req: express.Request, res: ex
         const token = await loadNft(symbol);
 
         // User checks out
-        if (decodedToken && decodedToken.aud === 'steem-engine-dex') {
+        if (decodedToken && decodedToken.aud === 'hive-engine') {
             try {
                 const username = decodedToken.uid;
 

@@ -1,5 +1,5 @@
 'use strict';
 
-const steem = jest.genMockFromModule('steem'); 
+const dhive = jest.genMockFromModule('@hivechain/dhive'); 
 
-export default steem;
+export default dhive;

@@ -178,8 +178,8 @@ export function createTransaction(username: string, contractName: string, contra
             contractPayload: payload
         };
     
-        if (window.steem_keychain) {
-            window.steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), title, async (response) => {
+        if (window.hive_keychain) {
+            window.hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), title, async (response) => {
                 if (response.success && response.result) {
                     try {
                         const transaction = await checkTransaction(response.result.id, 3);    

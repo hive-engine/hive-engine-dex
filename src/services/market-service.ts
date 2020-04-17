@@ -23,7 +23,7 @@ export class MarketService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Place buy order`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -47,7 +47,7 @@ export class MarketService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Place sell order`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -69,7 +69,7 @@ export class MarketService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Change sell price`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -90,7 +90,7 @@ export class MarketService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Cancel order`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {

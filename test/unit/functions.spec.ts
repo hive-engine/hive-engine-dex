@@ -230,12 +230,12 @@ describe('Functions', () => {
     test('create sell transaction through keychain and no successful response', async () => {
         const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'BEE' }, 'Sell', 'sellSuccess', 'errorSuccess');
 
-        expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
+        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
         expect(response).toBeFalsy();
     });
 
     test('create sell transaction through keychain and successful response', async () => {
-        (window.steem_keychain.requestCustomJson as any) = jest.fn().mockImplementation((username, jsonId, keyType, jsonData, displayName, callback) => {
+        (window.hive_keychain.requestCustomJson as any) = jest.fn().mockImplementation((username, jsonId, keyType, jsonData, displayName, callback) => {
             callback({
                 result: {
                     id: '984923j'
@@ -250,7 +250,7 @@ describe('Functions', () => {
 
         const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'BEE' }, 'Sell', 'sellSuccess', 'errorSuccess');
 
-        expect(window.steem_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
+        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
         expect(response).not.toBeFalsy();
     });
 

@@ -8,7 +8,7 @@ import * as serviceAccount from './steem-engine-dex-firebase-adminsdk-qldnz-94f3
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as any),
-    databaseURL: "https://steem-engine-dex.firebaseio.com"
+    databaseURL: "https://hive-engine.firebaseio.com"
 });
 
 import { authRouter } from './routes/auth';

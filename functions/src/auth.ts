@@ -1,19 +1,19 @@
 import * as Crypto from 'crypto-js';
-import * as hive from 'steem';
+import { Client } from '@hivechain/dhive';
 import * as uuidv4 from 'uuid/v4';
 
 import * as functions from 'firebase-functions';
 
-hive.api.setOptions({url: 'https://api.openhive.network'});
+const client = new Client(['https://anyx.io', 'https://api.openhive.network']);
 
 export class Auth {
     static async generateMemo(username: string) {
         const encryptedMessage = Crypto.AES.encrypt(`${username}::${uuidv4()}`, functions.config().keys.aes).toString();
 
         try {
-            const res = await hive.api.getAccountsAsync([username]);
+            const res = await client.database.getAccounts([username]);
 
-            const encryptedMemo = hive.memo.encode(functions.config().keys.steem, res[0].posting.key_auths[0][0], `#${encryptedMessage}`);
+            const encryptedMemo = client.memo.encode(functions.config().keys.steem, res[0].posting.key_auths[0][0], `#${encryptedMessage}`);
 
             return encryptedMemo;
         } catch (e) {

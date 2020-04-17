@@ -8,8 +8,8 @@ export const documentRouter = express.Router();
 import { Storage } from '@google-cloud/storage';
 const storage = new Storage();
 
-const userDocs = storage.bucket('steem-engine-dex.appspot.com', {
-    userProject: 'steem-engine-dex'
+const userDocs = storage.bucket('hive-engine.appspot.com', {
+    userProject: 'hive-engine'
 });
 
 const firestore = admin.firestore();
@@ -48,7 +48,7 @@ documentRouter.post('/upload', uploadMiddleware, async (req: express.Request, re
         const decodedToken = await admin.auth().verifyIdToken(authToken);
 
         // User checks out
-        if (decodedToken && decodedToken.aud === 'steem-engine-dex') {
+        if (decodedToken && decodedToken.aud === 'hive-engine') {
             // Username from token
             const username = decodedToken.uid;
 

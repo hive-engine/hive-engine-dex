@@ -247,7 +247,7 @@ export class NftService {
                 };
             }
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Issue NFT Token ${symbol}`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -271,7 +271,7 @@ export class NftService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Transfer NFT Token ${symbol} ${id}`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -319,8 +319,8 @@ export class NftService {
                 };
             }            
 
-            if (window.steem_keychain) {
-                window.steem_keychain.requestCustomJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), 'Update Property Definition', async (response) => {
+            if (window.hive_keychain) {
+                window.hive_keychain.requestCustomJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), 'Update Property Definition', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -372,7 +372,7 @@ export class NftService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Change NFT Ownership`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -394,7 +394,7 @@ export class NftService {
                 }
             };
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 return resolve(customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(transactionData), `Burn NFT Token ${symbol} ${id}`));
             } else {
                 hiveSignerJson(this.se.getUser(), 'active', transactionData, () => {
@@ -421,9 +421,9 @@ export class NftService {
                 return acc;
             }, []);
     
-            if (window.steem_keychain) {
+            if (window.hive_keychain) {
                 try {
-                    window.steem_keychain.requestCustomJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(payloads), `Add NFT Properties ${symbol}`, async (response) => {
+                    window.hive_keychain.requestCustomJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(payloads), `Add NFT Properties ${symbol}`, async (response) => {
 
                         if (response.success && response.result) {
                             try {                                

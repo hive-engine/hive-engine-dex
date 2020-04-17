@@ -46,7 +46,7 @@ export class NftEnableModal {
             }
         };
 
-        if (window.steem_keychain) {
+        if (window.hive_keychain) {
             const response = await customJson(this.se.getUser(), environment.chainId, 'Active', JSON.stringify(payload), `Set Group By Properties`);
 
             if (response.success) {

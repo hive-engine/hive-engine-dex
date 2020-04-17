@@ -27,7 +27,7 @@ export async function hiveSignerJson(username: string, auth_type: AuthType, data
     url += '&id=' + environment.chainId;
     url += '&json=' + encodeURI(JSON.stringify(data));
 
-    popupCenter(url, 'steemconnect', 500, 560);
+    popupCenter(url, 'hivesigner', 500, 560);
 
     if (callback) {
         window._hs_callback = callback;
@@ -48,18 +48,18 @@ export async function hiveSignerJsonId(username: string, auth_type: AuthType, id
     url += '&id=' + id;
     url += '&json=' + encodeURI(JSON.stringify(data));
 
-    popupCenter(url, 'steemconnect', 500, 560);
+    popupCenter(url, 'hivesigner', 500, 560);
 
     this._hs_callback = callback;
 }
 
-export async function steemConnectTransfer(from: string, to: string, amount: string, memo: string, callback: any) {
+export async function hiveSignerTransfer(from: string, to: string, amount: string, memo: string, callback: any) {
     let url = 'https://hivesigner.com/sign/transfer?';
     url += '&from=' + encodeURI(from);
     url += '&to=' + encodeURI(to);
     url += '&amount=' + encodeURI(amount);
     url += '&memo=' + encodeURI(memo);
 
-    popupCenter(url, 'steemconnect', 500, 560);
+    popupCenter(url, 'hivesigner', 500, 560);
     window._hs_callback = callback;
 }
