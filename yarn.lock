@@ -11995,7 +11995,7 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sscjs@0.0.8:
+sscjs@^0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/sscjs/-/sscjs-0.0.8.tgz#68b7c8901b9e22cc39482a8e6d2f28eeae898cc5"
   integrity sha512-uu7zaFHUqUL5YySNrRg0MKN9PtZA356mX080ETJgGXNy7Wdc1RgwxHWbZJySTyywZRjn3BdIZRrNCEId6AS+Yw==
@@ -12057,7 +12057,7 @@ stealthy-require@^1.1.1:
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
 
-steem@^0.7.10:
+steem@^0.7.11:
   version "0.7.11"
   resolved "https://registry.yarnpkg.com/steem/-/steem-0.7.11.tgz#0e8349b4cb677b1438d929537670b028d1ef864e"
   integrity sha512-ZKOJKVZRtm3eVxJbFOjCY7HcCry8018FWQZHSB64gvzlQUJ7x3qKu0fj1kffvA9AgUjVtxNo+KV7zg/xFI1kLg==
