@@ -31,7 +31,6 @@ export class NavBar {
 
     signin() {
         this.dialogService.open({ viewModel: SigninModal }).whenClosed(response => {
-            console.log(response);
             if (!response.wasCancelled) {
                 // redirect to home if login was successfull
                 this.router.navigateToRoute('tokens');

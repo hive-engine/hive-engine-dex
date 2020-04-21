@@ -10,5 +10,5 @@ export const environment: Partial<EnvironmentInterface> = {
     ACCOUNTS_API_URL: 'https://api.hive-engine.com/accounts',
     CONVERTER_API: 'https://converter-api.hive-engine.com/api',
     nativeToken: 'BEE',
-    hivePegAccount: 'honey-swap',
+    hivePegAccount: 'honey-swap'
 };

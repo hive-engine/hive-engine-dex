@@ -13,7 +13,7 @@ import { Store } from 'aurelia-store';
 import { Subscription } from 'rxjs';
 
 import { loadTokens, checkTransaction, getFormattedCoinPairs } from 'common/hive-engine';
-import { hiveSignerJsonId, hiveSignerJson, getAccount, steemConnectTransfer } from 'common/hive';
+import { hiveSignerJsonId, hiveSignerJson, getAccount, hiveSignerTransfer } from 'common/hive';
 
 import { ToastService, ToastMessage } from './toast-service';
 import { queryParam, formatHiveAmount, getHivePrice, toFixedNoRounding } from 'common/functions';
@@ -406,7 +406,7 @@ export class HiveEngine {
             };
 
             if (window && window.hive_keychain) {
-                steem_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Enable Token Staking', async (response) => {
+                hive_keychain.requestCustomJson(username, environment.chainId, 'Active', JSON.stringify(transactionData), 'Enable Token Staking', async (response) => {
 
                     if (response.success && response.result) {
                         try {
@@ -1112,7 +1112,7 @@ export class HiveEngine {
                     resolve(false);
                 }
             } else {
-                steemConnectTransfer(username, environment.hivePegAccount, `${amount} HIVE`, JSON.stringify(transaction_data), () => {
+                hiveSignerTransfer(username, environment.hivePegAccount, `${amount} HIVE`, JSON.stringify(transaction_data), () => {
                     resolve(true);
                 });
             }

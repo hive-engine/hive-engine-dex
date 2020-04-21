@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { getAccount, hiveSignerJson, hiveSignerJsonId, steemConnectTransfer } from 'common/hive';
+import { getAccount, hiveSignerJson, hiveSignerJsonId, hiveSignerTransfer } from 'common/hive';
 import * as functions from 'common/functions';
 
 import hive from 'steem';
@@ -86,7 +86,7 @@ describe('Hive', () => {
 
         const spy = jest.spyOn(functions, 'popupCenter');
 
-        steemConnectTransfer('beggars', 'aggroed', '1.000 HIVE', 'Test', Function);
+        hiveSignerTransfer('beggars', 'aggroed', '1.000 HIVE', 'Test', Function);
 
         const url = 'https://hivesigner.com/sign/transfer?&from=beggars&to=aggroed&amount=1.000%20HIVE&memo=Test';
 
