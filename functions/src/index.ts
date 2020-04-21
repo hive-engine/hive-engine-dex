@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 
-import * as serviceAccount from './steem-engine-dex-firebase-adminsdk-qldnz-94f36e5f75.json';
+import * as serviceAccount from './hive-engine-firebase-adminsdk.json';
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as any),
@@ -13,7 +13,6 @@ admin.initializeApp({
 
 import { authRouter } from './routes/auth';
 import { documentRouter } from './routes/documents';
-import { nftRouter } from './routes/nft';
 
 const app = express();
 
@@ -33,7 +32,6 @@ app.use(cacheMiddleware);
 
 app.use('/', authRouter);
 app.use('/documents', documentRouter);
-app.use('/nfts', nftRouter);
 
 export const createUserRoles = functions.auth.user().onCreate((user) => {
     const customClaims: any = {
