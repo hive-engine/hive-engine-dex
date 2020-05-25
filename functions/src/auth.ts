@@ -18,7 +18,7 @@ export class Auth {
         try {
             const res = await client.database.getAccounts([username]);
 
-            const encryptedMemo = hive.memo.encode(functions.config().keys.steem, res[0].posting.key_auths[0][0], `#${encryptedMessage}`);
+            const encryptedMemo = hive.memo.encode(functions.config().keys.tribaldex, res[0].posting.key_auths[0][0], `#${encryptedMessage}`);
 
             return encryptedMemo;
         } catch (e) {

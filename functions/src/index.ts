@@ -5,7 +5,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 
 // @ts-ignore
-import * as serviceAccount from './tribaldex-d22e0-firebase-adminsdk-g0533-31a0b64d43.json';
+import * as serviceAccount from './hive-engine-firebase-adminsdk.json';
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as any),
