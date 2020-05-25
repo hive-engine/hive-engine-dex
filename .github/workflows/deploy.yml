@@ -19,6 +19,8 @@ jobs:
         node-version: '10.x'
     - name: Install npm dependencies
       run: npm install
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - name: Install Aurelia CLI
       run: npm install aurelia-cli -g
     - name: Run build task
