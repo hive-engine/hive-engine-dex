@@ -10,7 +10,7 @@ const SCOT_API = 'https://scot-api.steem-engine.com/';
 
 const http = new HttpClient();
 
-export async function request(url: string, params: any = {}) {
+export async function request(url: string, params: any = {}): Promise<any> {
     // Cache buster
     params.v = new Date().getTime();
 
