@@ -12,7 +12,7 @@ const client = new Client(['https://anyx.io', 'https://api.openhive.network']);
 hive.api.setOptions({ url: 'https://anyx.io' });
 
 export class Auth {
-    static async generateMemo(username: string) {
+    static async generateMemo(username: string): Promise<string> {
         const encryptedMessage = Crypto.AES.encrypt(`${username}::${uuidv4()}`, functions.config().keys.aes).toString();
 
         try {
@@ -26,7 +26,7 @@ export class Auth {
         }
     }
 
-    static decryptAes(string: string) {
+    static decryptAes(string: string): string[] {
         return Crypto.AES.decrypt(string, functions.config().keys.aes).toString(Crypto.enc.Utf8).split('::');
     }
 }
