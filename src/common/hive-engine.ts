@@ -6,7 +6,7 @@ import { queryParam } from 'common/functions';
 import { environment } from '../environment';
 import { ssc } from './ssc';
 
-const SCOT_API = 'https://scot-api.hive-engine.com/';
+const SCOT_API = 'https://scot-api.steem-engine.com/';
 
 const http = new HttpClient();
 
