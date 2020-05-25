@@ -144,7 +144,7 @@ export class WithdrawModal {
                 this.getDepositInfo();
 
                 if (this.depositInfo) {
-                    result = this.se.sendToken(this.token.pegged_token_symbol, this.depositInfo.account, amountFixed, this.depositInfo.memo);
+                    result = this.se.sendToken(this.token.pegged_token_symbol, this.depositInfo.account, amountFixed as unknown as number, this.depositInfo.memo);
                 }
             }
 

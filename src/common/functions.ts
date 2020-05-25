@@ -45,18 +45,18 @@ export function addCommas(nStr, currency?) {
     return x1 + x2;
 }
 
-export function usdFormat(val, decimal_limit?, hivePrice?, withoutFormatting = false) {
+export function usdFormat(val: number, decimal_limit?: string | number, hivePrice?: number, withoutFormatting = false) {
     if (!hivePrice) {
         hivePrice = window.hive_price;
     }
 
     const usd = val * hivePrice;
 
-    if (decimal_limit != null && !isNaN(parseInt(decimal_limit))) {
+    if (decimal_limit != null && !isNaN(parseInt(decimal_limit as string))) {
         if (withoutFormatting) {
-            return usd.toFixed(decimal_limit);
+            return usd.toFixed(decimal_limit as number);
         } else {
-            return '$' + addCommas(usd.toFixed(decimal_limit));
+            return '$' + addCommas(usd.toFixed(decimal_limit as number));
         }
     }
 
@@ -95,7 +95,7 @@ export function largeNumber(val) {
     }
 }
 
-export function popupCenter(url, title, w, h) {
+export function popupCenter(url: string, title: string, w: string | number, h: string | number) {
     /* istanbul ignore next */
     const dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
 
@@ -109,9 +109,9 @@ export function popupCenter(url, title, w, h) {
     const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
     const systemZoom = width / window.screen.availWidth;
-    const left = (width - w) / 2 / systemZoom + dualScreenLeft
-    const top = (height - h) / 2 / systemZoom + dualScreenTop
-    const newWindow = window.open(url, title, 'scrollbars=yes, width=' + w / systemZoom + ', height=' + h / systemZoom + ', top=' + top + ', left=' + left);
+    const left = (width - (w as number)) / 2 / systemZoom + dualScreenLeft
+    const top = (height - (h as number)) / 2 / systemZoom + dualScreenTop
+    const newWindow = window.open(url, title, 'scrollbars=yes, width=' + (w as number) / systemZoom + ', height=' + (h as number) / systemZoom + ', top=' + top + ', left=' + left);
 
     if (newWindow?.focus) {
         newWindow.focus();
@@ -156,16 +156,16 @@ export async function getHivePrice() {
     }
 }
 
-export function toFixedNoRounding(number, n) {
+export function toFixedNoRounding(number: number, n: string | number) {
     // Ref: https://helloacm.com/javascripts-tofixed-implementation-without-rounding/
     // make 3 digits without rounding e.g. 3.1499 => 3.149 and 3.1 => 3.100    
     const reg = new RegExp('^-?\\d+(?:\\.\\d{0,' + n + '})?', 'g')
     const a = number.toString().match(reg)[0];
     const dot = a.indexOf('.');
     if (dot === -1) { // integer, insert decimal dot and pad up zeros
-        return a + '.' + '0'.repeat(n);
+        return a + '.' + '0'.repeat(n as number);
     }
-    const b = n - (a.length - dot) + 1;
+    const b = (n as number) - (a.length - dot) + 1;
     /* istanbul ignore next */
     return b > 0 ? (a + '0'.repeat(b)) : a;
 }
