@@ -1,4 +1,4 @@
-# Hive Engine
+# Tribaldex 
 
 The new generation is upon us.
 
@@ -74,4 +74,4 @@ The `au build --env prod` command above uses the `aurelia_project/environments/p
 
 The `au build --env stage` command above uses the `aurelia_project/environments/staging.ts` file and the `au run --watch --env stage` command above uses the `aurelia_project/environments/staging.ts` environment config.
 
-Unless you are developing on the main Hive Engine DEX or creating your own variant, you probably don't need to touch these values whatsoever.
+Unless you are developing on the main Tribaldex or creating your own variant, you probably don't need to touch these values whatsoever.
