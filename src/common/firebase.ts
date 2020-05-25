@@ -6,14 +6,14 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCXxKDQB-rHTubFtxhbmePL6h6ETCNIs54",
-    authDomain: "hive-engine.firebaseapp.com",
-    databaseURL: "https://hive-engine.firebaseio.com",
-    projectId: "hive-engine",
-    storageBucket: "hive-engine.appspot.com",
-    messagingSenderId: "281598822229",
-    appId: "1:281598822229:web:a542226c2c9a397b9b91dc",
-    measurementId: "G-97NMGCXJT5"
+    apiKey: 'AIzaSyDTgQorxwEGSXCgmQaQpI4f1lEADwTgMbk',
+    authDomain: 'tribaldex-d22e0.firebaseapp.com',
+    databaseURL: 'https://tribaldex-d22e0.firebaseio.com',
+    projectId: 'tribaldex-d22e0',
+    storageBucket: 'tribaldex-d22e0.appspot.com',
+    messagingSenderId: '884996152894',
+    appId: '1:884996152894:web:c0ef769b4556858b717b6f',
+    measurementId: 'G-EPE7FWN2MB'
 };
 
 firebase.initializeApp(firebaseConfig);
