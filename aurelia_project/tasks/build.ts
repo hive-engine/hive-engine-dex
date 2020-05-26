@@ -31,12 +31,12 @@ function onBuild(err, stats) {
     if (!CLIOptions.hasFlag('watch') && err) {
         console.error(err.stack || err);
         if (err.details) console.error(err.details);
-        //process.exit(1);
+        process.exit(1);
     } else {
         process.stdout.write(stats.toString({ colors: require('supports-color') }) + '\n');
 
         if (!CLIOptions.hasFlag('watch') && stats.hasErrors()) {
-            process.exit(1);
+            //process.exit(1);
         }
     }
 }
