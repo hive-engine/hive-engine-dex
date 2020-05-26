@@ -1,7 +1,7 @@
 # Tribaldex 
 
-![](https://github.com/hive-engine/hive-engine-dex/workflows/build-and-test/badge.svg)
-![](https://github.com/hive-engine/hive-engine-dex/workflows/deploy/badge.svg)
+![](https://github.com/hive-engine/hive-engine-dex/workflows/CI/badge.svg)
+![](https://github.com/hive-engine/hive-engine-dex/workflows/Deploy/badge.svg)
 
 The codebase for Tribaldex.
 
