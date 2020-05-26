@@ -24,7 +24,7 @@ jobs:
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - name: Run Tests
       run: npm test
-      on: [pull_request]
+      on: [push, pull_request]
       env:
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - name: Install Aurelia CLI
