@@ -24,7 +24,7 @@ jobs:
     - name: Install Aurelia CLI
       run: npm install aurelia-cli -g
     - name: Run build task
-      run: au build --env prod
+      run: au build --env prod && ls
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
