@@ -2,7 +2,7 @@ import { getFormattedCoinPairs } from 'common/hive-engine';
 import { Store } from 'aurelia-store';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue, view, PLATFORM } from 'aurelia-framework';
+import { autoinject, TaskQueue, useView, PLATFORM } from 'aurelia-framework';
 import { ValidationControllerFactory, ControllerValidateResult, ValidationRules } from 'aurelia-validation';
 import { ToastService, ToastMessage } from 'services/toast-service';
 import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
@@ -13,7 +13,7 @@ import { environment } from 'environment';
 import { toFixedNoRounding } from 'common/functions';
 
 @autoinject()
-@view(PLATFORM.moduleName('./withdraw.html'))
+@useView(PLATFORM.moduleName('./withdraw.html'))
 export class WithdrawModal {
     private environment = environment;
     private subscription: Subscription;

@@ -3,7 +3,7 @@ import { I18N } from 'aurelia-i18n';
 import { dispatchify } from 'aurelia-store';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, view, PLATFORM } from 'aurelia-framework';
+import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
 import { environment } from 'environment';
 import { ToastService } from 'services/toast-service';
@@ -12,7 +12,7 @@ import { login } from 'store/actions';
 import styles from './signin.module.css';
 
 @autoinject()
-@view(PLATFORM.moduleName('./signin.html'))
+@useView(PLATFORM.moduleName('./signin.html'))
 export class SigninModal {
     private styles = styles;
     private environment = environment;
