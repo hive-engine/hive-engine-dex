@@ -36,7 +36,7 @@ function onBuild(err, stats) {
         process.stdout.write(stats.toString({ colors: require('supports-color') }) + '\n');
 
         if (!CLIOptions.hasFlag('watch') && stats.hasErrors()) {
-            //process.exit(1);
+            process.exit(1);
         }
     }
 }
