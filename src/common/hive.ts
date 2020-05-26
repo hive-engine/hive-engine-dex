@@ -3,7 +3,7 @@ import { AuthType } from './types';
 import hive from 'steem-js-patched';
 import { popupCenter } from './functions';
 
-export async function getAccount(username: string): any {
+export async function getAccount(username: string): Promise<any> {
     try {
         const user = await hive.api.getAccountsAsync([username]);
     

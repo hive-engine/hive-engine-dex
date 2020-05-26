@@ -1,10 +1,11 @@
 import { getFormattedCoinPairs } from 'common/hive-engine';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue } from 'aurelia-framework';
+import { autoinject, TaskQueue, PLATFORM, view } from 'aurelia-framework';
 import { environment } from 'environment';
 
 @autoinject()
+@view(PLATFORM.moduleName('./deposit.html'))
 export class DepositModal {
     private environment = environment;
     private user: any;

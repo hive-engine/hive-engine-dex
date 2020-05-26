@@ -3,7 +3,7 @@ import { I18N } from 'aurelia-i18n';
 import { dispatchify } from 'aurelia-store';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, view, PLATFORM } from 'aurelia-framework';
 import { Subscription } from 'rxjs';
 import { environment } from 'environment';
 import { ToastService } from 'services/toast-service';
@@ -12,6 +12,7 @@ import { login } from 'store/actions';
 import styles from './signin.module.css';
 
 @autoinject()
+@view(PLATFORM.moduleName('./signin.html'))
 export class SigninModal {
     private styles = styles;
     private environment = environment;
@@ -28,7 +29,7 @@ export class SigninModal {
         this.controller.settings.centerHorizontalOnly = true;
     }
 
-    attached() {
+    attached(): void {
         if (window.hive_keychain) {
             window.hive_keychain.requestHandshake(() => {
                 this.useKeychain = true;
@@ -36,7 +37,7 @@ export class SigninModal {
         }
     }
 
-    async keychainSignIn() {
+    async keychainSignIn(): Promise<void> {
         try {
             this.loading = true;
 
@@ -52,7 +53,7 @@ export class SigninModal {
         }
     }
 
-    async keySignIn() {
+    async keySignIn(): Promise<void>  {
         try {
             this.loading = true;
 
