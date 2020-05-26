@@ -1,44 +1,43 @@
-name: Node CI
+name: CI
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  build:
-
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
+    env:
+      FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      ARGS: "-rltgoDzvO"
+      SOURCE: "dist/"
+      REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      TARGET: ${{ secrets.REMOTE_TARGET }}
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: Install npm dependencies
-      run: npm install
-      on: [push, pull_request]
-      env:
-        FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
-    - name: Run Tests
-      run: npm test
-      on: [push, pull_request]
-      env:
-        FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
-    - name: Install Aurelia CLI
-      run: npm install aurelia-cli -g
-    - name: Run build task
-      run: au build --env prod
-      on: [push]
-    - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@v2.1.2
-      on: [push]
-      env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rltgoDzvO"
-          SOURCE: "dist/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+      - uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Install Aurelia CLI
+        run: npm install aurelia-cli -g
+
+      - name: Run build task
+        run: au build --env prod
+
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.1.2
