@@ -2,7 +2,7 @@ import { sendMarketOrder } from 'common/market';
 import { Store } from 'aurelia-store';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue } from 'aurelia-framework';
+import { autoinject, TaskQueue, view, PLATFORM } from 'aurelia-framework';
 import { pluck } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { environment } from 'environment';
@@ -16,6 +16,7 @@ interface IOrder {
 }
 
 @autoinject()
+@view(PLATFORM.moduleName('./market-order.html'))
 export class MarketOrderModal {
     private environment = environment;
     private subscription: Subscription;

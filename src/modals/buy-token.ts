@@ -1,7 +1,7 @@
 import { dispatchify, Store } from 'aurelia-store';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
+import { autoinject, TaskQueue, bindable, view, PLATFORM } from 'aurelia-framework';
 import { environment } from 'environment';
 import { Subscription } from 'rxjs';
 import { ValidationControllerFactory, ControllerValidateResult, ValidationRules } from 'aurelia-validation';
@@ -14,6 +14,7 @@ import { getAccount } from 'common/hive';
 import { stateTokensOnlyPegged } from 'common/functions';
 
 @autoinject()
+@view(PLATFORM.moduleName('./buy-token.html'))
 export class BuyTokenModal {
     @bindable amount;
 
