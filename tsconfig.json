@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "removeComments": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "lib": [
       "dom",
       "esnext"
