@@ -35,7 +35,7 @@
         "datatables.net-bs4": "^1.10.20",
         "datatables.net-plugins": "1.10.19",
         "datatables.net-responsive-bs4": "^2.2.3",
-        "firebase": "^7.14.0",
+        "firebase": "^7.14.5",
         "flag-icon-css": "^3.4.6",
         "flatpickr": "^4.6.3",
         "i18next-browser-languagedetector": "^4.1.1",
