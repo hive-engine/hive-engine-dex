@@ -1,6 +1,9 @@
 # Tribaldex 
 
-The new generation is upon us.
+![](https://github.com/hive-engine/hive-engine-dex/workflows/build-and-test/badge.svg)
+![](https://github.com/hive-engine/hive-engine-dex/workflows/deploy/badge.svg)
+
+The codebase for Tribaldex.
 
 ## Installation / Setup
 
