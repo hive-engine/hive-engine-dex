@@ -7,7 +7,7 @@ import { environment } from 'environment';
 import firebase from 'firebase/app';
 
 import SSC from 'sscjs';
-import hive from 'steem';
+import hive from 'steem-js-patched';
 
 import { Store } from 'aurelia-store';
 import { Subscription } from 'rxjs';

@@ -2,9 +2,9 @@
 import { getAccount, hiveSignerJson, hiveSignerJsonId, hiveSignerTransfer } from 'common/hive';
 import * as functions from 'common/functions';
 
-import hive from 'steem';
+import hive from 'steem-js-patched';
 
-jest.mock('steem');
+jest.mock('steem-js-patched');
 
 describe('Hive', () => {
     afterEach(() => {

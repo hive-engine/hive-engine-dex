@@ -10,7 +10,7 @@ import { ssc } from 'common/ssc';
 describe('Functions', () => {
 
     beforeEach(() => {
-        (window as any).steem_keychain = {
+        (window as any).hive_keychain = {
             requestCustomJson: jest
                 .fn()
                 .mockImplementation((username, jsonId, keyType, jsonData, displayName, callback) => {

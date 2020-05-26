@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 jest.mock('sscjs');
-jest.mock('steem');
+jest.mock('steem-js-patched');
 jest.mock('izitoast');
 
 jest.mock('moment', () => {
@@ -21,7 +21,7 @@ import { ssc } from 'common/ssc';
 describe('Market', () => {
 
     beforeEach(() => {
-        (window as any).steem_keychain = {
+        (window as any).hive_keychain = {
             requestCustomJson: jest
                 .fn()
                 .mockImplementation((username, jsonId, keyType, jsonData, displayName, callback) => {

@@ -53,7 +53,7 @@
         "shortid": "^2.2.15",
         "slick-carousel": "^1.8.1",
         "sscjs": "^0.0.8",
-        "steem": "^0.7.11",
+        "steem-js-patched": "^1.0.0",
         "trim-character": "^2.0.1",
         "typewriter-effect": "^2.12.1",
         "typit": "^0.6.4",

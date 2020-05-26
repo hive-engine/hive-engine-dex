@@ -8,7 +8,7 @@ import { Container } from 'aurelia-framework';
 import { HiveEngine } from 'services/hive-engine';
 
 jest.mock('sscjs');
-jest.mock('steem');
+jest.mock('steem-js-patched');
 
 describe('Hive Engine Service', () => {
     let sut: HiveEngine;
@@ -22,7 +22,7 @@ describe('Hive Engine Service', () => {
     beforeEach(() => {
         sut = new HiveEngine(mockHttp, mockI18n, store, mockToast, mockAuth);
 
-        (window as any).steem_keychain = {
+        (window as any).hive_keychain = {
             requestCustomJson: jest
                 .fn()
                 .mockImplementation((username, jsonId, keyType, jsonData, displayName, callback) => {

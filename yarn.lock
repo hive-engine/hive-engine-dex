@@ -5864,7 +5864,7 @@ fined@^1.0.1:
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
 
-firebase@^7.14.0:
+firebase@^7.14.5:
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-7.14.5.tgz#cf1be9c7f0603c6c2f45f65c7d817f6b22114a4b"
   integrity sha512-1vrC1UZIVhaT7owaElQoEseP81xqRt6tHQmxRJRojn0yI3JNXrdWCFsD+26xA1eQQCwodJuMsYJLzQSScgjHuQ==
@@ -12060,10 +12060,10 @@ stealthy-require@^1.1.1:
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
 
-steem@^0.7.11:
-  version "0.7.11"
-  resolved "https://registry.yarnpkg.com/steem/-/steem-0.7.11.tgz#0e8349b4cb677b1438d929537670b028d1ef864e"
-  integrity sha512-ZKOJKVZRtm3eVxJbFOjCY7HcCry8018FWQZHSB64gvzlQUJ7x3qKu0fj1kffvA9AgUjVtxNo+KV7zg/xFI1kLg==
+steem-js-patched@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/steem-js-patched/-/steem-js-patched-1.0.0.tgz#ea9ea2db2979a1cb207e5fb20225d3130b83c795"
+  integrity sha512-+wnXZCYOfoM20BMC7NG6onif9hWLGGWNeeDy3WOBpyi15pBdjumbXzGjb+1R1SuSBeIxTmwMAClQNR7TxBzF6g==
   dependencies:
     "@steemit/rpc-auth" "^1.1.1"
     bigi "^1.4.2"

@@ -3,7 +3,7 @@ import * as functions from 'common/hive-engine';
 //import { request, loadTokenMarketHistory, checkTransaction } from 'common/steem-engine';
 
 jest.mock('sscjs');
-jest.mock('steem');
+jest.mock('steem-js-patched');
 
 import { ssc } from 'common/ssc';
 
