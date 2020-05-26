@@ -26,11 +26,11 @@ jobs:
     - name: Run build task
       run: au build --env prod
     - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@v2.1.1
+      uses: easingthemes/ssh-deploy@v2.1.2
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "dist"
+          ARGS: "-rltgoDzvO"
+          SOURCE: "dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
