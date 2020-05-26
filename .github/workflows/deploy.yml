@@ -17,14 +17,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Install Yarn
-      uses: borales/actions-yarn@v2.0.0
     - name: Install npm dependencies
-      run: yarn
+      run: npm install
       env:
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - name: Install Aurelia CLI
-      run: yarn add aurelia-cli -g
+      run: npm install aurelia-cli -g
     - name: Run build task
       run: au build --env prod
     - name: Deploy to Server
