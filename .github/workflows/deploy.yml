@@ -12,23 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
     - name: Install npm dependencies
       run: npm install
+      on: [push, pull_request]
       env:
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - name: Run Tests
       run: npm test
+      on: [pull_request]
+      env:
+        FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - name: Install Aurelia CLI
       run: npm install aurelia-cli -g
     - name: Run build task
-      run: au build --env prod && ls
+      run: au build --env prod
+      on: [push]
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.2
+      on: [push]
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rltgoDzvO"
