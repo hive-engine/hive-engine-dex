@@ -21,11 +21,11 @@ export class MyNfts {
 
     }
 
-    async activate() {
+    async activate(): Promise<void> {
         await dispatchify(getUserNfts)();
     }
 
-    sellNft(token) {
+    sellNft(token: any): void {
         this.dialogService.open({ viewModel: NftSellModal, model: token }).whenClosed(async (result) => {
             if (!result.wasCancelled) {
                 await sleep(3200);

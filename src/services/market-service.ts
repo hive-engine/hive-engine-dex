@@ -11,7 +11,7 @@ export class MarketService {
 
     }
 
-    async buy(symbol: string, nftId: string) {
+    async buy(symbol: string, nftId: string): Promise<HiveKeychain.HiveKeyChainResponse | boolean>  {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nftmarket',
@@ -33,7 +33,7 @@ export class MarketService {
         });
     }
     
-    async sell(symbol: string, nftId: string, price: string, priceSymbol: string, ) {
+    async sell(symbol: string, nftId: string, price: string, priceSymbol: string, ): Promise<HiveKeychain.HiveKeyChainResponse | boolean>  {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nftmarket',
@@ -57,7 +57,7 @@ export class MarketService {
         });
     }
     
-    async changePrice(symbol: string, nftId: string, price: string ) {
+    async changePrice(symbol: string, nftId: string, price: string ): Promise<HiveKeychain.HiveKeyChainResponse | boolean>  {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nftmarket',
@@ -79,7 +79,7 @@ export class MarketService {
         });
     }
 
-    async cancel(symbol: string, nftId: string) {
+    async cancel(symbol: string, nftId: string): Promise<HiveKeychain.HiveKeyChainResponse | boolean>  {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nftmarket',

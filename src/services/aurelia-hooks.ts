@@ -5,29 +5,29 @@ export class AureliaHooks {
   private actions = {};
   private filters = {};
 
-  addAction(name: string, callback, priority = 10) {
+  addAction(name: string, callback, priority = 10): void {
     this.actions[name] = this.actions[name] || [];
     this.actions[name].push({ priority, callback });
   }
 
-  addFilter(name: string, callback, priority = 10) {
+  addFilter(name: string, callback, priority = 10): void {
     this.filters[name] = this.filters[name] || [];
     this.filters[name].push({ priority, callback });
   }
 
-  hasAction(name: string) {
+  hasAction(name: string): boolean {
     return this.actions[name] !== undefined;
   }
 
-  hasFilter(name: string) {
+  hasFilter(name: string): boolean {
     return this.filters[name] !== undefined;
   }
 
-  getActions(name: string) {
+  getActions(name: string): { priority: number; callback: () => void; } {
     return this.actions[name];
   }
 
-  getFilters(name: string) {
+  getFilters(name: string): { priority: number; callback: () => void; } {
     return this.filters[name];
   }
 
