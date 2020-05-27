@@ -90,7 +90,7 @@ export class NftService {
         }
     }
 
-    async loadSellBook(symbol: string, account, limit = 1000, offset = 0): Promise<INftSellBook[]> {
+    async loadSellBook(symbol: string, account: string, limit = 1000, offset = 0): Promise<INftSellBook[]> {
         try {
             const params: any = {};
 
@@ -217,7 +217,7 @@ export class NftService {
         }
     }
 
-    async issue(symbol: string, feeSymbol: string, to: string, toType?: NftType, lockTokens?: any, properties?: any) {
+    async issue(symbol: string, feeSymbol: string, to: string, toType?: NftType, lockTokens?: any, properties?: any): Promise<HiveKeychain.HiveKeyChainResponse | boolean> {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nft',
@@ -281,7 +281,7 @@ export class NftService {
         });
     }
 
-    async updatePropertyDefinition(symbol: string, property: any) {
+    async updatePropertyDefinition(symbol: string, property: any): Promise<boolean> {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nft',
@@ -361,7 +361,7 @@ export class NftService {
         });
     }
 
-    async changeOwnership(symbol: string, user: string) {
+    async changeOwnership(symbol: string, user: string): Promise<HiveKeychain.HiveKeyChainResponse | boolean> {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nft',
@@ -382,7 +382,7 @@ export class NftService {
         });
     }
 
-    async burn(symbol: string, id: string) {
+    async burn(symbol: string, id: string): Promise<HiveKeychain.HiveKeyChainResponse | boolean>  {
         return new Promise((resolve) => {
             const transactionData = {
                 contractName: 'nft',
@@ -404,7 +404,7 @@ export class NftService {
         });
     }
 
-    async addProperties(symbol: string, properties: any) {
+    async addProperties(symbol: string, properties: any): Promise<boolean>  {
         return new Promise(resolve => {
             const payloads = properties.reduce((acc, value) => {
                 acc.push({
