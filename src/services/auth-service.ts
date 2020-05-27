@@ -15,7 +15,7 @@ export class AuthService {
         });
     }
 
-    async getIdToken() {
+    async getIdToken(): Promise<string> {
         return firebase.auth().currentUser.getIdToken();
     }
 

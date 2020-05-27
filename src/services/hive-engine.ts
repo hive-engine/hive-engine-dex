@@ -210,7 +210,7 @@ export class HiveEngine {
         return result;
     }
 
-    async loadPendingUndelegations(account) {
+    async loadPendingUndelegations(account): Promise<IPendingUndelegationTransaction[]> {
         let result: IPendingUndelegationTransaction[] = await this.ssc.find('tokens', 'pendingUndelegations', { account: account }, 1000, 0, '', false);
 
         if (result != null) {
@@ -227,7 +227,7 @@ export class HiveEngine {
         return result;
     }
 
-    async getScotUsertokens(account) {
+    async getScotUsertokens(account): Promise<IScotToken[]> {
         const tokens: IScotToken[] = [];
         if (!account && this.user) {
             account = this.user.name;
@@ -268,7 +268,7 @@ export class HiveEngine {
         return claimTokenResult;
     }
 
-    async claimToken(symbol: string) {
+    async claimToken(symbol: string): Promise<boolean> {
         let claimTokenResult = false;        
 
         const scotToken = this.user.scotTokens.find(function (x) { return x.symbol === symbol });
@@ -285,7 +285,7 @@ export class HiveEngine {
         return claimTokenResult;
     }
 
-    async claimTokenCall(claimData, displayName) {    
+    async claimTokenCall(claimData, displayName): Promise<boolean> {    
         const username = this.getUser();
         let claimTokenResult = false;
 
@@ -320,7 +320,7 @@ export class HiveEngine {
         return claimTokenResult;
     }
 
-    async enableDelegation(symbol: string, undelegationCooldown: string): Promise<unknown> {
+    async enableDelegation(symbol: string, undelegationCooldown: string): Promise<boolean> {
         return new Promise((resolve) => {
             // Show loading
 
@@ -383,7 +383,7 @@ export class HiveEngine {
         });
     }
 
-    async enableStaking(symbol, unstakingCooldown, numberTransactions): Promise<unknown> {
+    async enableStaking(symbol, unstakingCooldown, numberTransactions): Promise<boolean> {
         return new Promise((resolve) => {
             // Show loading
 
