@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       ARGS: "-rltgoDzvO"
       SOURCE: "dist/"
@@ -26,6 +25,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
+
+      - name: Setup FontAwesome Token
+        run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Install npm dependencies
         run: npm install
