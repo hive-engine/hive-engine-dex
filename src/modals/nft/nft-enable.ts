@@ -1,12 +1,13 @@
 import { customJson } from 'common/keychain';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue, valueConverter } from 'aurelia-framework';
+import { autoinject, TaskQueue, useView, PLATFORM } from 'aurelia-framework';
 import styles from './nft-enable.module.css';
 
 import { environment } from 'environment';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-enable.html'))
 export class NftEnableModal {
     private styles = styles;
     private token;

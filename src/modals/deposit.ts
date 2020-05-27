@@ -5,7 +5,7 @@ import { autoinject, TaskQueue, PLATFORM, useView } from 'aurelia-framework';
 import { environment } from 'environment';
 
 @autoinject()
-@useView(PLATFORM.moduleName('./deposit.html'))
+@useView(PLATFORM.moduleName('modals/deposit.html'))
 export class DepositModal {
     private environment = environment;
     private user: any;

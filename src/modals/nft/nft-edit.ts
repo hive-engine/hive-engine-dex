@@ -8,7 +8,7 @@ import { ValidationControllerFactory, ValidationController, ValidationRules } fr
 import { customJson } from 'common/keychain';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue } from 'aurelia-framework';
+import { autoinject, TaskQueue, useView, PLATFORM } from 'aurelia-framework';
 
 import styles from './nft-edit.module.css';
 
@@ -16,6 +16,7 @@ import { environment } from 'environment';
 import { loading } from 'store/actions';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-edit.html'))
 export class NftEditModal {
     private styles = styles;
     private validation: ValidationController;

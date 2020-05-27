@@ -4,9 +4,10 @@ import { sleep } from 'common/functions';
 import { loading } from 'store/actions';
 import { dispatchify } from 'aurelia-store';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-change-price.html'))
 export class NftChangeSellPriceModal {
     private symbol;
     private nftId;
