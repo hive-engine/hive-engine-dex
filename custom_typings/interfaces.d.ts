@@ -358,4 +358,5 @@ interface State {
     instances: INftInstance[];
     instance: INftInstance;
     nftSellBook: INftSellBook[];
+    sellBookMap: string[];
 }
