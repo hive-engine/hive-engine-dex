@@ -81,8 +81,7 @@ export class HiveEngine {
         return this.user?.name ?? null;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    request(url: string, params: any = {}) {
+    request(url: string, params: any = {}): Promise<Response> {
         // Cache buster
         params.v = new Date().getTime();
 
