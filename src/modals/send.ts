@@ -2,7 +2,7 @@ import { DialogController } from 'aurelia-dialog';
 import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 
 @autoinject()
-@useView(PLATFORM.moduleName('./send.html'))
+@useView(PLATFORM.moduleName('modals/send.html'))
 export class SendModal {
     private token;
     private transaction;

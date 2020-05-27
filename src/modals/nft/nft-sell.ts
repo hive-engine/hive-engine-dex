@@ -1,16 +1,15 @@
 import { MarketService } from 'services/market-service';
 import { checkTransaction } from 'common/hive-engine';
 import { sleep } from 'common/functions';
-import { loading } from 'store/actions';
-import { dispatchify } from 'aurelia-store';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 import { ValidationControllerFactory, ValidationRules, ControllerValidateResult } from 'aurelia-validation';
 import { I18N } from 'aurelia-i18n';
 import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
 import { ToastMessage, ToastService } from 'services/toast-service';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-sell.html'))
 export class NftSellModal {
     private symbol;
     private nftId;

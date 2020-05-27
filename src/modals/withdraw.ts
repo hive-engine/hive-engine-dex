@@ -13,7 +13,7 @@ import { environment } from 'environment';
 import { toFixedNoRounding } from 'common/functions';
 
 @autoinject()
-@useView(PLATFORM.moduleName('./withdraw.html'))
+@useView(PLATFORM.moduleName('modals/withdraw.html'))
 export class WithdrawModal {
     private environment = environment;
     private subscription: Subscription;

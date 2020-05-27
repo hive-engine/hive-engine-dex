@@ -14,7 +14,7 @@ import { getAccount } from 'common/hive';
 import { stateTokensOnlyPegged } from 'common/functions';
 
 @autoinject()
-@useView(PLATFORM.moduleName('./buy-token.html'))
+@useView(PLATFORM.moduleName('modals/buy-token.html'))
 export class BuyTokenModal {
     @bindable amount;
 

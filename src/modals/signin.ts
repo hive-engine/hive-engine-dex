@@ -12,7 +12,7 @@ import { login } from 'store/actions';
 import styles from './signin.module.css';
 
 @autoinject()
-@useView(PLATFORM.moduleName('./signin.html'))
+@useView(PLATFORM.moduleName('modals/signin.html'))
 export class SigninModal {
     private styles = styles;
     private environment = environment;

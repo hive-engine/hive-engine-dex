@@ -16,7 +16,7 @@ interface IOrder {
 }
 
 @autoinject()
-@useView(PLATFORM.moduleName('./market-order.html'))
+@useView(PLATFORM.moduleName('modals/market-order.html'))
 export class MarketOrderModal {
     private environment = environment;
     private subscription: Subscription;

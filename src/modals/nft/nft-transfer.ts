@@ -1,16 +1,15 @@
 import { checkTransaction } from 'common/hive-engine';
 import { sleep } from 'common/functions';
-import { loading } from 'store/actions';
-import { dispatchify } from 'aurelia-store';
 import { NftService } from 'services/nft-service';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 import { ToastService, ToastMessage } from 'services/toast-service';
 import { ValidationControllerFactory, ControllerValidateResult, ValidationRules } from 'aurelia-validation';
 import { I18N } from 'aurelia-i18n';
 import { BootstrapFormRenderer } from 'resources/bootstrap-form-renderer';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-transfer.html'))
 export class NftTransferModal {
     private token;
     private transactionTo;
