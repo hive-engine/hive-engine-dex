@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="380" height="163" viewBox="0 0 380 163">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8bc6ec"/>
+      <stop offset="1" stop-color="#9599e2"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-613 -268)">
+    <text id="TRIBALDEX" transform="translate(613 363)" fill="#fff" font-size="56" font-family="Avenir-Heavy, Avenir" font-weight="800"><tspan x="0" y="53">TRIBALDEX</tspan></text>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="72" height="72" rx="5" transform="translate(727 268)" fill="url(#linear-gradient)"/>
+    <text id="T" transform="translate(727 279)" fill="#fff" font-size="60" font-family="AlrightSans-Black, Alright Sans" font-weight="800"><tspan x="15.84" y="46">T</tspan></text>
+  </g>
+</svg>

@@ -22,9 +22,9 @@ export class OpenOrders {
         $(this.openOrdersTable).DataTable({
             "columnDefs": [
                 { "targets": 0, "responsivePriority": 1 }, // Symbol
-                { "targets": 1, "responsivePriority": 2 }, // Price (steem)
+                { "targets": 1, "responsivePriority": 2 }, // Price (Hive)
                 { "targets": 2, "responsivePriority": 3 }, // Quantity
-                { "targets": 3, "responsivePriority": 10000 }, // Total (steem)
+                { "targets": 3, "responsivePriority": 10000 }, // Total (Hive)
                 { "targets": 4, "responsivePriority": 10010 }, // Date
                 { "targets": 5, "responsivePriority": 4 }, // Actions
             ],

@@ -81,7 +81,7 @@ describe('Hive', () => {
         expect(spy).toHaveBeenCalledWith(url, 'hivesigner', 500, 560);
     });
 
-    test('steemConnectTransfer creates transaction url for steem connect', () => {
+    test('hiveSigner creates transaction url for Hivesigner', () => {
         window.open = jest.fn();
 
         const spy = jest.spyOn(functions, 'popupCenter');

@@ -124,8 +124,7 @@ section {
 }
 
 .greenBtn {
-    /*padding: .5rem 3rem;*/
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -136,7 +135,7 @@ section {
 }
 
 .greenBtn:hover {
-    background-color: #1eac38;
+    background-color: #696FE4;
 }
 
 .yellowBtn {

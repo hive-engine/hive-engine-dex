@@ -3,11 +3,11 @@ export default [
         "_id": 1,
         "issuer": "null",
         "symbol": 'BEE',
-        "name": "Hive Engine Token",
+        "name": "Tribaldex Token",
         "metadata": {
             "url": "https://hive-engine.com",
             "icon": "https://s3.amazonaws.com/steem-engine/images/icon_steem-engine_gradient.svg",
-            "desc": "BEE is the native token for the Hive Engine platform"
+            "desc": "BEE is the native token for the Tribaldex platform"
         },
         "precision": 8,
         "maxSupply": 9007199254740991,
