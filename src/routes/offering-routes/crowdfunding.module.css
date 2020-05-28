@@ -8,8 +8,9 @@
 .crowdfunding-header {
     margin-top: 30px;
 }
+
 .crowdfunding-header-title h1 {
-    color: #0048b3;
+    color: #9599E2;
     font-size: 46px;
 }
 
@@ -21,21 +22,25 @@
 .header-btns {
     display: flex;
 }
+
 @media only screen and (max-width: 468px) {
     .crowdfunding-header {
         padding-top: 30px !important;
         text-align: center;
     }
 }
+
 .header-line {
     width: 10%;
-    border-top: 3px solid #0048b3;
+    border-top: 3px solid #9599E2;
     margin-bottom: 50px;
 }
+
 .crowdfunding-header h1 {
     margin-top: 46px;
-    color: #0048b3;
+    color: #9599E2;
 }
+
 .crowdfunding-banner {
     /* background-color: #f4f7f9; */
     background: #f4f7f9;
@@ -45,16 +50,19 @@
     padding: 80px 0;
     margin: 0;
 }
+
 .crowdfunding-banner-wrapper {
     background-image: url(../../images/colorfulbg.svg);
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: cover;
 }
+
 .header-img {
     margin-bottom: -50px;
     z-index: -2;
 }
+
 .header-illustration {
     padding: 50px 0;
 }
@@ -68,23 +76,28 @@ section {
     /* margin-top: 50px; */
     padding: 30px 0px;
 }
+
 .section-header {
-    color: #0048b3;
+    color: #9599E2;
 }
+
 .div-wave {
     background: url("../../images/div-wave.svg");
     height: 100%;
     transform: scaleY(-1);
     margin-top: -30px;
 }
+
 .yellow-line {
     width: 10%;
     border-top: 3px solid rgb(166, 255, 0);
 }
+
 .divider {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
 @media only screen and (max-width: 468px) {
     .divider-xs {
         margin-top: 50px !important;
@@ -118,10 +131,12 @@ section {
         text-align: center;
     }
 }
+
 .no-margin-bottom {
     margin-bottom: 0 !important;
     margin-top: 50px;
 }
+
 @media only screen and (min-width: 767px) {
     .div-wave {
         height: 100px;
@@ -139,9 +154,11 @@ section {
     border-radius: 0.25rem;
     min-width: 76px;
 }
+
 .greenBtn:hover {
     background-color: #1eac38;
 }
+
 .askBtn {
     padding: 0.5rem 3rem;
     background-color: rgb(255, 196, 0);
@@ -153,9 +170,11 @@ section {
     border-radius: 0.25rem;
     min-width: 76px;
 }
+
 .askBtn:hover {
     background-color: rgb(255, 139, 0);
 }
+
 .yellowBtn {
     padding: 0.5rem 3rem;
     background-color: #ffc400;
@@ -167,12 +186,14 @@ section {
     border-radius: 21px;
     min-width: 76px;
 }
+
 .yellowBtn:hover {
     background-color: rgb(218, 167, 3);
 }
+
 .tranBtn {
     padding: 0.5rem 2rem;
-    background-color:transparent ;
+    background-color: transparent;
     border: 2px solid #010f22;
     color: #010f22;
     font-weight: bold;
@@ -182,13 +203,15 @@ section {
     border-radius: 8px;
     min-width: 76px;
 }
+
 .tranBtn:hover {
     background-color: rgb(9, 2, 48);
     color: #fff!important;
 }
+
 .tran2Btn {
     padding: 0.5rem 2rem;
-    background-color:transparent ;
+    background-color: transparent;
     border: 2px solid #3c8d16;
     color: #3c8d16;
     font-weight: bold;
@@ -198,20 +221,23 @@ section {
     border-radius: 8px;
     min-width: 76px;
 }
+
 .tran2Btn:hover {
     background-color: #3c8d16;
     color: #fff!important;
 }
 
 .font-awesome-icons {
-    color: #0048b3;
+    color: #9599E2;
     font-size: 12px;
     padding: 9px 0 0 -2px;
     transition: 0.1s all ease-out;
 }
+
 .cards-wrapper {
     display: flex;
 }
+
 .card1 {
     background-color: #fcfcfc;
     border-radius: 22px;
@@ -224,6 +250,7 @@ section {
     box-shadow: 13px 9px 18px -9px rgba(0, 0, 0, 0.2);
     transition: 0.1s all ease-out;
 }
+
 .card2 {
     background-color: #fcfcfc;
     border-radius: 22px;
@@ -236,6 +263,7 @@ section {
     box-shadow: -9px 9px 18px -9px rgba(0, 0, 0, 0.2);
     transition: 0.1s all ease-out;
 }
+
 .explore-cards {
     display: block;
 }
@@ -258,36 +286,44 @@ section {
     margin-top: 3px;
     box-shadow: 0 4px 18px 8px rgba(204, 207, 216, 0.651);
 }
+
 .explore-card-body {
     padding: 10px;
 }
+
 .explore-card p {
     margin-bottom: 0;
 }
+
 .explore-img {
     width: 100%;
     min-height: 230px;
     image-rendering: optimizeQuality;
 }
+
 .explore-pfa {
     display: flex !important;
     margin-top: 12px;
     margin-bottom: 20px;
 }
+
 .what {
     text-transform: capitalize;
-    color: #0048b3 !important;
+    color: #9599E2 !important;
 }
+
 .heart-icon {
     margin-left: auto;
-    outline: #0048b3;
+    outline: #9599E2;
     font-size: 24px;
 }
+
 .explore-title {
     text-transform: uppercase;
     font-size: 1rem;
     color: rgb(36, 32, 32);
 }
+
 .explore-desc {
     font-size: 0.75rem;
     line-height: 1.5;
@@ -296,21 +332,26 @@ section {
     margin-bottom: 0.25rem;
     display: -webkit-box;
 }
+
 .project-category {
     margin: 15px auto;
 }
+
 .explore-goal {
     font-size: 12px;
     color: #6a6a6a;
 }
+
 .time-left {
     margin-top: 12px;
 }
+
 .time-left-span {
     font-size: 0.65rem;
     line-height: 1.5;
     color: #6a6a6a;
 }
+
 .participate-wrapper {
     background-image: url("../../images/participate.png");
     background-size: cover;
@@ -324,16 +365,19 @@ section {
     background-color: rgba(2, 2, 37, 0.411);
     padding: 100px 50px;
 }
+
 .participate-title h2,
 .participate-title p {
     color: #ffffff;
     text-align: center;
 }
+
 .participate-title p {
     font-size: 1.1rem;
     padding: 0 50px;
     line-height: 1.5;
 }
+
 .learn {
     color: #ffffff;
     font-size: 24px;
@@ -341,12 +385,16 @@ section {
     font-weight: 400;
     text-shadow: #00060a;
 }
+
+
 /* .inspired {
     margin-bottom: -30px;
 } */
+
 .inspired-wrapper {
     position: relative;
 }
+
 .inspired-wrapper::before {
     position: absolute;
     left: -40%;
@@ -356,6 +404,7 @@ section {
     opacity: 0.1;
     z-index: -1;
 }
+
 .inspired-wrapper::after {
     position: absolute;
     right: -45%;
@@ -371,6 +420,7 @@ section {
     margin-bottom: -100px;
     margin-top: 40px;
 }
+
 .ask-us-wrapper {
     background-image: url(../../images/askus.svg);
     background-position: right;
@@ -379,21 +429,25 @@ section {
     padding: 80px 50px;
     margin: 0;
 }
+
 .ask-us-wrapper h2 {
     color: #fff;
     margin-bottom: 30px;
 }
+
 .why-wrapper {
     padding: 0px 20px;
 }
+
 .why-icon {
     padding: 20px;
     border-radius: 50%;
-    box-shadow: 0 1px 9px rgba(0,0,0,.05);
+    box-shadow: 0 1px 9px rgba(0, 0, 0, .05);
     margin-bottom: 10px;
     width: 100px;
     height: 100px!important;
 }
+
 .why-desc {
     font-size: 16px;
     padding: 15px 0px 0px;

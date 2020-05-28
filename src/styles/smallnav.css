@@ -7,7 +7,7 @@
 
 .tab a {
     background-color: inherit;
-    color: #0048b3 !important;
+    color: #9599E2 !important;
     border: none;
     outline: none;
     cursor: pointer;
@@ -17,6 +17,7 @@
     border-bottom: 2px solid transparent;
     font-size: 18px;
 }
+
 @media only screen and (max-width: 468px) {
     .tab a {
         font-size: 8px;
@@ -27,9 +28,11 @@
         margin-bottom: 14px;
     }
 }
+
 .tab a:hover {
-    border-bottom: 2px solid #0048b3;
+    border-bottom: 2px solid #9599E2;
 }
+
 .tab a.active {
-    border-bottom: 2px solid #0048b3;
+    border-bottom: 2px solid #9599E2;
 }

@@ -1,31 +1,38 @@
 .register-header {
-    background-color: darkblue;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     padding-top: 80px;
     padding-bottom: 120px;
     background-position: 100%;
     margin: 41px 0px;
 }
+
 .title h2 {
     color: #fff;
     font-size: 36px;
     margin: 20px 0px 10px;
     padding-top: 40px;
 }
+
 .title p {
     color: #fff;
     font-size: 18px;
 }
+
 .register-logo {
     margin-bottom: 15px;
 }
+
 .full-width {
     width: 100%;
 }
+
 .steps-count {
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
+
 .step {
     height: 60px;
     width: 60px;
@@ -40,13 +47,15 @@
 }
 
 .step.active {
-    background-color: #0048b3;
+    background-color: #9599E2;
     color: #fff !important;
 }
+
 .active {
-    background-color: #0048b3;
+    background-color: #9599E2;
     color: #fff !important;
 }
+
 .step.active strong {
     color: #fff;
     font-weight: bolder;
@@ -57,6 +66,7 @@
     color: black;
     margin: auto;
 }
+
 .headImg {
     position: absolute;
     bottom: -59px;
@@ -75,9 +85,11 @@ span.step-one:after {
     background: #d8d8d8;
     z-index: -1;
 }
+
 .standalone-header {
     padding: 50px 0px 0px;
 }
+
 .option-wrapper {
     color: #000 !important;
     margin-top: 20px;
@@ -87,27 +99,32 @@ span.step-one:after {
     border-radius: 10px;
     padding: 30px;
 }
+
 .option-wrapper:hover {
     border-color: #0052cc;
-    box-shadow: 0 2px 6px -4px rgba(0, 0, 0, 0.2), 0 8px 10px -4px rgba(0, 0, 0, 0.14),
-        0 8px 12px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 6px -4px rgba(0, 0, 0, 0.2), 0 8px 10px -4px rgba(0, 0, 0, 0.14), 0 8px 12px 4px rgba(0, 0, 0, 0.05);
     transform: translateY(-2px);
 }
+
 .body-text {
     margin: 10px 0;
 }
+
 .fee-text {
     margin: 10px 0px 0px !important;
-    color: darkblue;
+    color: #9599E2;
 }
+
 .option-logo {
     margin-top: 10px;
 }
+
 .disclaimer-text {
     margin-top: 50px;
     margin-bottom: -20px;
     font-size: 16px;
 }
+
 .preview-card {
     background: rgba(248, 248, 248, 0.377);
     /* background-color: #fff; */
@@ -128,68 +145,84 @@ span.step-one:after {
     position: sticky;
     top: 20%;
 }
+
 .preview-card-name {
     display: flex;
     padding: 10px;
     justify-content: space-between;
     border-bottom: 1px dashed #ebebeb;
 }
+
 .preview-card-name .maxSupply {
     font-size: 14px;
     font-weight: bolder;
     color: #0048be !important;
 }
+
 .preview-info {
     font-size: 12px;
     color: darkgray;
     align-self: center;
 }
+
 .preview-img {
     border-radius: 0.8rem;
 }
+
 .card-ownership {
     padding: 4px 10px;
 }
+
 .preview-card-body {
     margin: 5px;
     padding: 10px;
     /* width: 100%; */
     border: 1px solid lightgray;
 }
+
 .preview-para {
     margin-bottom: 0;
 }
+
 .go-back {
-    color: #0048b3!important;
+    color: #9599E2!important;
     font-size: 14px;
     margin-top: 30px;
 }
+
 .go-back:hover {
     text-decoration: underline;
     color: #129cc1!important;
 }
+
 .checkbox-style {
     margin: auto;
     margin-left: 13px;
     transform: scale(2);
 }
+
 .consent-text {
     text-align: left !important;
 }
+
 .submit-nft-button {
     display: none;
 }
+
 .hide-tabs {
     display: none;
 }
+
 .steps-btn {
     display: flex;
     justify-content: space-between;
 }
+
 .step-btn {
     display: flex;
     justify-content: flex-end;
 }
+
 .prevBtn {
     border-radius: 50%;
     background-color: #ff3300;
@@ -200,10 +233,12 @@ span.step-one:after {
     width: 60px;
     height: 60px;
 }
+
 .prevBtn:hover {
     background-color: #ddd;
     color: black;
 }
+
 .nextBtn {
     border-radius: 50%;
     background-color: #4caf50;
@@ -214,6 +249,7 @@ span.step-one:after {
     width: 60px;
     height: 60px;
 }
+
 .nextBtn:hover {
     background-color: rgb(221, 221, 221);
     color: black;

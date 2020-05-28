@@ -108,7 +108,8 @@ legend {
 }
 
 .main-header {
-    border-bottom: 1px solid #424242;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     height: 250px;
 }
 
@@ -156,12 +157,12 @@ legend {
 }
 
 .tabs .active {
-    color: #3489e7;
-    border-bottom: 2px solid #3489e7;
+    color: #FFF;
+    border-bottom: 2px solid #FFF;
 }
 
 .tabs__tab {
-    color: #797979;
+    color: #FFF;
     text-align: center;
 }
 
@@ -214,6 +215,11 @@ legend {
 .table-dark tbody td {
     border-bottom: 1px solid #c5c5c5;
     border-top: 0;
+}
+
+.table .thead-dark th {
+    background-color: #9398ff;
+    border-color: #FFF;
 }
 
 ul li {

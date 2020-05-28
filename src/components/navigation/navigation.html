@@ -1,0 +1,5 @@
+<template bindable="router, loggedIn, claims">
+    <ul class="navbar-nav">
+        <li class="nav-item ${row.isActive ? 'active' : ''}" repeat.for="row of router.navigation | authFilter:loggedIn:claims"><a class="nav-link" href.bind="row.href">${row.title & t}</a></li>
+    </ul>
+</template>

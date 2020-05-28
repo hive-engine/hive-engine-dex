@@ -3,15 +3,20 @@
     src: url('../../fonts/main-font-bold-c.woff');
     font-display: fallback;
 }
+
 .route--tokens {
     color: #333;
 }
+
 .main-header {
-    background-color: #00193f;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
+
 .main-head {
     margin-bottom: 30px;
 }
+
 .head-container {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -21,11 +26,13 @@
     align-content: center;
     justify-content: center;
 }
+
 .make-flex {
     display: flex;
     align-content: center;
     justify-content: center;
 }
+
 .actionButtons {
     cursor: pointer;
     display: inline-block;
@@ -34,8 +41,8 @@
     border: none;
     vertical-align: baseline;
     background: #e0e1e2 none;
-    color: rgba(0,0,0,.6);
-    font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;
+    color: rgba(0, 0, 0, .6);
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
     margin: 0 .25em 0 0;
     padding: .78571429em 1.5em .78571429em;
     text-transform: none;
@@ -46,29 +53,33 @@
     text-align: center;
     text-decoration: none;
     border-radius: .28571429rem;
-    -webkit-box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
-    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    -webkit-box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, .15) inset;
+    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, .15) inset;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
-    transition: opacity .1s ease,background-color .1s ease,color .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
-    transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
-    transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
+    -webkit-transition: opacity .1s ease, background-color .1s ease, color .1s ease, background .1s ease, -webkit-box-shadow .1s ease;
+    transition: opacity .1s ease, background-color .1s ease, color .1s ease, background .1s ease, -webkit-box-shadow .1s ease;
+    transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+    transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease, -webkit-box-shadow .1s ease;
     will-change: '';
     -webkit-tap-highlight-color: transparent;
 }
+
 .color-white {
     color: #fff;
 }
+
 .tokenIcon {
     width: 24px;
     height: 24px;
 }
+
 button:focus {
     outline: none!important;
 }
+
 .changePercentCol .red,
 .changePercentCol .green {
     font-weight: bold;
@@ -81,6 +92,7 @@ button:focus {
 .changePercentCol .green {
     color: green;
 }
+
 .greenBtn {
     padding: 0.5rem 3rem;
     background-color: #21be3d;
@@ -91,9 +103,11 @@ button:focus {
     border-radius: 0.25rem;
     border: none;
 }
+
 .greenBtn:hover {
     background-color: #1eac38;
 }
+
 .redBtn {
     padding: 0.5rem 3rem;
     background-color: #ca0505 !important;
@@ -105,12 +119,14 @@ button:focus {
     border-radius: 0.25rem;
     border: none;
 }
+
 .redBtn:hover {
     background-color: #e42020 !important;
 }
+
 .blueBtn {
     padding: 0.5rem 3rem;
-    background-color: #0048b3 !important;
+    background-color: #9599E2 !important;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -119,11 +135,14 @@ button:focus {
     border-radius: 0.25rem;
     border: none;
 }
+
 .blueBtn:hover {
     background-color: #0147af !important;
 }
 
+
 /* ========= Mobile */
+
 @media only screen and (max-width: 468px) {
     .show-mobile {
         display: inline-flex;
