@@ -10,7 +10,7 @@ import { HiveEngine } from 'services/hive-engine';
 jest.mock('sscjs');
 jest.mock('steem-js-patched');
 
-describe('Hive Engine Service', () => {
+describe('Tribaldex Service', () => {
     let sut: HiveEngine;
     const mockHttp = () => Container.instance.get(HttpClient);
     const mockI18n = Container.instance.get(I18N);
