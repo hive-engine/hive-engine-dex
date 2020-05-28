@@ -87,7 +87,7 @@ describe('Functions', () => {
         expect(returnedValue).toEqual('$0.09478');
     });
 
-    test('usdFormat gets steem price from window object', () => {
+    test('usdFormat gets Hive price from window object', () => {
         window.hive_price = 0.1354;
         
         const returnedValue = usdFormat(0.7, null);
@@ -120,7 +120,7 @@ describe('Functions', () => {
         expect(returnedValue).toEqual('5,000');
     });
 
-    test('should format steem amount', () => {
+    test('should format Hive amount', () => {
         const returnedValue = formatHiveAmount(257.135678);
 
         expect(returnedValue).toEqual('257.136');

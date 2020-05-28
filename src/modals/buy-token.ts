@@ -23,7 +23,7 @@ export class BuyTokenModal {
     private state: State;
     private subscription: Subscription;
     private user: any;
-    private steemBalance: any;
+    private hiveBalance: any;
     private beeBalance: any;
     private username: any;
     private validationController;
@@ -63,7 +63,7 @@ export class BuyTokenModal {
         this.username = this.state.account.name;
 
         const user = await getAccount(this.username);
-        this.steemBalance = user.balance.replace('HIVE', '').trim();
+        this.hiveBalance = user.balance.replace('HIVE', '').trim();
 
         this.beeBalance = 0;
         const beeToken = this.state.account.balances.find(x => x.symbol === environment.nativeToken);
@@ -74,7 +74,7 @@ export class BuyTokenModal {
     }
 
     balanceClicked() {
-        this.amount = this.steemBalance;
+        this.amount = this.hiveBalance;
     }
 
     private createValidationRules() {
@@ -88,7 +88,7 @@ export class BuyTokenModal {
             .satisfies((value: any, object: BuyTokenModal) => {
                 const amount = parseFloat(value);
 
-                return (amount <= object.steemBalance);
+                return (amount <= object.hiveBalance);
             })
             .withMessageKey('errors:insufficientBalanceForbuyBee')
             .rules;
@@ -106,7 +106,7 @@ export class BuyTokenModal {
                 const toast = new ToastMessage();
 
                 toast.message = this.i18n.tr(result.rule.messageKey, {
-                    balance: this.steemBalance,
+                    balance: this.hiveBalance,
                     symbol: environment.peggedToken,
                     ns: 'errors'
                 });

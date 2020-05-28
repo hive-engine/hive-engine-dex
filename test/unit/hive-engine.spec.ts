@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import * as functions from 'common/hive-engine';
-//import { request, loadTokenMarketHistory, checkTransaction } from 'common/steem-engine';
 
 jest.mock('sscjs');
 jest.mock('steem-js-patched');
@@ -241,7 +240,7 @@ describe('Functions', () => {
         expect(parsed).toHaveLength(3);
     });
 
-    test('parseTokens sets steemp supply and circulating supply', () => {
+    test('parseTokens sets HIVEP supply and circulating supply', () => {
         const data = {
             tokens: [
                 { symbol: 'PAL', supply: 0, circulatingSupply: 0 },
