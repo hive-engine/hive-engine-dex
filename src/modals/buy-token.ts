@@ -66,9 +66,11 @@ export class BuyTokenModal {
         this.hiveBalance = user.balance.replace('HIVE', '').trim();
 
         this.beeBalance = 0;
+        
         const beeToken = this.state.account.balances.find(x => x.symbol === environment.nativeToken);
-        if (beeToken)
+        if (beeToken) {
             this.beeBalance = beeToken.balance;
+        }
 
         this.loading = false;
     }
