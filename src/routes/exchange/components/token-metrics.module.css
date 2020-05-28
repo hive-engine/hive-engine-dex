@@ -1,6 +1,5 @@
 .meta-header {
-    background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    background-color: #9398ff;
     color: #fff;
     font-size: 16px;
     height: 60px;
@@ -145,14 +144,8 @@
 
 .green {
     -webkit-text-fill-color: green;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: #fff;
 }
 
 .red {
     -webkit-text-fill-color: red;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: #fff;
 }
