@@ -1,19 +1,23 @@
 /* body {
     background-color: rgb(250, 250, 250);
 } */
+
 .register-header {
-    background-color: darkblue;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     padding-top: 80px;
     padding-bottom: 120px;
     background-position: 100%;
     /* margin: 41px 0px; */
 }
+
 .title h2 {
     color: #fff;
     font-size: 36px;
     margin: 20px 0px 10px;
     padding-top: 40px;
 }
+
 .title p {
     color: #fff;
     font-size: 18px;
@@ -32,20 +36,23 @@
     border: 0;
     border-top: 1px solid #eee;
 }
+
 .standalone-header {
     padding: 50px 0px 0px;
 }
+
 .card-form {
     background-color: #fff;
     border-radius: 10px;
     padding: 30px 80px 80px;
-    box-shadow: 0 2px 6px -4px rgba(0, 0, 0, 0.2), 0 8px 10px -4px rgba(0, 0, 0, 0.14),
-        0 8px 12px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 6px -4px rgba(0, 0, 0, 0.2), 0 8px 10px -4px rgba(0, 0, 0, 0.14), 0 8px 12px 4px rgba(0, 0, 0, 0.05);
     position: relative;
 }
+
 .register-logo {
     opacity: 0.8;
 }
+
 .create-form-label {
     font-size: 24px;
     text-align: center !important;
