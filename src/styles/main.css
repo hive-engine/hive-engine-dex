@@ -157,12 +157,12 @@ legend {
 }
 
 .tabs .active {
-    color: #585858;
-    border-bottom: 2px solid #585858;
+    color: #FFF;
+    border-bottom: 2px solid #FFF;
 }
 
 .tabs__tab {
-    color: #797979;
+    color: #FFF;
     text-align: center;
 }
 
