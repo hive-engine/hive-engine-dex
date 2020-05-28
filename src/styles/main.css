@@ -217,6 +217,11 @@ legend {
     border-top: 0;
 }
 
+.table .thead-dark th {
+    background-color: #9398ff;
+    border-color: #FFF;
+}
+
 ul li {
     padding: 10px;
 }
