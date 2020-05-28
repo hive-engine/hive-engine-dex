@@ -3,13 +3,13 @@
 }
 
 .btn-primary {
-    background-color: rgb(32, 39, 53);
+    background-color: #696FE4;
     border: none;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:not(:disabled):hover {
-    background-color: rgb(41, 50, 69);
+    background-color: #9599E2;
 }
 
 .btn-secondary {
