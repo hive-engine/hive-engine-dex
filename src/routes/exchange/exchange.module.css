@@ -93,12 +93,12 @@ tr td:last-child {
     background: #ececec;
     border: none;
     box-shadow: none;
-    color: #0048b3;
+    color: #9599E2;
     outline: none;
 }
 
 .input-group-text-dark {
-    background: #0048b3;
+    background: #9599E2;
     height: 100%;
     width: 100%;
     border: none;

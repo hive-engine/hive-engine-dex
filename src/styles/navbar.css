@@ -2,13 +2,13 @@
     /*background: linear-gradient(280deg, #160033 0%, #008b80 51.72%, #00323e 100%);*/
     /*background: url(https://s3.amazonaws.com/steem-engine/images/bg_header.jpg) black repeat-x top right;*/
     background-color: #fff;
-    color: #0048b3!important;
+    color: #9599E2!important;
     min-height: 60px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    box-shadow:  0 1px 9px rgba(0,0,0,.05);
+    box-shadow: 0 1px 9px rgba(0, 0, 0, .05);
     z-index: 980;
     padding: 20px;
     margin: 0;
@@ -24,7 +24,7 @@
 }
 
 .navbar-expand-lg .navbar-nav .nav-link,
-.navbar-nav > li > a {
+.navbar-nav>li>a {
     color: #000000;
     font-weight: 400;
     font-size: 16px;
@@ -32,46 +32,48 @@
     text-transform: initial;
 }
 
+
 /* .navbar-nav > li.active:not(.button) > a,
 .navbar-nav > li > a:hover {
     color: lightblue!important;
 } */
 
-.navbar-nav > li.language-option > a {
+.navbar-nav>li.language-option>a {
     margin-right: 10px;
 }
 
-.navbar-nav > li.language-option > a {
+.navbar-nav>li.language-option>a {
     padding: 5px 20px !important;
-    border: 1px solid #0048b3;
+    border: 1px solid #9599E2;
     border-radius: 5px;
 }
 
 .language-option .dropdown-menu .nav-link {
-    color: #0048b3;
+    color: #9599E2;
 }
 
-.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link {
+.navbar-expand-lg .navbar-nav>li.button>.btn.nav-link {
     background: transparent;
     border: 1px solid transparent;
 }
-.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link:focus,
-.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link:focus:active,
-.navbar-expand-lg .navbar-nav > li.button > .btn.nav-link:hover {
+
+.navbar-expand-lg .navbar-nav>li.button>.btn.nav-link:focus,
+.navbar-expand-lg .navbar-nav>li.button>.btn.nav-link:focus:active,
+.navbar-expand-lg .navbar-nav>li.button>.btn.nav-link:hover {
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     background: #fff;
-    color: #0048b3;
+    color: #9599E2;
 }
 
-.navbar-expand-lg .navbar-nav > li.button.active > .btn.nav-link {
+.navbar-expand-lg .navbar-nav>li.button.active>.btn.nav-link {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navbar-expand-lg .navbar-nav > li.button > .nav-link:hover,
-.navbar-nav > li.button > a:hover {
+.navbar-expand-lg .navbar-nav>li.button>.nav-link:hover,
+.navbar-nav>li.button>a:hover {
     background-color: #ffffff;
     color: #009efd;
 }
@@ -95,7 +97,7 @@
 }
 
 @media all and (max-width: 991px) {
-    .navbar-expand-lg > .container {
+    .navbar-expand-lg>.container {
         position: relative;
     }
     .navbar {
@@ -124,7 +126,7 @@
         border-radius: 1px;
         height: 2px;
         width: 35px;
-        background: #0048b3;
+        background: #9599E2;
         position: absolute;
         left: 0;
         top: 50%;
@@ -176,7 +178,7 @@
         overflow: auto;
     }
     .navbar-expand-lg .navbar-nav .nav-link,
-    .navbar-nav > li > a {
+    .navbar-nav>li>a {
         color: #505050;
     }
     .navbar-expand-lg .navbar-nav .nav-link,
@@ -198,22 +200,22 @@
         padding-left: 15px;
     }
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link,
-    .navbar-nav .dropdown-menu > li > a {
+    .navbar-nav .dropdown-menu>li>a {
         padding-top: 4px;
         padding-bottom: 4px;
     }
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link:before,
-    .navbar-nav .dropdown-menu > li > a:before {
+    .navbar-nav .dropdown-menu>li>a:before {
         content: '-';
         display: inline-block;
         vertical-align: middle;
         margin-right: 5px;
     }
     .navbar-expand-lg .navbar-nav .dropdown .nav-link,
-    .navbar-nav > li.dropdown > a {
+    .navbar-nav>li.dropdown>a {
         padding-right: 50px;
     }
-    .dropdown > a:after {
+    .dropdown>a:after {
         content: '\e61a';
         font-family: 'themify';
         position: absolute;
@@ -221,15 +223,15 @@
         right: 0;
         padding: 9px 15px;
     }
-    .dropdown-menu .dropdown > a:after {
+    .dropdown-menu .dropdown>a:after {
         padding-top: 4px;
         padding-bottom: 4px;
     }
     .dropdown a.sm-shown:after {
         content: '\e622';
     }
-    .navbar-expand-lg .navbar-nav > li.button > .nav-link,
-    .navbar-nav > li.button > a {
+    .navbar-expand-lg .navbar-nav>li.button>.nav-link,
+    .navbar-nav>li.button>a {
         margin: 0 5px 5px;
         background-color: #009efd;
         color: #ffffff;
@@ -253,7 +255,7 @@
         background-color: #ffffff;
         box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
     }
-    .navbar > .container {
+    .navbar>.container {
         width: 100%;
         max-width: none;
         padding: 0 15px;

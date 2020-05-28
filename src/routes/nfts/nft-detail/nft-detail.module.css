@@ -1,5 +1,5 @@
 .nft-details-title {
-    color: #0048b3;
+    color: #9599E2;
     margin-top: 60px;
     margin-bottom: 20px;
 }
@@ -29,7 +29,7 @@
 
 .rate-now a {
     text-decoration: none;
-    color: #0048b3;
+    color: #9599E2;
     font-weight: 400;
     line-height: 1.2;
 }
@@ -71,7 +71,7 @@
 }
 
 .nft-attribute {
-    color: #0048b3;
+    color: #9599E2;
     line-height: 1.1;
     list-style: none;
     padding: 4px 8px 4px 8px;
@@ -134,13 +134,13 @@
 .curr-price {
     font-size: 22px;
     display: block;
-    color: #0048b3;
+    color: #9599E2;
     margin-top: 10px;
 }
 
 .buyBtn {
     border-color: #c60;
-    background: #0048b3;
+    background: #9599E2;
     color: #fff;
     padding: 2px 1.95em;
     margin-top: 10px;
@@ -176,7 +176,7 @@
 }
 
 .bg-blue {
-    background: #0048b3;
+    background: #9599E2;
 }
 
 .color-white {

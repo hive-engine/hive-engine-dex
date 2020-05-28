@@ -31,14 +31,14 @@
         display: block;
     }
     .metric-item-label {
-        color: #0048b3;
+        color: #9599E2;
     }
     .metric-item-value {
-        color: #0048b3;
+        color: #9599E2;
     }
     .blueBtn {
         padding: 0.5rem 2.5rem;
-        background-color: #0048b3 !important;
+        background-color: #9599E2 !important;
         color: #fff !important;
         font-weight: bold;
         font-family: main-font-bold !important;
@@ -93,14 +93,14 @@
         text-align: center;
     }
     .metric-item-label {
-        color: #0048b3;
+        color: #9599E2;
     }
     .metric-item-value {
-        color: #0048b3;
+        color: #9599E2;
     }
     .blueBtn {
         padding: 0.5rem 2.5rem;
-        background-color: #0048b3 !important;
+        background-color: #9599E2 !important;
         color: #fff !important;
         font-weight: bold;
         font-family: main-font-bold !important;

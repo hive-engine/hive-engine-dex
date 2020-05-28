@@ -2,6 +2,7 @@
     font-size: 12px;
     margin: 0;
 }
+
 .user-header {
     height: 450px;
     display: flex;
@@ -10,6 +11,7 @@
     justify-content: center;
     position: relative;
 }
+
 .user-image {
     position: absolute;
     top: 0;
@@ -18,6 +20,7 @@
     height: 450px;
     z-index: -1;
 }
+
 .header-row {
     background: rgba(277, 277, 277, 0.8);
     width: 40%;
@@ -28,58 +31,69 @@
     align-content: center;
     padding: 40px;
 }
+
 .header-text {
     margin: auto;
-
 }
 
 h1 {
     color: blue;
 }
+
 .header-text-desc {
     margin: 0;
 }
+
 .user-info {
     display: flex;
     justify-content: space-evenly;
 }
+
 .info {
     color: #000;
 }
+
 .user-summary {
     margin-bottom: 20px;
 }
+
 .nice-border {
     border-bottom: 4px solid #11111194;
     padding: 5px 0 10px;
     margin-bottom: 20px;
 }
+
 .owner-info {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
 }
+
 .owner-info-header {
     color: #757575;
 }
+
 .owner-image {
     width: 60%;
     border-radius: 50%;
-    border: 1px dashed #0048b3;
+    border: 1px dashed #9599E2;
     align-self: center;
 }
+
 .owner-name {
     align-self: center;
     margin: 0;
     font-size: large;
 }
+
 .about-user {
     width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-around;
 }
+
 .about-user span {
     font-size: small;
     display: inline-block;
@@ -87,15 +101,17 @@ h1 {
     padding: 3px;
     white-space: pre-line;
 }
+
 .social {
     align-self: center;
 }
+
 .social-icon {
     width: 25px;
 }
 
 .showroom-header h2 {
-    color: #0048b3;
+    color: #9599E2;
 }
 
 .showroom-cards {
@@ -204,19 +220,19 @@ h1 {
 }
 
 .rate-nft {
-    color: #0048b3;
+    color: #9599E2;
     /* -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: #0048b3; */
+    -webkit-text-stroke-color: #9599E2; */
 }
 
 .what {
     text-transform: capitalize;
-    color: #0048b3 !important;
+    color: #9599E2 !important;
 }
 
 .heart-icon {
     margin-left: auto;
-    outline: #0048b3;
+    outline: #9599E2;
     font-size: 24px;
 }
 
@@ -265,8 +281,6 @@ h1 {
     margin-bottom: -20px;
     font-size: 16px;
 }
-
-
 
 .cat-card {
     background: white;
@@ -324,7 +338,7 @@ h1 {
 .now-price {
     font-size: 32px;
     display: block;
-    color: #0048b3;
+    color: #9599E2;
     margin-top: 10px;
 }
 
@@ -335,7 +349,7 @@ h1 {
 
 .buyBtn {
     border-color: #c60;
-    background: #0048b3;
+    background: #9599E2;
     color: #fff!important;
     padding: 2px 1.95em;
     margin-top: 10px;
