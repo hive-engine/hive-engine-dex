@@ -72,56 +72,44 @@ authRouter.post('/verifyUserAuthMemo', async (req: express.Request, res: express
             const user = await usersRef.doc(username).get();
 
             if (!user.exists) {
-                await admin.auth().createUser({ uid: username });
-
-                // Create new user reference
-                usersRef.doc(username).set({
-                    country: '',
-                    email: '',
-                    firstName: '',
-                    lastName: '',
-                    addressLine1: '',
-                    addressLine2: '',
-                    state: '',
-                    zipCode: '',
-                    favourites: [],
-                    hiddenTokens: [],
-                    notifications: [],
-                    kyc: {
-                        passportPending: false,
-                        passportVerified: false,
-                        passportRejected: false,
-                        passportRejectionReason: '',
-                        selfiePending: false,
-                        selfieVerified: false,
-                        selfieRejected: false,
-                        selfieRejectionReason: '',
-                        token: shortid.generate(),
-                        verified: false
-                    },
-                    wallet: {
-                        hideZeroBalances: false,
-                        onlyShowFavourites: false
-                    },
-                    tabPreference: 'profile',
-                    admin: false,
-                    super: false,
-                    kycAuditor: false
-                });
-            } else {
-                // const userData = user.data();
-
-                // // eslint-disable-next-line no-undef
-                // if (userData && userData.kyc?.passportRejected === undefined) {
-                //     user.ref.update({
-                //         kyc: {
-                //             passportRejected: false,
-                //             passportRejectionReason: '',
-                //             selfieRejected: false,
-                //             selfieRejectionReason: ''
-                //         }
-                //     });
-                // }
+                try {
+                    await admin.auth().createUser({ uid: username });
+                } finally {
+                    // Create new user reference
+                    usersRef.doc(username).set({
+                        country: '',
+                        email: '',
+                        firstName: '',
+                        lastName: '',
+                        addressLine1: '',
+                        addressLine2: '',
+                        state: '',
+                        zipCode: '',
+                        favourites: [],
+                        hiddenTokens: [],
+                        notifications: [],
+                        kyc: {
+                            passportPending: false,
+                            passportVerified: false,
+                            passportRejected: false,
+                            passportRejectionReason: '',
+                            selfiePending: false,
+                            selfieVerified: false,
+                            selfieRejected: false,
+                            selfieRejectionReason: '',
+                            token: shortid.generate(),
+                            verified: false,
+                        },
+                        wallet: {
+                            hideZeroBalances: false,
+                            onlyShowFavourites: false,
+                        },
+                        tabPreference: 'profile',
+                        admin: false,
+                        super: false,
+                        kycAuditor: false,
+                    });
+                }
             }
 
             return res.status(200).json({ success: true, token });
@@ -130,6 +118,6 @@ authRouter.post('/verifyUserAuthMemo', async (req: express.Request, res: express
             return res.status(500).json({ success: false, message: e });
         }
     } else {
-        return res.status(401).json({ success: false, message: 'Username not found in payload' })
+        return res.status(401).json({ success: false, message: 'Username not found in payload' });
     }
 });

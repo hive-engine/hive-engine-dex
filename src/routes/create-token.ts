@@ -114,7 +114,7 @@ export class CreateToken {
                 'tokens',
                 'create',
                 payload,
-                'Hive Engine Token Registration',
+                'Tribaldex Token Registration',
                 'tokenCreateSuccess',
                 'tokenCreateError',
             );

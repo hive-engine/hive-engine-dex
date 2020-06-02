@@ -1,6 +1,7 @@
 section {
     margin: 50px auto;
 }
+
 .tribes-header {
     padding: 0;
     margin: 0;
@@ -11,6 +12,7 @@ section {
     background-attachment: fixed;
     height: 100vh;
 }
+
 .tribes-header-wrapper {
     /* padding-top: 80px; */
     margin-bottom: 20px;
@@ -21,12 +23,14 @@ section {
     align-content: center;
     justify-content: center;
 }
+
 @media only screen and (max-width: 468px) {
     .tribes-header {
         padding-top: 30px !important;
         text-align: center;
     }
 }
+
 .card {
     /*transition: box-shadow 0.25s linear;
     margin-right: 0 !important;
@@ -39,18 +43,22 @@ section {
     text-align: center;
     transition: 0.1s all ease-out;
 }
+
 .card:hover {
     transform: scale(1.1);
     cursor: pointer;
     background: rgba(161, 149, 212, 0.034);
     border-radius: 10%;
 }
+
 .container-head {
     margin: auto;
 }
+
 .what-we-do-head {
     margin-top: 150px;
 }
+
 .this-title {
     margin: 50px auto 0;
     max-width: 700px;
@@ -63,6 +71,7 @@ section {
 .tribes-title {
     margin-top: 20px;
 }
+
 .tribes-title h1 {
     color: #fff;
     font-size: 80px;
@@ -71,20 +80,24 @@ section {
     max-width: 790px;
     letter-spacing: -0.5px;
 }
+
 .tribes-title p {
     font-size: 17px;
     color: #fff;
     letter-spacing: -0.5px;
 }
+
 .blueBtn {
     margin: 5px auto;
     background-color: #1a73e8;
     color: #fff;
 }
+
 .blueBtn:hover {
     color: #fff;
     background-color: #0c56b8;
 }
+
 @media (min-width: 1024px) {
     .blueBtn {
         font-size: 16px;
@@ -97,51 +110,60 @@ section {
 .margin-class {
     margin-bottom: 15px;
 }
+
 .greenBtn {
     /*padding: .5rem 3rem;*/
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
     font-size: 12px;
     border-radius: 0.25rem;
 }
+
 .greenBtn:hover {
-    background-color: #1eac38;
+    background-color: #696FE4;
 }
 
 .see-more a {
-    color: #0048b3;
+    color: #9599E2;
     font-size: 24px;
     padding-bottom: 25px;
 }
+
 .see-more a:hover {
     color: #061833;
     text-decoration: underline;
 }
+
 .see-more:hover .see-more-fa {
     color: #061833;
     padding-left: 6px;
     margin-left: 2px;
 }
+
 .see-more-fa {
-    color: #0048b3;
+    color: #9599E2;
     font-size: 14px;
     padding-left: 3px;
     transition: 0.1s all ease-out;
 }
+
 .start {
     background: rgb(22, 139, 104);
     padding: 80px 20px;
     margin-bottom: -100px;
 }
+
 .start h2,
 .start p {
     color: #fff !important;
 }
+
 .why-wrapper {
     padding: 0px 20px;
 }
+
 .why-icon {
     padding: 20px;
     border-radius: 50%;
@@ -150,16 +172,19 @@ section {
     width: 100px;
     height: 100px !important;
 }
+
 .why-desc {
     font-size: 16px;
     padding: 5px 0px 0px;
 }
+
 .di {
     margin: 100px auto 30px;
     width: 50%;
     background-color: #d3d3d3;
     text-align: center;
 }
+
 .faq-tabs ul.faq-tabs-btns {
     width: 50%;
     float: left;
@@ -167,6 +192,7 @@ section {
     list-style: none;
     padding: 0 15px;
 }
+
 .faq-tabs ul.faq-tabs-btns li {
     background-color: #f2f2f2;
     display: block;
@@ -178,6 +204,7 @@ section {
     -o-border-radius: 6px;
     border-radius: 6px;
 }
+
 .faq-tabs ul.faq-tabs-btns li a {
     display: block;
     font-size: 19px;
@@ -195,15 +222,18 @@ section {
     border: 1px solid rgb(22, 139, 104);
     color: rgb(22, 139, 104);
 }
+
 .faq-tabs ul.faq-tabs-btns li a:active,
 .faq-tabs ul.faq-tabs-btns li a:focus,
 .faq-tabs ul.faq-tabs-btns li a:hover {
     background-color: rgb(22, 139, 104) !important;
     color: #fff !important;
 }
+
 .faq-tabs .col-md-6 {
     overflow: hidden;
 }
+
 @media (min-width: 768px) {
     .col-md-6 {
         -ms-flex: 0 0 50%;
@@ -227,6 +257,7 @@ section {
     -o-border: 1px solid rgb(22, 139, 104);
     border: 1px solid rgb(22, 139, 104);
 }
+
 .hide-this {
     display: none;
 }

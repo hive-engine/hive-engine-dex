@@ -1,7 +1,7 @@
 import { dispatchify, Store } from 'aurelia-store';
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue, bindable } from 'aurelia-framework';
+import { autoinject, TaskQueue, bindable, useView, PLATFORM } from 'aurelia-framework';
 import { environment } from 'environment';
 import { Subscription } from 'rxjs';
 import { ValidationControllerFactory, ControllerValidateResult, ValidationRules } from 'aurelia-validation';
@@ -14,6 +14,7 @@ import { getAccount } from 'common/hive';
 import { stateTokensOnlyPegged } from 'common/functions';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/buy-token.html'))
 export class BuyTokenModal {
     @bindable amount;
 
@@ -22,7 +23,7 @@ export class BuyTokenModal {
     private state: State;
     private subscription: Subscription;
     private user: any;
-    private steemBalance: any;
+    private hiveBalance: any;
     private beeBalance: any;
     private username: any;
     private validationController;
@@ -62,18 +63,20 @@ export class BuyTokenModal {
         this.username = this.state.account.name;
 
         const user = await getAccount(this.username);
-        this.steemBalance = user.balance.replace('HIVE', '').trim();
+        this.hiveBalance = user.balance.replace('HIVE', '').trim();
 
         this.beeBalance = 0;
+        
         const beeToken = this.state.account.balances.find(x => x.symbol === environment.nativeToken);
-        if (beeToken)
+        if (beeToken) {
             this.beeBalance = beeToken.balance;
+        }
 
         this.loading = false;
     }
 
     balanceClicked() {
-        this.amount = this.steemBalance;
+        this.amount = this.hiveBalance;
     }
 
     private createValidationRules() {
@@ -87,7 +90,7 @@ export class BuyTokenModal {
             .satisfies((value: any, object: BuyTokenModal) => {
                 const amount = parseFloat(value);
 
-                return (amount <= object.steemBalance);
+                return (amount <= object.hiveBalance);
             })
             .withMessageKey('errors:insufficientBalanceForbuyBee')
             .rules;
@@ -105,7 +108,7 @@ export class BuyTokenModal {
                 const toast = new ToastMessage();
 
                 toast.message = this.i18n.tr(result.rule.messageKey, {
-                    balance: this.steemBalance,
+                    balance: this.hiveBalance,
                     symbol: environment.peggedToken,
                     ns: 'errors'
                 });

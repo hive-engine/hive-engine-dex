@@ -1,9 +1,10 @@
 import { HiveEngine } from 'services/hive-engine';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject, TaskQueue } from 'aurelia-framework';
+import { autoinject, TaskQueue, useView, PLATFORM } from 'aurelia-framework';
 import styles from './nft-properties.module.css';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-properties.html'))
 export class NftPropertiesModal {
     private properties: any;
     private lockedTokens: Map<string, string>;

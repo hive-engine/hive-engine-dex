@@ -31,7 +31,6 @@ import { ConsoleAppender } from 'aurelia-logging-console';
 import { environment } from './environment';
 import { PLATFORM } from 'aurelia-pal';
 import { initialState } from './store/state';
-import { dispatchify } from 'aurelia-store';
 import { TCustomAttribute } from 'aurelia-i18n';
 import Backend from 'i18next-xhr-backend';
 

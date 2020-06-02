@@ -8,14 +8,15 @@ ux-dialog-container {
     height: fit-content;
     margin: auto;
     outline: 0;
-
     box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4) !important;
 }
+
 ux-dialogue {
     width: 100%;
 }
+
 .signin-text {
-    color: #0048b3;
+    color: #9599E2;
     margin: 0 0 10px 0;
 }
 
@@ -26,8 +27,7 @@ ux-dialogue {
 }
 
 .keychain-btn {
-    background-image: url(../images/icon_keychain.svg),
-        linear-gradient(280deg, #0048b3 0%, #8562e7 51.72%, #0048b3 100%);
+    background-image: url(../images/icon_keychain.svg), linear-gradient(280deg, #9599E2 0%, #8562e7 51.72%, #9599E2 100%);
     background-position: 20px center, 0 0;
     background-repeat: no-repeat;
     border: none;
@@ -46,12 +46,13 @@ ux-dialogue {
 }
 
 .auth-link {
-    color: #0048b3;
+    color: #9599E2;
     display: block;
     font-size: 12px;
     text-align: right;
     text-decoration: underline;
 }
+
 .active-key-btn {
     color: white;
     background: yellowgreen;
@@ -59,12 +60,12 @@ ux-dialogue {
     padding: 11px;
     width: 100%;
 }
+
 .greenBtns {
     margin-top: 0;
     width: 30%;
-
     padding: 0 !important;
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -74,9 +75,11 @@ ux-dialogue {
     min-width: 76px;
     display: inline-block;
 }
+
 .greenBtns:hover {
-    background-color: #1eac38;
+    background-color: #696FE4;
 }
+
 .redBtn {
     margin-top: 0;
     padding: 0!important;
@@ -89,6 +92,7 @@ ux-dialogue {
     border-radius: 0.25rem;
     min-width: 76px;
 }
+
 .redBtn:hover {
     background-color: #e420200c !important;
 }

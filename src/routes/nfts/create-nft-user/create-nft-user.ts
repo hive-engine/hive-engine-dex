@@ -210,7 +210,7 @@ export class CreateNftUser {
                 'nft',
                 'create',
                 payload,
-                'Hive Engine NFT Creation',
+                'Tribaldex NFT Creation',
                 'nftCreateSuccess',
                 'nftCreateError',
             );

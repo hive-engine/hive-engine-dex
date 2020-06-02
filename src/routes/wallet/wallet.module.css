@@ -1,5 +1,6 @@
 .main-header {
-    background-color: #00193f;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
 .main-head {
@@ -83,7 +84,7 @@ button:focus {
 
 .greenBtn {
     padding: .5rem 3rem;
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -93,7 +94,7 @@ button:focus {
 }
 
 .greenBtn:hover {
-    background-color: #1eac38;
+    background-color: #696FE4;
 }
 
 .redBtn {
@@ -111,13 +112,14 @@ button:focus {
 .redBtn:hover {
     background-color: #e42020 !important;
 }
+
 @media only screen and (max-width: 468px) {
     .minus-margin {
         margin: auto -12px;
     }
     .remove-padding {
-        padding: 0.5rem 0.2rem; 
-        border-left: 1px soild #fefefe; 
+        padding: 0.5rem 0.2rem;
+        border-left: 1px soild #fefefe;
         font-size: 14px;
     }
 }

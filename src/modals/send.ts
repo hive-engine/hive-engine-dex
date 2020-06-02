@@ -1,7 +1,8 @@
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/send.html'))
 export class SendModal {
     private token;
     private transaction;
@@ -11,7 +12,7 @@ export class SendModal {
         this.controller.settings.centerHorizontalOnly = true;
     }
 
-    activate(token) {
+    activate(token: string): void {
         this.token = token;
     }
 }

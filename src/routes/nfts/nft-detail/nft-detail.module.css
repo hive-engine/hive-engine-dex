@@ -1,5 +1,5 @@
 .nft-details-title {
-    color: #0048b3;
+    color: #9599E2;
     margin-top: 60px;
     margin-bottom: 20px;
 }
@@ -13,26 +13,26 @@
 }
 
 .rating-wrap {
-     margin-bottom: 6px;
-     display: flex;
- }
+    margin-bottom: 6px;
+    display: flex;
+}
 
- .rate-now {
-     margin-bottom: 0!important;
-     margin-left: 5px;
- }
+.rate-now {
+    margin-bottom: 0!important;
+    margin-left: 5px;
+}
 
- .rate-nft {
-     color: goldenrod;
-     padding: 4px;
- }
+.rate-nft {
+    color: goldenrod;
+    padding: 4px;
+}
 
- .rate-now a {
-     text-decoration: none;
-     color: #0048b3;
-     font-weight: 400;
-     line-height: 1.2;
- }
+.rate-now a {
+    text-decoration: none;
+    color: #9599E2;
+    font-weight: 400;
+    line-height: 1.2;
+}
 
 .best-nft-review p {
     margin-bottom: 10px!important;
@@ -50,7 +50,7 @@
     font-weight: bold;
     line-height: 26px;
     font-size: 18px;
-    color: rgba(3,27,78,.7);
+    color: rgba(3, 27, 78, .7);
     list-style-type: square;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .nft-attribute {
-    color: #0048b3;
+    color: #9599E2;
     line-height: 1.1;
     list-style: none;
     padding: 4px 8px 4px 8px;
@@ -134,13 +134,13 @@
 .curr-price {
     font-size: 22px;
     display: block;
-    color: #0048b3;
+    color: #9599E2;
     margin-top: 10px;
 }
 
 .buyBtn {
     border-color: #c60;
-    background: #0048b3;
+    background: #9599E2;
     color: #fff;
     padding: 2px 1.95em;
     margin-top: 10px;
@@ -163,8 +163,8 @@
 }
 
 .tabs .active {
-    color: #3488e770;
-    border-bottom: 2px solid #3488e770;
+    color: #585858;
+    border-bottom: 2px solid #585858;
 }
 
 .nft-details {
@@ -176,11 +176,13 @@
 }
 
 .bg-blue {
-    background: #0048b3;
+    background: #9599E2;
 }
+
 .color-white {
     color: #fff;
 }
+
 .info-wrapper {
     padding: 0 20px;
 }

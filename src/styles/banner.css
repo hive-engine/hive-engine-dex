@@ -6,6 +6,7 @@
     background-attachment: fixed;
     height: 100%;
 }
+
 .overlay {
     background: rgba(4, 3, 20, 0.8);
 }
@@ -19,9 +20,12 @@
     align-content: center;
     text-align: center;
 }
+
 .banner-logo {
+    margin-left: 70px;
     margin-top: -30px;
 }
+
 .banner-header {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -46,6 +50,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .banner-button {
     margin: 4px;
 }
@@ -61,24 +66,28 @@
 }
 
 .btn-view-markets {
-    background-color: #0048b3;
+    background-color: #9599E2;
     color: white;
 }
+
 .btn-view-markets:hover {
     background-color: #042475;
     color: white!important;
 }
+
 .btn-get-started {
-    background-color: #21be3d;
+    background-color: #6c74ff;
     color: #fff;
     margin-right: 28px;
 }
+
 @media only screen and (max-device-width: 480px) {
     .btn-get-started {
         margin-right: 0!important;
         margin-bottom: 12px;
     }
 }
+
 @media only screen and (max-device-width: 769px) {
     .btn-get-started {
         margin-right: 0!important;

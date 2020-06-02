@@ -3,12 +3,13 @@
 }
 
 .btn-primary {
-    background-color: rgb(32, 39, 53);
+    background-color: #696FE4;
     border: none;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .btn-primary:not(:disabled):hover {
-    background-color: rgb(41, 50, 69);
+    background-color: #6E71AB;
 }
 
 .btn-secondary {
@@ -42,7 +43,7 @@
 .btn-link {
     background: none;
     border: none;
-    color: #0048b3;
+    color: #9599E2;
     font-size: 12px;
     line-height: 1;
     margin: 0;
@@ -106,11 +107,11 @@
 }
 
 .btn-favourite.active {
-    color: #0048b3;
+    color: #9599E2;
 }
+
 .greenBtn {
-    /*padding: .5rem 3rem;*/
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -119,12 +120,14 @@
     border-radius: 0.25rem;
     min-width: 76px;
 }
+
 .greenBtn:hover {
-    background-color: #1eac38;
+    background-color: #696FE4;
 }
+
 .seeBtn {
     padding: .5rem 3rem;
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -132,6 +135,7 @@
     line-height: 2.5;
     min-width: 76px;
 }
+
 .seeBtn:hover {
     background-color: #1eac38;
 }
@@ -148,6 +152,7 @@
     border: none;
     border-radius: 3px;
 }
+
 .seeMoreBtn:hover {
     background-color: #1eac38;
 }

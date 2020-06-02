@@ -1,5 +1,5 @@
 {
-    "hiveEngine": "Hive Engine",
+    "tribalDex": "Tribaldex",
     "Exchange": "거래소",
     "Tokens": "토큰",
     "Offerings": "토큰 공개 참여",
@@ -28,7 +28,7 @@
     "Buy": "매수",
     "Sell": "매도",
     "Create Tokens + Smart Contracts on the HIVE blockchain": "HIVE 블록 체인에서 토큰과 스마트 계약을 만들어보세요",
-    "HIVE ENGINE is a platform that empowers communities, project owners, fundraisers, developers, and businesses to quickly and easily build on the Hive blockchain like never before": "HIVE ENGINE은 커뮤니티, 프로젝트, 펀딩 예정자, 개발자, 사업가가 스팀 블록체인 위에서 쉽고 빠르게 환경을 구축할 수 있게 도와주는 플랫폼입니다.",
+    "Tribaldex is a platform that empowers communities, project owners, fundraisers, developers, and businesses to quickly and easily build on the Hive blockchain like never before": "Tribaldex은 커뮤니티, 프로젝트, 펀딩 예정자, 개발자, 사업가가 스팀 블록체인 위에서 쉽고 빠르게 환경을 구축할 수 있게 도와주는 플랫폼입니다.",
     "Sell Orders": "매도 주문",
     "Buy Orders": "매수 주문",
     "Transaction History": "거래 내역",

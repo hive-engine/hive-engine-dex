@@ -2,9 +2,9 @@
 import { getAccount, hiveSignerJson, hiveSignerJsonId, hiveSignerTransfer } from 'common/hive';
 import * as functions from 'common/functions';
 
-import hive from 'steem';
+import hive from 'steem-js-patched';
 
-jest.mock('steem');
+jest.mock('steem-js-patched');
 
 describe('Hive', () => {
     afterEach(() => {
@@ -81,7 +81,7 @@ describe('Hive', () => {
         expect(spy).toHaveBeenCalledWith(url, 'hivesigner', 500, 560);
     });
 
-    test('steemConnectTransfer creates transaction url for steem connect', () => {
+    test('hiveSigner creates transaction url for Hivesigner', () => {
         window.open = jest.fn();
 
         const spy = jest.spyOn(functions, 'popupCenter');

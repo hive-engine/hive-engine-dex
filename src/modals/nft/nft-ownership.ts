@@ -4,9 +4,10 @@ import { loading } from 'store/actions';
 import { dispatchify } from 'aurelia-store';
 import { NftService } from './../../services/nft-service';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, useView, PLATFORM } from 'aurelia-framework';
 
 @autoinject()
+@useView(PLATFORM.moduleName('modals/nft/nft-ownership.html'))
 export class NftOwnershipModal {
     private symbol;
     private user;

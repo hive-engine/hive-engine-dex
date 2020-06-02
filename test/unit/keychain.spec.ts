@@ -3,7 +3,7 @@ import { customJson, requestTransfer } from 'common/keychain';
 
 describe('Hive Keychain', () => {
     beforeEach(() => {
-        (window as any).steem_keychain = {
+        (window as any).hive_keychain = {
             requestCustomJson: jest
                 .fn()
                 .mockImplementation((username, jsonId, keyType, jsonData, displayName, callback) => {

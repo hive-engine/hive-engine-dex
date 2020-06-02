@@ -1,9 +1,10 @@
 header {
     margin-top: 80px;
-    
 }
+
 .header-wrapper {
-    background: #451771;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     box-shadow: 0 3px 0 #30104f;
     padding: 30px;
     border-radius: 15px;
@@ -11,20 +12,24 @@ header {
     color: #fff;
     margin-bottom: 30px;
 }
+
 .wizard-header {
     color: #fff;
 }
+
 .wizard-header-desc {
     color: #fff;
 }
+
 .detail-card {
     padding: 30px;
     border-radius: 15px;
     background: #fff;
-    box-shadow: 0 3px 0 rgba(84,94,111,0.2);
-    transition: transform .2s ease-in-out,background .2s ease-in-out;
+    box-shadow: 0 3px 0 rgba(84, 94, 111, 0.2);
+    transition: transform .2s ease-in-out, background .2s ease-in-out;
     margin-bottom: 20px;
 }
+
 .desc {
     font-size: 14px;
     margin-bottom: 0;

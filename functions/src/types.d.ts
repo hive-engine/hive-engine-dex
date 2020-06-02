@@ -1,1 +1,1 @@
-declare module 'steem';
+declare module 'steem-js-patched';

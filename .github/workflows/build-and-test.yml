@@ -1,0 +1,25 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  buildAndTest:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Setup FontAwesome Token
+      run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+    - name: Install npm dependencies
+      run: npm install
+    - name: Run Tests
+      run: npm test
+    - name: Install Aurelia CLI
+      run: npm install aurelia-cli -g
+    - name: Run build task
+      run: au build --env prod

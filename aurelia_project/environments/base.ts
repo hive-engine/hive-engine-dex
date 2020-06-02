@@ -1,7 +1,7 @@
 export const baseEnvironmentConfiguration: Partial<EnvironmentInterface> = {
-    siteName: 'Hive Engine.',
+    siteName: 'Tribal Dex',
     defaultLocale: 'en',
-    SCOT_API: 'https://scot-api.hive-engine.com/',
+    SCOT_API: 'https://scot-api.steem-engine.com/',
     HISTORY_API: 'https://accounts.hive-engine.com/',
     CONVERTER_API: 'https://converter-api.hive-engine.com/api/',
     FIREBASE_API: 'https://us-central1-tribaldex-d22e0.cloudfunctions.net/api/',

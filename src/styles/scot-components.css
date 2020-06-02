@@ -1,14 +1,15 @@
 .card-header {
     padding: 15px;
     margin-bottom: 0;
-    background-color: #0048b3 !important;
+    background-color: #9599E2 !important;
     color: white !important;
 }
+
 
 /* .mycard-header {
     padding: 15px;
     margin-bottom: 0;
-    background-color: #0048b3 !important;
+    background-color: #9599E2 !important;
     color: white !important;
 } */
 
@@ -18,6 +19,7 @@
     margin-bottom: 0;
     padding: 0;
 }
+
 .card-form {
     padding: 20px;
 }
@@ -26,14 +28,16 @@
     color: #000 !important;
     margin-top: 15px;
 }
+
 .form-control:focus {
-    color: #0048b3;
+    color: #9599E2;
     background-color: #fff;
-    border-color: #0048b3;
+    border-color: #9599E2;
 }
+
 .greenBtn {
     padding: 0.5rem 3rem;
-    background-color: #21be3d;
+    background-color: #696FE4;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -42,19 +46,23 @@
     width: 100% !important;
     margin-top: 30px;
 }
+
 .greenBtn:hover {
-    background-color: #1eac38;
+    background-color: #696FE4;
     cursor: pointer;
 }
+
 .scotbot-component-label {
     color: black !important;
 }
+
 .hint-body h2 {
     font-size: large;
     padding: 15px;
     padding-bottom: 0px;
     margin-bottom: -10px;
 }
+
 .hint-body p {
     padding: 15px !important;
     font-size: 14px;

@@ -45,7 +45,7 @@ ux-dialog {
 }
 
 ux-dialog>ux-dialog-header {
-    background: linear-gradient( 280deg, #0048b3 0%, #a1b9e7 511.72%, #0048b3 100%);
+    background: linear-gradient( 280deg, #9599E2 0%, #a1b9e7 511.72%, #9599E2 100%);
     color: #fff;
     display: block;
     font-size: 22px;
@@ -93,12 +93,12 @@ ux-dialog>ux-dialog-body {
     overflow: auto;
 }
 
-ux-dialog > ux-dialog-body.withdrawDialogBody {
+ux-dialog>ux-dialog-body.withdrawDialogBody {
     max-height: 500px;
 }
 
 ux-dialog>ux-dialog-body a {
-    color: #0048b3;
+    color: #9599E2;
 }
 
 ux-dialog>ux-dialog-footer {
@@ -115,7 +115,7 @@ ux-dialog>ux-dialog-footer button {
     margin-top: 0;
     width: 30%;
     padding: 0 !important;
-    background-color: #0048b3;
+    background-color: #9599E2;
     color: #fff !important;
     font-weight: bold;
     font-family: main-font-bold !important;
@@ -167,7 +167,7 @@ ux-dialog>ux-dialog-footer button:last-child {
 
 .ux-dialog-open .note,
 .ux-dialog-open .note p {
-    color: #0048b3;
+    color: #9599E2;
 }
 
 .input-group-append {
