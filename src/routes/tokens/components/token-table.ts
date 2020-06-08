@@ -15,50 +15,22 @@ export class TokenTable {
     @bindable tokens;
     @bindable tableId;
     @bindable tab;
+    private pageSize = 10;
+    private filters = [{ value: '', keys: ['symbol', 'name'] }];
     private state: State;
     private loading = true;    
 
-    constructor(private se: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {
+    constructor(private he: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {
         this.loading = true;
     }
 
-    async activate() {
+    async activate() {        
         await dispatchify(getCurrentFirebaseUser)();
     }
 
-    attached() {             
-        this.taskQueue.queueMicroTask(() => {
-            this.applyDatatable();            
-            this.loading = false;
-        });
-    }
-
-    applyDatatable() {
-        // @ts-ignore
-        $('#' + this.tableId).DataTable({
-            order: [],
-            columnDefs: [
-                {
-                    targets: 'no-sort',
-                    orderable: false,
-                },
-                { targets: 0, responsivePriority: 1 }, // Logo
-                { targets: 1, responsivePriority: 2 }, // Symbol
-                { targets: 2, responsivePriority: 10000 }, // Name
-                { targets: 3, responsivePriority: 10010, type: 'html-num-fmt' }, // Market cap
-                { targets: 4, responsivePriority: 3, type: 'html-num-fmt' }, // price
-                { targets: 5, responsivePriority: 10020, type: 'html-num-fmt' }, // Change %
-                { targets: 6, responsivePriority: 4, type: 'html-num-fmt' }, // 24h volume
-                { targets: 7, responsivePriority: 10030 }, // Supply
-                { targets: 8, responsivePriority: 20000 }, // Actions
-            ],
-            destroy: true,
-            bInfo: false,
-            paging: true,
-            searching: false,
-            responsive: true
-        });
-    }
+    attached() {      
+        this.loading = false;
+    }    
 
     favouriteToken(token) {
         this.taskQueue.queueTask(() => {
@@ -75,7 +47,7 @@ export class TokenTable {
             const userRef = firebase
                 .firestore()
                 .collection('users')
-                .doc(this.se.getUser());
+                .doc(this.he.getUser());
 
             userRef.set(this.state.firebaseUser, {
                 merge: true,
