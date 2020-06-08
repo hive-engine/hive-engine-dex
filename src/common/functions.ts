@@ -140,13 +140,13 @@ export function percentageOf(amount: number, percentOf: number) {
 
 export async function getHivePrice() {
     try {
-        const request = await http.fetch('https://postpromoter.net/api/prices', {
+        const request = await http.fetch('https://api.coingecko.com/api/v3/simple/price?ids=HIVE&vs_currencies=USD', {
             method: 'GET'
         });
 
         const response = await request.json();
 
-        window.hive_price = parseFloat(response.steem_price);
+        window.hive_price = parseFloat(response.hive.usd);
 
         return window.hive_price;
     } catch {

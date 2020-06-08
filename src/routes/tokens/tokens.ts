@@ -2,7 +2,7 @@ import { TokenInfoModal } from 'modals/wallet/token-info';
 import { HiveEngine } from 'services/hive-engine';
 import { autoinject, observable, TaskQueue, bindable } from 'aurelia-framework';
 
-import { connectTo, dispatchify } from 'aurelia-store';
+import { connectTo, dispatchify, Store } from 'aurelia-store';
 import { loadTokensList, loadTokenSymbols, getCurrentFirebaseUser } from 'store/actions';
 
 import styles from './tokens.module.css';
@@ -11,6 +11,7 @@ import { BuyTokenModal } from 'modals/buy-token';
 import { DepositModal } from 'modals/deposit';
 import { WithdrawModal } from 'modals/withdraw';
 import { loadTokens } from 'common/hive-engine';
+import { Subscription as StateSubscription } from 'rxjs';
 
 @autoinject()
 @connectTo()
@@ -21,30 +22,36 @@ export class Tokens {
     private peggedTokens = [];
     private currentLimit = 1000;
     private currentOffset = 0;
-        
+    private subscription: StateSubscription;
+
+    @bindable tokenList = [];
     @bindable tab = 'engine';
 
-    constructor(private se: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService) {}
+    constructor(private he: HiveEngine, private taskQueue: TaskQueue, private dialogService: DialogService, private store: Store<State>) {
+        this.subscription = this.store.state.subscribe(async (state: State) => {
+            this.state = state;
+        });
+    }
 
     async canActivate() {
-         this.peggedTokens = await loadTokens(['BCHP',
-                    'BTCP',
-                    'DOGEP',
-                    'SWAP.HIVE',
-                    'BRIDGEBTCP',
-                    'BTSCNYP',
-                    'BTSP',
-                    'LTCP',
-                    'PEOSP',
-                    'SWIFTP',
-                    'TLOSP',
-                    'WEKUP',
-                ],
-                50,
-                0
-            );
+        let peggedCoins = await this.he.getPeggedTokens();
+        let peggedTokenSymbols = [];
+        peggedCoins.forEach(x => peggedTokenSymbols.push(x.symbol));
 
-        await dispatchify(loadTokensList)(this.currentLimit, this.currentOffset);                
+        this.peggedTokens = await loadTokens(peggedTokenSymbols, 50, 0);
+
+        await dispatchify(loadTokensList)(this.currentLimit, this.currentOffset);           
+
+        this.tokenList = this.state.tokens;
+    }
+
+    toggleTokens(tabVal) {
+        this.tab = tabVal;
+        if (this.tab == 'engine') {
+            this.tokenList = this.state.tokens;
+        } else {
+            this.tokenList = this.peggedTokens;
+        }
     }
 
     async activate() {

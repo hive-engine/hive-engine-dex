@@ -283,6 +283,7 @@ sellbook {
 
 .table-buttons a {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .table-buttons a:last-child {

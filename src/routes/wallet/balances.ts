@@ -33,6 +33,8 @@ export class Balances {
     private subscription: Subscription;
     private styles = styles;
     private totalWalletValue = 0.00;
+    private pageSize = 10;
+    private filters = [{ value: '', keys: ['symbol', 'name'] }];
 
     private tokenTable: HTMLTableElement;
     private showActionBtns = () => {
@@ -41,7 +43,7 @@ export class Balances {
 
     @observable() private hideZeroBalances = false;
 
-    constructor(private se: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue, private dialogService: DialogService) {
+    constructor(private he: HiveEngine, private store: Store<State>, private taskQueue: TaskQueue, private dialogService: DialogService) {
         this.subscription = this.store.state.subscribe((state: State) => {
             if (state) {
                 this.state = state;
@@ -164,7 +166,7 @@ export class Balances {
     }
 
     updateUser() {
-        const userRef = firebase.firestore().collection('users').doc(this.se.getUser());
+        const userRef = firebase.firestore().collection('users').doc(this.he.getUser());
 
         userRef.set(this.user, {
             merge: true
