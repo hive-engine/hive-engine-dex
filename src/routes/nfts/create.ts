@@ -131,9 +131,7 @@ export class CreateNft {
     }
 
     public async createToken() {
-        console.log('test');
         const validationResult = await this.controller.validate();
-        console.log(validationResult);
 
         const payload: { symbol: string; name: string; maxSupply?: number; url?: string, authorizedIssuingAccounts?: string[], authorisedIssuingContracts?: string[], orgName?: string, productName?: string } = {
             symbol: this.symbol,
