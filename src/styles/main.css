@@ -329,3 +329,11 @@ sellbook {
     margin: 0 10px 0 0;
     padding: 0;
 }
+
+.nftFeeWarning {
+    margin-top: 10px;
+}
+
+.btnCreateNFT.disabled {
+    background-color: #6c757d;
+}

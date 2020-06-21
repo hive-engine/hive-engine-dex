@@ -91,11 +91,12 @@
                     <div class="form-group">
                         <button type="button"
                                 disabled.bind="tokenCreationFee > beeBalance"
-                                class="greenBtn"
+                                class="greenBtn btnCreateNFT ${tokenCreationFee > beeBalance ? 'disabled' : '' }"
                                 style="border: none;"
                                 click.delegate="createToken()">
                             ${'Create my token' & t}
                         </button>
+                        <div show.bind="tokenCreationFee > beeBalance" class="alert alert-warning nftFeeWarning">You cannot create NFT's if you don't have sufficient BEE balance.</div>
                     </div>
                 </div>
             </div>
