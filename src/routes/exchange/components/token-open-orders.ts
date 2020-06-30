@@ -1,5 +1,5 @@
 import { customElement, bindable } from 'aurelia-framework';
-import { cancelMarketOrder } from 'common/market';
+import { cancelMarketOrder, cancelMarketOrders } from 'common/market';
 import { HiveEngine } from 'services/hive-engine';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { faInfo } from '@fortawesome/pro-regular-svg-icons';
@@ -76,12 +76,17 @@ export class TokenOpenOrders {
         if (window.hive_keychain) {
             if (orders.length > 0) {
                 this.loading = true;
+                let response: any;
 
-                for (let o of orders) {
-                    let response:any = await cancelMarketOrder(this.se.getUser(), o.type, o.txId, o.symbol);
-                    
-                    if (response && response.transactionId)
-                        reloadOrders = true;
+                if (orders.length == 1) {
+                    response = await cancelMarketOrder(this.se.getUser(), orders[0].type, orders[0].txId, orders[0].symbol);
+                } else {
+                    response = await cancelMarketOrders(this.se.getUser(), orders);
+                }
+
+                if (response && response.transactionId) {
+                    reloadOrders = true;
+                    this.anyOrderChecked = false;
                 }
             }
         } else {
