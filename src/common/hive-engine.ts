@@ -368,7 +368,7 @@ export async function loadConversions(account: string, type = 'from', limit = 20
 
 export async function getPrices() {
     try {
-        const request = await http.fetch(`https://postpromoter.net/api/prices`, {
+        const request = await http.fetch(`https://api.coingecko.com/api/v3/simple/price?ids=HIVE&vs_currencies=USD`, {
             headers: {
                 'Origin': 'https://hive-engine.com',
                 'Referer': 'https://hive-engine.com/?p=conversion_history',
