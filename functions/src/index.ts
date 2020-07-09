@@ -14,6 +14,7 @@ admin.initializeApp({
 
 import { authRouter } from './routes/auth';
 import { documentRouter } from './routes/documents';
+import { imageProxyRouter } from './routes/image-proxy';
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(cacheMiddleware);
 
 app.use('/', authRouter);
 app.use('/documents', documentRouter);
+app.use('/image', imageProxyRouter);
 
 export const createUserRoles = functions.auth.user().onCreate((user) => {
     const customClaims: any = {

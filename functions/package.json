@@ -27,6 +27,7 @@
     "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.6.1",
     "multer": "^1.4.2",
+    "request": "^2.88.2",
     "shortid": "^2.2.15",
     "sscjs": "0.0.8",
     "steem": "^0.7.11",
