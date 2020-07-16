@@ -34,7 +34,7 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
             return res.status(404).send('Expected URI host to be non-empty');
         }
 
-        (options as any).headers = { 'User-Agent': 'tribaldex/0.0.7', 'Accept': '*/*' };
+        (options as any).headers = { 'User-Agent': 'tribaldex/0.0.1', 'Accept': '*/*' };
 
         const agent = options.protocol === 'http:' ? http : https;
         let timeout = false;
@@ -67,7 +67,7 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
             }
 
             if (response.statusCode !== 200) {
-                return res.sendFile('./download.png');
+                return res.sendFile('download.png');
                 //return res.status(404).send('Expected response code 200, got ' + response.statusCode);
             }
 

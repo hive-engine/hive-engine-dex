@@ -23,6 +23,7 @@ app.disable('x-powered-by');
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 const cacheMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
