@@ -30,7 +30,15 @@ export class TokenTable {
 
     attached() {      
         this.loading = false;
-    }    
+    }   
+    
+    getImageUrl(url: string) {
+        if (url.includes('.svg')) {
+            return url;
+        }
+
+        return `https://us-central1-tribaldex-d22e0.cloudfunctions.net/api/image/?url=${url}&width=24&height=24`;
+    }
 
     favouriteToken(token) {
         this.taskQueue.queueTask(() => {
