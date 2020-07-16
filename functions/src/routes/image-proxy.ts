@@ -16,12 +16,13 @@ const mimeTypes = [
 
 const imageMagick = gm.subClass({ imageMagick: true });
 
+// @ts-ignore
 imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    const width = req.query.width as string; 
-    const height = req.query.height as string;
+    const width = req.query.width as string ?? 120;
+    const height = req.query.height as string ?? 120;
 
     // @ts-ignore
-    const retrieve = function(remote: any) {
+    const retrieve = function (remote: any) {
         const options = url.parse(remote, true);
         (options as any).agent = false;
 
@@ -39,7 +40,7 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
         let timeout = false;
 
         // @ts-ignore
-        const request = agent.get(options, function(response) {
+        const request = agent.get(options, function (response) {
             if (timeout) {
                 return;
             }
@@ -66,7 +67,8 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
             }
 
             if (response.statusCode !== 200) {
-                return res.status(404).send('Expected response code 200, got ' + response.statusCode);
+                return res.sendFile('./download.png');
+                //return res.status(404).send('Expected response code 200, got ' + response.statusCode);
             }
 
             const mimeType = (response.headers['content-type'] || '').replace(/;.*/, '');
@@ -76,18 +78,9 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
                 return res.status(404).send('Expected content type ' + mimeTypes.join(', ') + ', got ' + mimeType);
             }
 
-            const parsedWidth = parseInt(width);
-            const parsedHeight = parseInt(height);
-
-            if (parsedWidth > 1000 || parsedHeight > 1000) {
-                return res.send(404).send('Invalid height or width values');
-            }
-
             imageMagick(response, 'image.' + extension)
                 .colorspace('RGB')
-                .resize(parsedWidth, parsedHeight)
-                .gravity('Center')
-                .extent(parseInt(width), parseInt(height))
+                .resize(parseInt(width), parseInt(height), '^')
                 .stream(extension, function (err: any, stdout: any, stderr: any) {
                     if (err) {
                         return next(err);
@@ -107,6 +100,22 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
             timeout = true;
             return res.status(504).send();
         });
+    }
+
+    if (isNaN(parseInt(width))) {
+        return res.status(404).send('Expected width to be an integer');
+    }
+
+    if (parseInt(width) > 1000) {
+        return res.status(404).send('Expected width to be less than or equal to 1000');
+    }
+
+    if (isNaN(parseInt(height))) {
+        return res.status(404).send('Expected height to be an integer');
+    }
+
+    if (parseInt(height) > 1000) {
+        return res.status(404).send('Expected height to be less than or equal to 1000');
     }
 
     retrieve(decodeURIComponent(req.query.url as string));
