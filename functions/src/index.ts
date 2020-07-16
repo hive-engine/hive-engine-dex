@@ -14,6 +14,7 @@ admin.initializeApp({
 
 import { authRouter } from './routes/auth';
 import { documentRouter } from './routes/documents';
+import { imageProxyRouter } from './routes/image-proxy';
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.disable('x-powered-by');
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 const cacheMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
@@ -33,6 +35,7 @@ app.use(cacheMiddleware);
 
 app.use('/', authRouter);
 app.use('/documents', documentRouter);
+app.use('/image', imageProxyRouter);
 
 export const createUserRoles = functions.auth.user().onCreate((user) => {
     const customClaims: any = {
