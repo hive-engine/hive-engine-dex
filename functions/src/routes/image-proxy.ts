@@ -12,6 +12,7 @@ const mimeTypes = [
     'image/jpeg',
     'image/png',
     'image/jpg',
+    'image/svg+xml'
 ];
 
 const imageMagick = gm.subClass({ imageMagick: true });
@@ -81,6 +82,7 @@ imageProxyRouter.get('/', (req: express.Request, res: express.Response, next: ex
             imageMagick(response, 'image.' + extension)
                 .colorspace('RGB')
                 .resize(parseInt(width), parseInt(height), '^')
+                .quality(80)
                 .stream(extension, function (err: any, stdout: any, stderr: any) {
                     if (err) {
                         return next(err);
