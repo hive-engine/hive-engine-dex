@@ -8,7 +8,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@hivechain/dhive": "^0.13.3",
+        "@hiveio/dhive": "^0.14.1",
         "@types/slick-carousel": "^1.6.33",
         "animate.css": "^4.1.0",
         "apollo-boost": "^0.4.7",
