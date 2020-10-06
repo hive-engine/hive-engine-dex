@@ -230,7 +230,7 @@ describe('Functions', () => {
     test('create sell transaction through keychain and no successful response', async () => {
         const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'BEE' }, 'Sell', 'sellSuccess', 'errorSuccess');
 
-        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('beeab'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
+        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
         expect(response).toBeFalsy();
     });
 
@@ -250,7 +250,7 @@ describe('Functions', () => {
 
         const response = await createTransaction('beggars', 'market', 'sell', { symbol: 'BEE' }, 'Sell', 'sellSuccess', 'errorSuccess');
 
-        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('beeab'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
+        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('BEE'), 'Sell', expect.any(Function));
         expect(response).not.toBeFalsy();
     });
 

@@ -67,7 +67,7 @@ describe('Market', () => {
     test('sendmarket order', async () => {
         await sendMarketOrder('beggars', 'sell', 'BEE', '500', '0.90');
 
-        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('beeab'), 'Active', expect.stringContaining('contractAction'), 'SELL Order', expect.any(Function));
+        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('contractAction'), 'SELL Order', expect.any(Function));
     });
 
     test('sendmarket order invalid action', async () => {
@@ -77,7 +77,7 @@ describe('Market', () => {
     test('cancelmarket order', async () => {
         cancelMarketOrder('beggars', 'sell', '898fdsfkjk', 'BEE');
 
-        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('beeab'), 'Active', expect.stringContaining('cancel'), 'Cancel SELL Order', expect.any(Function));
+        expect(window.hive_keychain.requestCustomJson).toHaveBeenCalledWith('beggars', expect.stringContaining('ssc-'), 'Active', expect.stringContaining('cancel'), 'Cancel SELL Order', expect.any(Function));
     });
 
     test('cancelmarket order invalid action', async () => {
