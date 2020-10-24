@@ -14,7 +14,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@google-cloud/storage": "^4.7.0",
-    "@hivechain/dhive": "^0.13.4",
+    "@hiveio/dhive": "^0.14.1",
     "@types/crypto-js": "^3.1.47",
     "@types/gm": "^1.18.9",
     "@types/multer": "^1.4.3",
